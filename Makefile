@@ -1,0 +1,2 @@
+
+CC = -Wall -Wextra -Werror
