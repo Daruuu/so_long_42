@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:44:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2023/11/06 20:45:55 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/02 13:22:36 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_read_line_file(int fd, char *storage, int num_bytes)
 		else
 		{
 			buff_datos_leidos[num_bytes] = '\0';
-			storage = ft_strjoin(storage, buff_datos_leidos, -1);
+			storage = ft_strjoin_gnl(storage, buff_datos_leidos, -1);
 		}
 	}
 	free(buff_datos_leidos);

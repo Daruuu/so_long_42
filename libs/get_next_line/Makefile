@@ -11,10 +11,10 @@ SRCS_BONUS=	get_next_line_bonus.c get_next_line_utils_bonus.c \
 OBJS= 	$(SRCS:.c=.o)
 OBJS_BONUS= 	$(SRCS_BONUS:.c=.o)
 
-CC= 		gcc
-RM= 		rm -f
-AR= 		ar -rcs
-CFLAGS=		-Wall -Wextra -Werror
+CC = cc
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror
+AR = ar -rcs
 
 all: $(NAME)
 

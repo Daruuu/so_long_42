@@ -1,4 +1,3 @@
-
 CC =		cc
 CFLAGS =	-Wall -Wextra -Werror
 
@@ -6,7 +5,7 @@ RM =		rm -f
 
 LIB =		ar rc
 
-NAME =		libftprintf.a
+NAME =		printf.a
 HEADER =	ft_printf.h
 
 SRCS =		ft_printf.c \
