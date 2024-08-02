@@ -32,4 +32,10 @@ all: $(LIBFT_DIR) $(MLX_DIR)/libmlx_Linux.a $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIB_DIR) $(LIB_PRINTF) $(LIB_GNL) $(LIB_MLX) -o $(NAME)
 
+# ---------------------------- COMPILE OF LIBS -------------------------------
+
+$(C_LIBFT):
+		$(MAKE) -C $(LIB_LIBFT)
+
+$(C_)
 
