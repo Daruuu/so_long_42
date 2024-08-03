@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 23:39:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/03 13:16:23 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/03 12:10:31 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/03 14:44:58 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "include/so_long.h"
+#include "../include/so_long.h"
 
-int	main(int ac, char **av)
+int validate_filename_map(char **av)
 {
-	printf("Hello, World!\n");
-	if (ac == 2)
-	{
-		validate_filename_map(av[1]);
-		// comprobar que el av[1] sea un mapa.ber
+    char    *type_file;
+    int     len_file;
+    char    *result;
+    int     i;
 
-	}
-
-	return (0);
+    type_file = ".ber";
+    len_file =  ft_strlen(av[1]);
+    result = ft_strnstr(av[1], type_file, len_file);
+    i = 0;
+    while (result && type_file)
+    {
+        if (result[i] != type_file[i])
+            return (0);
+        i++;
+    }
+    return (1);
 }
