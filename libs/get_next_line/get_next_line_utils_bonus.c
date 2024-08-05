@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:37:14 by dasalaza          #+#    #+#             */
-/*   Updated: 2023/11/06 22:15:59 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:37:12 by anamedin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strjoin(char *str1, char *str2, int i)
 	return (new_ptr);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr_gnl(char *str, int c)
 {
 	unsigned int	i;
 
@@ -98,7 +98,7 @@ char	*ft_update_storage(char *storage)
 	int		size_rest_of_line;
 	int		i;
 
-	ptr_newline = ft_strchr(storage, '\n');
+	ptr_newline = ft_strchr_gnl(storage, '\n');
 	if (!ptr_newline)
 	{
 		free(storage);

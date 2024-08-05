@@ -17,9 +17,16 @@ SO_LONG_H = include/so_long.h
 #------------------------ FONT FILES & OBJECTS --------------------------------
 
 # SRC = $(wildcard $(SRC_DIR)/*.c) main.c
-SRC = main.c $(SRC_DIR)/validations_map.c
-OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-OBJ := $(OBJ:main.c=$(OBJ_DIR)/main.o)
+SRC =	main.c	\
+		$(SRC_DIR)/validations_map.c \
+		$(SRC_DIR)/map.c \
+		$(SRC_DIR)/graphics.c \
+		$(SRC_DIR)/so_long.c \
+		$(SRC_DIR)/get_map_with_gnl.c \
+
+OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
+#OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+#OBJ := $(OBJ:main.c=$(OBJ_DIR)/main.o)
 
 #-------------------------------- LIBS --------------------------------
 
@@ -53,8 +60,9 @@ $(MLX_DIR)/libmlx_Linux.a:
 
 # ---------------------------- COMPILE OBJECTS  -------------------------------
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c ../$(SO_LONG_H)
-	@mkdir -p $(OBJ_DIR)
+#$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(SO_LONG_H)
+$(OBJ_DIR)/%.o: %.c $(SO_LONG_H)
+	@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/main.o: main.c $(SO_LONG_H)

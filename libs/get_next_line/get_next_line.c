@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: anamedin <anamedin@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/03 19:02:13 by anamedin          #+#    #+#             */
+/*   Updated: 2024/08/05 14:34:12 by anamedin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:44:49 by dasalaza          #+#    #+#             */
@@ -29,7 +41,7 @@ char	*ft_read_line_file(int fd, char *storage, int num_bytes)
 		return (NULL);
 	}
 	buff_datos_leidos[0] = '\0';
-	while (num_bytes > 0 && (!ft_strchr(buff_datos_leidos, '\n')))
+	while (num_bytes > 0 && (!ft_strchr_gnl(buff_datos_leidos, '\n')))
 	{
 		num_bytes = read(fd, buff_datos_leidos, BUFFER_SIZE);
 		if (num_bytes == -1)
@@ -54,7 +66,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!storage || (storage && !ft_strchr(storage, '\n')))
+	if (!storage || (storage && !ft_strchr_gnl(storage, '\n')))
 		storage = ft_read_line_file(fd, storage, 1);
 	if (!storage)
 		return (NULL);

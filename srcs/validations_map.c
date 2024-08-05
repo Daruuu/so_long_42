@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: anamedin <anamedin@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/03 19:02:13 by anamedin          #+#    #+#             */
+/*   Updated: 2024/08/05 16:44:09 by anamedin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:10:31 by dasalaza          #+#    #+#             */
@@ -12,22 +24,18 @@
 
 #include "../include/so_long.h"
 
-int validate_filename_map(char **av)
+int	validate_filename_map(char **av)
 {
-    char    *type_file;
-    int     len_file;
-    char    *result;
-    int     i;
+	const char	*type_file;
+	int			len_file;
+	char		*result;
+	int			i;
 
-    type_file = ".ber";
-    len_file =  ft_strlen(av[1]);
-    result = ft_strnstr(av[1], type_file, len_file);
-    i = 0;
-    while (result && type_file)
-    {
-        if (result[i] != type_file[i])
-            return (0);
-        i++;
-    }
-    return (1);
+	type_file = ".ber";
+	len_file = (int)ft_strlen(av[1]);
+	if (len_file < 4)
+		return (0);
+	if (ft_strncmp(av[1] + len_file - 4, type_file, 4))
+		return (1);
+	return (0);
 }
