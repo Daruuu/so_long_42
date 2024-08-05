@@ -25,8 +25,6 @@ SRC =	main.c	\
 		$(SRC_DIR)/get_map_with_gnl.c \
 
 OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
-#OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-#OBJ := $(OBJ:main.c=$(OBJ_DIR)/main.o)
 
 #-------------------------------- LIBS --------------------------------
 
