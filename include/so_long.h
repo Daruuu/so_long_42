@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 00:02:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/03 14:16:48 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/06 16:51:18 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 #include <string.h>	// strerror
 
 // VALIDATIONS MAP
-int     validate_filename_map(char **av);
+// int     validate_filename_map(char **av);
+void        all_validations(char **av);
+
+// ********** FT_FREE_ERRORS.C ***********************
+
+void        if_not_exist_free_pointer(char **ptr);
 
 #endif

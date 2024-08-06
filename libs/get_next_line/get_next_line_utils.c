@@ -6,13 +6,13 @@
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 21:37:14 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/05 14:37:44 by anamedin         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:19:08 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char *str)
+int	strlen_gnl(char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *str1, char *str2, int i)
+char	*ft_strjoin_gnl(char *str1, char *str2, int i)
 {
 	char	*new_ptr;
 	int		j;
@@ -34,7 +34,7 @@ char	*ft_strjoin(char *str1, char *str2, int i)
 			return (0);
 		str1[0] = '\0';
 	}
-	new_ptr = malloc (sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 1));
+	new_ptr = malloc (sizeof(char) * (strlen_gnl(str1) + strlen_gnl(str2) + 1));
 	if (!new_ptr)
 	{
 		free(str1);
@@ -121,7 +121,7 @@ char	*ft_update_storage(char *storage)
 		free(storage);
 		return (NULL);
 	}
-	size_rest_of_line = ft_strlen(ptr_newline + 1);
+	size_rest_of_line = strlen_gnl(ptr_newline + 1);
 	rest_of_line = (char *) malloc(size_rest_of_line * sizeof(char) + 1);
 	if (!rest_of_line)
 	{
