@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.22)
 
 # cmake_minimum_required(VERSION 3.28)
 project(so_long_42 C)
@@ -20,7 +20,13 @@ add_executable(so_long_42 main.c
         libs/printf/ft_puthexa_nbr.c
         libs/printf/ft_putnbr_n.c
         libs/printf/ft_putstr.c
+# GET_NEXT_LINE
+        libs/get_next_line/get_next_line.c
+        libs/get_next_line/get_next_line_utils.c
+        libs/libft/ft_memcpy.c
 #       SO_LONG
         srcs/validations_map.c
+        srcs/ft_free_errors.c
+        srcs/ft_aux.c
 
 )

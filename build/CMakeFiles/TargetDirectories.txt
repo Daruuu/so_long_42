@@ -1,0 +1,3 @@
+/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles/so_long_42.dir
+/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles/edit_cache.dir
+/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles/rebuild_cache.dir

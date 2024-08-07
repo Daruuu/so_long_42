@@ -8,14 +8,13 @@ in other terminal:
     target remote | /usr/bin/vgdb --pid=xxxx
 
 
-    #include <fcntl.h>
+
+
+#include <fcntl.h>
 
 // Prototipos de funciones adicionales (asumiendo que existen en tu proyecto)
-char    *get_next_line(int fd);
-void    ft_printf(const char *format, ...);
-size_t  ft_strlen(const char *str);
 
-char **get_map_from_file(char **av, int *num_lines)
+char    **get_map_from_file(char **av, int *num_lines)
 {
     int     fd;
     char    *line;
