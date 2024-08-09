@@ -25,7 +25,7 @@
 
 // VALIDATIONS MAP
 // int     validate_filename_map(char **av);
-void        all_validations(char **av);
+void        aux_validations(char **av);
 
 // ********** FT_FREE_ERRORS.C ***********************
 

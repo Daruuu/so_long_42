@@ -28,5 +28,6 @@ add_executable(so_long_42 main.c
         srcs/validations_map.c
         srcs/ft_free_errors.c
         srcs/ft_aux.c
+        srcs/init_structures.c
 
 )

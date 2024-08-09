@@ -8,6 +8,11 @@ in other terminal:
     target remote | /usr/bin/vgdb --pid=xxxx
 
 
+en una funcion validar las columnas y rows
+si es OKay
+creo el mapa / si no error exit
+al crear al mapa check items del mapa
+
 
 
 #include <fcntl.h>

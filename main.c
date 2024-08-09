@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	printf("Hello, World!\n");
 	if (ac == 2)
 	{
-		all_validations(av);
+		aux_validations(av);
 	}
 	return (0);
 }

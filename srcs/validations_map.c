@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 11:08:01 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/07 22:50:29 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:36:45 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,17 @@ void	print_map(char *av)
 	i = 0;
 	while (av[i] != '\0')
 	{
-		ft_printf("%s",av[i]);
+		ft_printf("%s", av[i]);
 		i++;
 	}
 }
 
-int check_columns_file(char *av, int *n_columns)
+int	check_walls_map(char *line);
+/*
+ * Pre: el parametro map debe venir inicializado
+ *
+ */
+int	check_validations_map(char *av, t_map *map)
 {
 	int		fd;
 	char	*line;
@@ -58,22 +63,42 @@ int check_columns_file(char *av, int *n_columns)
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
-	{
 		ft_printf("error read fd\n");
-	}
-	*n_columns = -1;
+
+	map->columns = -1;
+	map->rows = 0;
 	while ((line = get_next_line(fd)) != NULL)
 	{
+
 		len_line = ft_strlen(line) - 1;
-		if ((len_line < 3) || (*n_columns != -1 && len_line != *n_columns))
+		if ((len_line < 3) || (map->columns != -1 && len_line != map->columns)
+			|| (check_walls_map(line) == 0))
 		{
 			ft_printf("error\n");
 			exit(EXIT_FAILURE);
 		}
-		if (*n_columns == -1)
-			*n_columns = len_line;
+		if (map->columns == -1)
+			map->columns = len_line;
+		map->rows = map->rows + 1;
 	}
 	close(fd);
+	return (1);
+}
+
+/*
+ * posible error si la linea no tiene '/n'
+ */
+
+int	check_walls_map(char *line)
+{
+	if (line == NULL)
+		return (0);
+	while (*line != '\n')
+	{
+		if (*line != WALL)
+			return (0);
+		line++;
+	}
 	return (1);
 }
 
@@ -90,7 +115,7 @@ int	can_open_map(char *path_map)
 	return (fd);
 }
 
-void	all_validations(char **av)
+void	aux_validations(char **av)
 {
 	int	n_columns;
 
@@ -99,7 +124,7 @@ void	all_validations(char **av)
 	else
 		ft_printf("file no compatible\n");
 	n_columns = 0;
-	if (check_columns_file(av[1], &n_columns) == 1)
+	if (check_validations_map(av[1], &n_columns) == 1)
 		ft_printf("columns is: %d Ok\n", n_columns);
 	else
 		ft_printf("error columns\n");
