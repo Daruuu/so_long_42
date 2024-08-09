@@ -19,6 +19,7 @@ SO_LONG_H = include/so_long.h
 # SRC = $(wildcard $(SRC_DIR)/*.c) main.c
 SRC =	main.c	\
 		$(SRC_DIR)/validations_map.c \
+		$(SRC_DIR)/init_structs.c \
 		$(SRC_DIR)/map.c \
 		$(SRC_DIR)/graphics.c \
 		$(SRC_DIR)/so_long.c \

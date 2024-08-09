@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   custom_macros.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 11:08:01 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/08 10:08:45 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef MACROS_H
-# define MACROS_H
+#ifndef AUX_SO_LONG_h
+# define AUX_SO_LONG_h 
 
 //  GAME OBJECTS
 # define PLAYER 'P'

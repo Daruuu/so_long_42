@@ -10,12 +10,10 @@ in other terminal:
 
 en una funcion validar las columnas y rows
 si es OKay
-creo el mapa / si no error exit
+creo el mapa / error exit
 al crear al mapa check items del mapa
 
 
-
-#include <fcntl.h>
 
 // Prototipos de funciones adicionales (asumiendo que existen en tu proyecto)
 

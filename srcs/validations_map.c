@@ -3,22 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 11:08:01 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/08 10:36:45 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   validations_map.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/07 18:18:37by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/09 14:18:47 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +43,7 @@ int	check_walls_map(char *line);
  * Pre: el parametro map debe venir inicializado
  *
  */
+
 int	check_validations_map(char *av, t_map *map)
 {
 	int		fd;
@@ -64,22 +53,32 @@ int	check_validations_map(char *av, t_map *map)
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
 		ft_printf("error read fd\n");
-
 	map->columns = -1;
 	map->rows = 0;
-	while ((line = get_next_line(fd)) != NULL)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-
 		len_line = ft_strlen(line) - 1;
-		if ((len_line < 3) || (map->columns != -1 && len_line != map->columns)
-			|| (check_walls_map(line) == 0))
+		if (len_line < 3)
 		{
-			ft_printf("error\n");
+			ft_printf("len line < 3\n");
+			exit(EXIT_FAILURE);
+		}
+		else if (map->columns != -1 && len_line != map->columns)
+		{
+			ft_printf("columns: %d\n", map->columns);
+			ft_printf("error map columns no OK\n");
+			exit(EXIT_FAILURE);
+		}
+		else if(check_walls_map(line) == 0)
+		{
+			ft_printf("error walls map\n");
 			exit(EXIT_FAILURE);
 		}
 		if (map->columns == -1)
 			map->columns = len_line;
 		map->rows = map->rows + 1;
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (1);
@@ -117,15 +116,15 @@ int	can_open_map(char *path_map)
 
 void	aux_validations(char **av)
 {
-	int	n_columns;
+	t_map	new_map;
 
+	new_map = init_map();
 	if (validate_filename_map(av) == 1)
 		ft_printf("file extension Ok\n");
 	else
 		ft_printf("file no compatible\n");
-	n_columns = 0;
-	if (check_validations_map(av[1], &n_columns) == 1)
-		ft_printf("columns is: %d Ok\n", n_columns);
+	if (check_validations_map(av[1], &new_map) == 1)
+		ft_printf("columns is: %d Ok\n", new_map.columns);
 	else
 		ft_printf("error columns\n");
 }
