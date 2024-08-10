@@ -1,6 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 00:04:05 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   init_structures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
@@ -30,17 +42,20 @@ t_image	init_window(void)
 	return (s_image);
 }
 
-t_map	init_map(void)
+t_map	*init_map(void)
 {
-	t_map	new_map;
+	t_map	*new_map;
 
-	new_map.matrix_map = NULL;
-	new_map.rows = 0;
-	new_map.columns = 0;
-	new_map.coins = 0;
-	new_map.exits = 0;
-	new_map.players = 0;
-	new_map.player_pos = init_positions();
+	new_map = malloc(sizeof(t_map));
+	if (!new_map)
+		return (NULL);
+	new_map->matrix_map = NULL;
+	new_map->rows = 0;
+	new_map->columns = 0;
+	new_map->coins = 0;
+	new_map->exits = 0;
+	new_map->players = 0;
+	new_map->player_pos = init_positions();
 	return (new_map);
 }
 

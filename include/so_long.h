@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 00:04:53 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 00:02:58 by dasalaza          #+#    #+#             */
@@ -38,7 +50,7 @@ void        *ft_realloc(void *ptr, size_t new_size);
 
 t_position  init__positions(void);
 t_image     init_window(void);
-t_map       init_map(void);
+t_map       *init_map(void);
 t_game      inti_game(void);
 
 #endif

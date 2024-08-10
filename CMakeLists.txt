@@ -8,10 +8,13 @@ set(CMAKE_C_STANDARD 99)
 add_executable(so_long_42 main.c
 #       HEADERS
         include/so_long.h
+        libs/libft/libft.h
         libs/printf/ft_printf.h
+        libs/get_next_line/get_next_line.h
 #       LIBFT
         libs/libft/ft_strlen.c
         libs/libft/ft_strncmp.c
+        libs/libft/ft_memcpy.c
 #        PRINTF
         libs/printf/ft_printf.c
         libs/printf/ft_put_ptr.c
@@ -20,14 +23,14 @@ add_executable(so_long_42 main.c
         libs/printf/ft_puthexa_nbr.c
         libs/printf/ft_putnbr_n.c
         libs/printf/ft_putstr.c
-# GET_NEXT_LINE
+#       GET_NEXT_LINE
         libs/get_next_line/get_next_line.c
         libs/get_next_line/get_next_line_utils.c
-        libs/libft/ft_memcpy.c
 #       SO_LONG
         srcs/validations_map.c
         srcs/ft_free_errors.c
         srcs/ft_aux.c
-        srcs/init_structures.c
+        srcs/init_structs.c
+        srcs/print_functions.c
 
 )

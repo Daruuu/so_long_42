@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/09 14:18:47 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 00:23:50 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,10 @@ static int	validate_filename_map(char **av)
 	return (0);
 }
 
-void	print_map(char *av)
-{
-	int	i;
-
-	i = 0;
-	while (av[i] != '\0')
-	{
-		ft_printf("%s", av[i]);
-		i++;
-	}
-}
-
-int	check_walls_map(char *line);
+int	check_walls_map(char *line, int row, int total_rows);
+int	can_open_fd(char *path_map);
 /*
  * Pre: el parametro map debe venir inicializado
- *
  */
 
 int	check_validations_map(char *av, t_map *map)
@@ -49,36 +37,38 @@ int	check_validations_map(char *av, t_map *map)
 	int		fd;
 	char	*line;
 	int		len_line;
+	int		i;
 
-	fd = open(av, O_RDONLY);
-	if (fd == -1)
-		ft_printf("error read fd\n");
+	fd = can_open_fd(av);
 	map->columns = -1;
-	map->rows = 0;
 	line = get_next_line(fd);
+	i = 0;
 	while (line != NULL)
 	{
-		len_line = ft_strlen(line) - 1;
+		len_line = (int) ft_strlen(line) - 1;
 		if (len_line < 3)
 		{
 			ft_printf("len line < 3\n");
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		else if (map->columns != -1 && len_line != map->columns)
 		{
 			ft_printf("columns: %d\n", map->columns);
 			ft_printf("error map columns no OK\n");
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
-		else if(check_walls_map(line) == 0)
+		else if (check_walls_map(line, i, map->rows) == 0)
 		{
 			ft_printf("error walls map\n");
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		if (map->columns == -1)
 			map->columns = len_line;
 		map->rows = map->rows + 1;
+		ft_printf("PRINT LINE: %d\n%s", i, line);
+		free(line);
 		line = get_next_line(fd);
+		i++;
 	}
 	close(fd);
 	return (1);
@@ -88,20 +78,27 @@ int	check_validations_map(char *av, t_map *map)
  * posible error si la linea no tiene '/n'
  */
 
-int	check_walls_map(char *line)
+int	check_walls_map(char *line, int row, int total_rows)
 {
-	if (line == NULL)
-		return (0);
-	while (*line != '\n')
+	int	i;
+
+	if (row == 0 || row == total_rows - 1)
 	{
-		if (*line != WALL)
-			return (0);
-		line++;
+		i = 0;
+		while (line[i] != '\0' && line[i] != '\n')
+		{
+			if (line[i] != WALL)
+				return (0);
+			i++;
+		}
 	}
+	else
+		if (line[0] != WALL || line[ft_strlen(line) - 2] != WALL)
+			return (0);
 	return (1);
 }
 
-int	can_open_map(char *path_map)
+int	can_open_fd(char *path_map)
 {
 	int	fd;
 
@@ -109,24 +106,30 @@ int	can_open_map(char *path_map)
 	if (fd < 0)
 	{
 		ft_printf("fd < 0\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	return (fd);
 }
 
 void	aux_validations(char **av)
 {
-	t_map	new_map;
+	t_map	*new_map;
 
 	new_map = init_map();
 	if (validate_filename_map(av) == 1)
+	{
 		ft_printf("file extension Ok\n");
+		if (check_validations_map(av[1], new_map) == 1)
+		{
+			ft_printf("columns map: %d \n", new_map->columns);
+			ft_printf("rows map: %d \n", new_map->rows);
+		}
+	}
 	else
+	{
 		ft_printf("file no compatible\n");
-	if (check_validations_map(av[1], &new_map) == 1)
-		ft_printf("columns is: %d Ok\n", new_map.columns);
-	else
 		ft_printf("error columns\n");
+	}
 }
 
 /*
