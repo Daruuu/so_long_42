@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/06 12:02:54 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/11 23:06:16 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	printf("Hello, World!\n");
 	if (ac == 2)
 	{
-		validate_file_and_edge_of_map(av);
+		validate_file_and_edge_of_map(av[1]);
 	}
 	return (0);
 }

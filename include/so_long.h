@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 19:14:21 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 23:29:06 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 17:54:17 by dasalaza         ###   ########.fr       */
+/*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 19:14:21 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@
 
 // VALIDATIONS MAP
 // int     validate_filename_map(char **av);
-void		validate_file_and_edge_of_map(char **av);
+void		validate_file_and_edge_of_map(char *av);
 
 // ********** FT_FREE_ERRORS.C ***********************
 void		if_not_exist_free_pointer(char **ptr);
 void		exit_and_message(char *message);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
-int         can_open_fd(char *path_map);
+int			can_open_fd(char *path_map);
+void        check_minim_items_in_map(t_map *map);
+void        add_map_to_matrix(char *map_ptr, t_map *map);
 
 // ********** FT_AUX.C ***********************
 void		*ft_realloc(void *ptr, size_t new_size);
@@ -53,6 +55,6 @@ void		*ft_realloc(void *ptr, size_t new_size);
 t_position	init__positions(void);
 t_image		init_window(void);
 t_map		*init_map(void);
-t_game		inti_game(void);
+t_game		init_game(void);
 
 #endif

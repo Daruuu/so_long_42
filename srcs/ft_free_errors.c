@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_errors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 12:26:32 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 17:13:24 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 23:16:16 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,10 @@ void	exit_and_message(char *message)
 	ft_printf(message);
 	exit(1);
 }
+
+/*
+void	free_struct_map_and_exit(t_map *map)
+{
+	
+}
+*/

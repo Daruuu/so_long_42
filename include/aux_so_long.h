@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 18:21:42 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 22:37:24 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //  GAME OBJECTS
 # define PLAYER 'P'
-# define EXIT 'E'
+# define EXIT_GAME 'E'
 # define COLLECTIONABLE 'C'
 # define WALL '1'
 # define EMPTY '0'
