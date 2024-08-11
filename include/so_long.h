@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 18:35:26 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 19:14:21 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ void		validate_file_and_edge_of_map(char **av);
 // ********** FT_FREE_ERRORS.C ***********************
 void		if_not_exist_free_pointer(char **ptr);
 void		exit_and_message(char *message);
+
+// ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
+int         can_open_fd(char *path_map);
 
 // ********** FT_AUX.C ***********************
 void		*ft_realloc(void *ptr, size_t new_size);

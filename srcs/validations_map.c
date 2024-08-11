@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 18:36:35 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 19:13:00 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	check_first_and_last_line_map(char *line, int row, int total_rows)
 	return (0);
 }
 
-static int	can_open_fd(char *path_map)
+int	can_open_fd(char *path_map)
 {
 	int	fd;
 
