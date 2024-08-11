@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	printf("Hello, World!\n");
 	if (ac == 2)
 	{
-		aux_validations(av);
+		validate_file_and_edge_of_map(av);
 	}
 	return (0);
 }

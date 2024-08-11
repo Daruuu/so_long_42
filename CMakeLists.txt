@@ -32,5 +32,6 @@ add_executable(so_long_42 main.c
         srcs/ft_aux.c
         srcs/init_structs.c
         srcs/print_functions.c
+        srcs/get_map_and_validate_items.c
 
 )

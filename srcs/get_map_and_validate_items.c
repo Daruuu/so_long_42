@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_map_with_gnl.c                                 :+:      :+:    :+:   */
+/*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 12:47:57 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/03 14:42:26 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 18:39:11 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../include/so_long.h"
+
+#include "../include/so_long.h"
 
 /*
 void    get_map_from_fd(char **av[1])

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_so_long.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/11 18:21:42 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AUX_SO_LONG_h
 # define AUX_SO_LONG_h 
 
@@ -59,10 +71,9 @@ typedef struct s_game
 	int			count_moves;// Contador de movimientos
 	int			player_sprite;// Identificador del sprite del jugador
 	t_map		map;// Información del mapa
-    // t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado
-    // Imágenes
-	t_image		wall;             // Imagen para las paredes
-    t_image    floor;            // Imagen para el suelo
+    /* Imágenes*/
+	t_image		wall;// Imagen para las paredes
+	t_image    floor;            // Imagen para el suelo
     t_image    coins;            // Imagen para las monedas
     t_image    open_exit;        // Imagen para la salida abierta
     t_image    exit_closed;      // Imagen para la salida cerrada
@@ -73,7 +84,7 @@ typedef struct s_game
     t_image    player_right;     // Imagen del jugador mirando hacia la derecha
     t_image    player_back;      // Imagen del jugador mirando hacia atrás
 }   t_game;
-
+// t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado
 /********Definición de t_bool si no está definida********/
 // typedef struct  s_bool_true_false
 // {

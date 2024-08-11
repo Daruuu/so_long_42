@@ -19,6 +19,7 @@ SO_LONG_H = include/so_long.h
 # SRC = $(wildcard $(SRC_DIR)/*.c) main.c
 SRC =	main.c	\
 		$(SRC_DIR)/validations_map.c \
+		$(SRC_DIR)/ft_free_erros.c \
 		$(SRC_DIR)/init_structs.c \
 		$(SRC_DIR)/map.c \
 		$(SRC_DIR)/graphics.c \
@@ -46,16 +47,16 @@ $(NAME): $(OBJ)
 # ---------------------------- COMPILE OF LIBS -------------------------------
 
 $(LIBFT_DIR)/libft.a:
-	$(MAKE) -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR)
 
 $(PRINTF_DIR)/printf.a:
-	$(MAKE) -C $(PRINTF_DIR)
+	@$(MAKE) -C $(PRINTF_DIR)
 
 $(GNL_DIR)/get_next_line.a:
-	$(MAKE) -C $(GNL_DIR)
+	@$(MAKE) -C $(GNL_DIR)
 
 $(MLX_DIR)/libmlx_Linux.a:
-	$(MAKE) -C $(MLX_DIR)
+	@$(MAKE) -C $(MLX_DIR)
 
 # ---------------------------- COMPILE OBJECTS  -------------------------------
 

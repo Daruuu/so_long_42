@@ -17,82 +17,36 @@ al crear al mapa check items del mapa
 
 // Prototipos de funciones adicionales (asumiendo que existen en tu proyecto)
 
-char    **get_map_from_file(char **av, int *num_lines)
+int	check_edge_of_map(char *av, t_map *map)
 {
-    int     fd;
-    char    *line;
-    char    **map;
-    int     lines_allocated;
-    int     i;
+	int		fd;
+	char	*line;
+	int		len_line;
+	int		i = 0;
 
-    *num_lines = 0;
-    lines_allocated = 10;  // Asignar espacio inicialmente para 10 líneas
-    map = (char **)malloc(lines_allocated * sizeof(char *));
-    if (!map)
-    {
-        ft_printf("Error: Memory allocation failed\n");
-        return NULL;
-    }
+	fd = can_open_fd(av);
+	map->columns = -1;
 
-    fd = open(av[1], O_RDONLY);
-    if (fd == -1)
-    {
-        ft_printf("Error: could not open file %s\n", av[1]);
-        free(map);
-        return NULL;
-    }
+	while ((line = get_next_line(fd)))
+	{
+		len_line = (int)ft_strlen(line);
+		if (line[len_line - 1] == '\n')
+			line[--len_line] = '\0';  // Simplificación para eliminar '\n'
 
-    while ((line = get_next_line(fd)) != NULL)
-    {
-        if (*num_lines >= lines_allocated)
-        {
-            // Redimensionar el array si es necesario
-            lines_allocated *= 2;
-            char **new_map = (char **)realloc(map, lines_allocated * sizeof(char *));
-            if (!new_map)
-            {
-                ft_printf("Error: Memory reallocation failed\n");
-                free(line);
-                for (i = 0; i < *num_lines; i++)
-                    free(map[i]);
-                free(map);
-                close(fd);
-                return NULL;
-            }
-            map = new_map;
-        }
-        map[*num_lines] = line;
-        (*num_lines)++;
-    }
-    close(fd);
-    return map;
-}
+		if (len_line < 3)
+			exit_and_message("len line < 3\n");
+		if (map->columns == -1)
+			map->columns = len_line;
+		else if (len_line != map->columns)
+			exit_and_message("error map columns no OK\n");
 
-void free_map(char **map, int num_lines)
-{
-    for (int i = 0; i < num_lines; i++)
-        free(map[i]);
-    free(map);
-}
+		if (!check_first_and_last_line_map(line, i, map->rows))
+			exit_and_message("error walls map\n");
 
-int main(int argc, char **argv)
-{
-    if (argc != 2)
-    {
-        ft_printf("Usage: %s <map_file>\n", argv[0]);
-        return 1;
-    }
-
-    int num_lines;
-    char **map = get_map_from_file(argv, &num_lines);
-    if (!map)
-        return 1;
-
-    for (int i = 0; i < num_lines; i++)
-        ft_printf("MAP: %s\n", map[i]);
-
-    ft_printf("Total lines: %d\n", num_lines);
-    free_map(map, num_lines);
-
-    return 0;
+		map->rows++;
+		free(line);
+		i++;
+	}
+	close(fd);
+	return (1);
 }
