@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 23:28:49 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/11 23:56:44 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,21 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	int	j;
 
 	map->matrix_map = ft_split(map_ptr, '\n');
+	if (!map->matrix_map)
+		exit_and_message("error memory allocation of MATRIX IN MAP STRUCT\n");
 	i = 0;
 	while (map->matrix_map[i] != NULL)
 		i++;
 	if (map->rows != i)
-		ft_printf("matrix no correct!!");
+	{
+		ft_printf("matrix ROWS no correct!!");
         //TODO: call free of matrix here
+	}
 	i = 0;
 	while (i < map->rows)
 	{
 		j = 0;
-		while (map->matrix_map[i][j] != '\n')
+		while (map->matrix_map[i][j] != '\0')
 			j++;
 		if (j != map->columns)
 		{

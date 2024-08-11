@@ -15,6 +15,9 @@ add_executable(so_long_42 main.c
         libs/libft/ft_strlen.c
         libs/libft/ft_strncmp.c
         libs/libft/ft_memcpy.c
+        libs/libft/ft_split.c
+        libs/libft/ft_strchr.c
+        libs/libft/ft_substr.c
 #        PRINTF
         libs/printf/ft_printf.c
         libs/printf/ft_put_ptr.c

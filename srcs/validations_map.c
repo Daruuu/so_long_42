@@ -95,8 +95,10 @@ int	check_edge_of_map(char *av1, t_map *map)
 void	validate_file_and_edge_of_map(char *av1)
 {
 	t_map	*new_map;
+	char	*ptr_map;
 
 	new_map = init_map();
+	ptr_map = NULL;
 	if (!(validate_filename_map(av1)))
 	{
 		ft_printf("file extension Ok\n");
@@ -105,7 +107,8 @@ void	validate_file_and_edge_of_map(char *av1)
 			ft_printf("\ncolumns map: %d \n", new_map->columns);
 			ft_printf("rows map: %d \n", new_map->rows);
 		}
-		add_map_to_matrix()
+		ptr_map = get_map_from_file(av1);
+		add_map_to_matrix(ptr_map, new_map);
 		check_minim_items_in_map(new_map);
 	}
 	else

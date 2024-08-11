@@ -43,6 +43,7 @@ void		if_not_exist_free_pointer(char **ptr);
 void		exit_and_message(char *message);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
+char 		*get_map_from_file(char *path);
 int			can_open_fd(char *path_map);
 void        check_minim_items_in_map(t_map *map);
 void        add_map_to_matrix(char *map_ptr, t_map *map);
