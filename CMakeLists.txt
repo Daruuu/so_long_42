@@ -18,7 +18,7 @@ add_executable(so_long_42 main.c
         libs/libft/ft_split.c
         libs/libft/ft_strchr.c
         libs/libft/ft_substr.c
-#        PRINTF
+#       PRINTF
         libs/printf/ft_printf.c
         libs/printf/ft_put_ptr.c
         libs/printf/ft_put_uint_nbr.c

@@ -129,6 +129,126 @@ so_long_42/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/build
 .PHONY : so_long_42/fast
 
+libs/get_next_line/get_next_line.o: libs/get_next_line/get_next_line.c.o
+.PHONY : libs/get_next_line/get_next_line.o
+
+# target to build an object file
+libs/get_next_line/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o
+.PHONY : libs/get_next_line/get_next_line.c.o
+
+libs/get_next_line/get_next_line.i: libs/get_next_line/get_next_line.c.i
+.PHONY : libs/get_next_line/get_next_line.i
+
+# target to preprocess a source file
+libs/get_next_line/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.i
+.PHONY : libs/get_next_line/get_next_line.c.i
+
+libs/get_next_line/get_next_line.s: libs/get_next_line/get_next_line.c.s
+.PHONY : libs/get_next_line/get_next_line.s
+
+# target to generate assembly for a file
+libs/get_next_line/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.s
+.PHONY : libs/get_next_line/get_next_line.c.s
+
+libs/get_next_line/get_next_line_utils.o: libs/get_next_line/get_next_line_utils.c.o
+.PHONY : libs/get_next_line/get_next_line_utils.o
+
+# target to build an object file
+libs/get_next_line/get_next_line_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o
+.PHONY : libs/get_next_line/get_next_line_utils.c.o
+
+libs/get_next_line/get_next_line_utils.i: libs/get_next_line/get_next_line_utils.c.i
+.PHONY : libs/get_next_line/get_next_line_utils.i
+
+# target to preprocess a source file
+libs/get_next_line/get_next_line_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.i
+.PHONY : libs/get_next_line/get_next_line_utils.c.i
+
+libs/get_next_line/get_next_line_utils.s: libs/get_next_line/get_next_line_utils.c.s
+.PHONY : libs/get_next_line/get_next_line_utils.s
+
+# target to generate assembly for a file
+libs/get_next_line/get_next_line_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s
+.PHONY : libs/get_next_line/get_next_line_utils.c.s
+
+libs/libft/ft_memcpy.o: libs/libft/ft_memcpy.c.o
+.PHONY : libs/libft/ft_memcpy.o
+
+# target to build an object file
+libs/libft/ft_memcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o
+.PHONY : libs/libft/ft_memcpy.c.o
+
+libs/libft/ft_memcpy.i: libs/libft/ft_memcpy.c.i
+.PHONY : libs/libft/ft_memcpy.i
+
+# target to preprocess a source file
+libs/libft/ft_memcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.i
+.PHONY : libs/libft/ft_memcpy.c.i
+
+libs/libft/ft_memcpy.s: libs/libft/ft_memcpy.c.s
+.PHONY : libs/libft/ft_memcpy.s
+
+# target to generate assembly for a file
+libs/libft/ft_memcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.s
+.PHONY : libs/libft/ft_memcpy.c.s
+
+libs/libft/ft_split.o: libs/libft/ft_split.c.o
+.PHONY : libs/libft/ft_split.o
+
+# target to build an object file
+libs/libft/ft_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o
+.PHONY : libs/libft/ft_split.c.o
+
+libs/libft/ft_split.i: libs/libft/ft_split.c.i
+.PHONY : libs/libft/ft_split.i
+
+# target to preprocess a source file
+libs/libft/ft_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.i
+.PHONY : libs/libft/ft_split.c.i
+
+libs/libft/ft_split.s: libs/libft/ft_split.c.s
+.PHONY : libs/libft/ft_split.s
+
+# target to generate assembly for a file
+libs/libft/ft_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.s
+.PHONY : libs/libft/ft_split.c.s
+
+libs/libft/ft_strchr.o: libs/libft/ft_strchr.c.o
+.PHONY : libs/libft/ft_strchr.o
+
+# target to build an object file
+libs/libft/ft_strchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o
+.PHONY : libs/libft/ft_strchr.c.o
+
+libs/libft/ft_strchr.i: libs/libft/ft_strchr.c.i
+.PHONY : libs/libft/ft_strchr.i
+
+# target to preprocess a source file
+libs/libft/ft_strchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.i
+.PHONY : libs/libft/ft_strchr.c.i
+
+libs/libft/ft_strchr.s: libs/libft/ft_strchr.c.s
+.PHONY : libs/libft/ft_strchr.s
+
+# target to generate assembly for a file
+libs/libft/ft_strchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.s
+.PHONY : libs/libft/ft_strchr.c.s
+
 libs/libft/ft_strlen.o: libs/libft/ft_strlen.c.o
 .PHONY : libs/libft/ft_strlen.o
 
@@ -176,6 +296,30 @@ libs/libft/ft_strncmp.s: libs/libft/ft_strncmp.c.s
 libs/libft/ft_strncmp.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.s
 .PHONY : libs/libft/ft_strncmp.c.s
+
+libs/libft/ft_substr.o: libs/libft/ft_substr.c.o
+.PHONY : libs/libft/ft_substr.o
+
+# target to build an object file
+libs/libft/ft_substr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o
+.PHONY : libs/libft/ft_substr.c.o
+
+libs/libft/ft_substr.i: libs/libft/ft_substr.c.i
+.PHONY : libs/libft/ft_substr.i
+
+# target to preprocess a source file
+libs/libft/ft_substr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.i
+.PHONY : libs/libft/ft_substr.c.i
+
+libs/libft/ft_substr.s: libs/libft/ft_substr.c.s
+.PHONY : libs/libft/ft_substr.s
+
+# target to generate assembly for a file
+libs/libft/ft_substr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.s
+.PHONY : libs/libft/ft_substr.c.s
 
 libs/printf/ft_printf.o: libs/printf/ft_printf.c.o
 .PHONY : libs/printf/ft_printf.o
@@ -417,6 +561,78 @@ srcs/ft_free_errors.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s
 .PHONY : srcs/ft_free_errors.c.s
 
+srcs/get_map_and_validate_items.o: srcs/get_map_and_validate_items.c.o
+.PHONY : srcs/get_map_and_validate_items.o
+
+# target to build an object file
+srcs/get_map_and_validate_items.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o
+.PHONY : srcs/get_map_and_validate_items.c.o
+
+srcs/get_map_and_validate_items.i: srcs/get_map_and_validate_items.c.i
+.PHONY : srcs/get_map_and_validate_items.i
+
+# target to preprocess a source file
+srcs/get_map_and_validate_items.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i
+.PHONY : srcs/get_map_and_validate_items.c.i
+
+srcs/get_map_and_validate_items.s: srcs/get_map_and_validate_items.c.s
+.PHONY : srcs/get_map_and_validate_items.s
+
+# target to generate assembly for a file
+srcs/get_map_and_validate_items.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s
+.PHONY : srcs/get_map_and_validate_items.c.s
+
+srcs/init_structs.o: srcs/init_structs.c.o
+.PHONY : srcs/init_structs.o
+
+# target to build an object file
+srcs/init_structs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/init_structs.c.o
+.PHONY : srcs/init_structs.c.o
+
+srcs/init_structs.i: srcs/init_structs.c.i
+.PHONY : srcs/init_structs.i
+
+# target to preprocess a source file
+srcs/init_structs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/init_structs.c.i
+.PHONY : srcs/init_structs.c.i
+
+srcs/init_structs.s: srcs/init_structs.c.s
+.PHONY : srcs/init_structs.s
+
+# target to generate assembly for a file
+srcs/init_structs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/init_structs.c.s
+.PHONY : srcs/init_structs.c.s
+
+srcs/print_functions.o: srcs/print_functions.c.o
+.PHONY : srcs/print_functions.o
+
+# target to build an object file
+srcs/print_functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.o
+.PHONY : srcs/print_functions.c.o
+
+srcs/print_functions.i: srcs/print_functions.c.i
+.PHONY : srcs/print_functions.i
+
+# target to preprocess a source file
+srcs/print_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.i
+.PHONY : srcs/print_functions.c.i
+
+srcs/print_functions.s: srcs/print_functions.c.s
+.PHONY : srcs/print_functions.s
+
+# target to generate assembly for a file
+srcs/print_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.s
+.PHONY : srcs/print_functions.c.s
+
 srcs/validations_map.o: srcs/validations_map.c.o
 .PHONY : srcs/validations_map.o
 
@@ -450,12 +666,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... so_long_42"
+	@echo "... libs/get_next_line/get_next_line.o"
+	@echo "... libs/get_next_line/get_next_line.i"
+	@echo "... libs/get_next_line/get_next_line.s"
+	@echo "... libs/get_next_line/get_next_line_utils.o"
+	@echo "... libs/get_next_line/get_next_line_utils.i"
+	@echo "... libs/get_next_line/get_next_line_utils.s"
+	@echo "... libs/libft/ft_memcpy.o"
+	@echo "... libs/libft/ft_memcpy.i"
+	@echo "... libs/libft/ft_memcpy.s"
+	@echo "... libs/libft/ft_split.o"
+	@echo "... libs/libft/ft_split.i"
+	@echo "... libs/libft/ft_split.s"
+	@echo "... libs/libft/ft_strchr.o"
+	@echo "... libs/libft/ft_strchr.i"
+	@echo "... libs/libft/ft_strchr.s"
 	@echo "... libs/libft/ft_strlen.o"
 	@echo "... libs/libft/ft_strlen.i"
 	@echo "... libs/libft/ft_strlen.s"
 	@echo "... libs/libft/ft_strncmp.o"
 	@echo "... libs/libft/ft_strncmp.i"
 	@echo "... libs/libft/ft_strncmp.s"
+	@echo "... libs/libft/ft_substr.o"
+	@echo "... libs/libft/ft_substr.i"
+	@echo "... libs/libft/ft_substr.s"
 	@echo "... libs/printf/ft_printf.o"
 	@echo "... libs/printf/ft_printf.i"
 	@echo "... libs/printf/ft_printf.s"
@@ -486,6 +720,15 @@ help:
 	@echo "... srcs/ft_free_errors.o"
 	@echo "... srcs/ft_free_errors.i"
 	@echo "... srcs/ft_free_errors.s"
+	@echo "... srcs/get_map_and_validate_items.o"
+	@echo "... srcs/get_map_and_validate_items.i"
+	@echo "... srcs/get_map_and_validate_items.s"
+	@echo "... srcs/init_structs.o"
+	@echo "... srcs/init_structs.i"
+	@echo "... srcs/init_structs.s"
+	@echo "... srcs/print_functions.o"
+	@echo "... srcs/print_functions.i"
+	@echo "... srcs/print_functions.s"
 	@echo "... srcs/validations_map.o"
 	@echo "... srcs/validations_map.i"
 	@echo "... srcs/validations_map.s"
