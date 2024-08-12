@@ -24,11 +24,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c" "CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o" "gcc" "CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c" "CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o" "gcc" "CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/main.c" "CMakeFiles/so_long_42.dir/main.c.o" "gcc" "CMakeFiles/so_long_42.dir/main.c.o.d"
-  "/home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c" "CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c" "CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c" "CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c" "CMakeFiles/so_long_42.dir/srcs/init_structs.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/init_structs.c.o.d"
-  "/home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c" "CMakeFiles/so_long_42.dir/srcs/print_functions.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/print_functions.c.o.d"
   "/home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c" "CMakeFiles/so_long_42.dir/srcs/validations_map.c.o" "gcc" "CMakeFiles/so_long_42.dir/srcs/validations_map.c.o.d"
   )
 

@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 00:49:54 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/13 01:45:50 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(int ac, char **av)
 {
-	printf("Hello, World!\n");
+	// printf("Hello, World!\n");
 	if (ac == 2)
 	{
 		validate_file_and_edge_of_map(av[1]);

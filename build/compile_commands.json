@@ -81,18 +81,13 @@
 },
 {
   "directory": "/home/daruuu/CLionProjects/so_long_42/build",
-  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c",
-  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c"
-},
-{
-  "directory": "/home/daruuu/CLionProjects/so_long_42/build",
   "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c",
   "file": "/home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c"
 },
 {
   "directory": "/home/daruuu/CLionProjects/so_long_42/build",
-  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c",
-  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c"
+  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c",
+  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c"
 },
 {
   "directory": "/home/daruuu/CLionProjects/so_long_42/build",
@@ -101,12 +96,7 @@
 },
 {
   "directory": "/home/daruuu/CLionProjects/so_long_42/build",
-  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/print_functions.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c",
-  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c"
-},
-{
-  "directory": "/home/daruuu/CLionProjects/so_long_42/build",
-  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c",
-  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c"
+  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu99 -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c",
+  "file": "/home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c"
 }
 ]

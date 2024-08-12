@@ -30,11 +30,15 @@ add_executable(so_long_42 main.c
         libs/get_next_line/get_next_line.c
         libs/get_next_line/get_next_line_utils.c
 #       SO_LONG
-        srcs/validations_map.c
         srcs/ft_free_errors.c
-        srcs/ft_aux.c
-        srcs/init_structs.c
-        srcs/print_functions.c
         srcs/get_map_and_validate_items.c
+        srcs/init_structs.c
+        srcs/validations_map.c
+        # NO USING
+        # srcs/ft_aux.c
+        # srcs/graphics.c
+        # srcs/map.c
+        # srcs/print_functions.c
+        # srcs/so_long.c
 
 )

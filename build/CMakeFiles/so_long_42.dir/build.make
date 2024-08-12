@@ -293,24 +293,10 @@ CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s
 
-CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/flags.make
-CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: ../srcs/validations_map.c
-CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/so_long_42.dir/srcs/validations_map.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -MF CMakeFiles/so_long_42.dir/srcs/validations_map.c.o.d -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c
-
-CMakeFiles/so_long_42.dir/srcs/validations_map.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/validations_map.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c > CMakeFiles/so_long_42.dir/srcs/validations_map.c.i
-
-CMakeFiles/so_long_42.dir/srcs/validations_map.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/validations_map.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.s
-
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: ../srcs/ft_free_errors.c
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -MF CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o.d -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c
 
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.i: cmake_force
@@ -321,24 +307,24 @@ CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s
 
-CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o: CMakeFiles/so_long_42.dir/flags.make
-CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o: ../srcs/ft_aux.c
-CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o -MF CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o.d -o CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c
+CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/flags.make
+CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: ../srcs/get_map_and_validate_items.c
+CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -MF CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o.d -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c
 
-CMakeFiles/so_long_42.dir/srcs/ft_aux.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/ft_aux.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c > CMakeFiles/so_long_42.dir/srcs/ft_aux.c.i
+CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c > CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i
 
-CMakeFiles/so_long_42.dir/srcs/ft_aux.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/ft_aux.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/ft_aux.c -o CMakeFiles/so_long_42.dir/srcs/ft_aux.c.s
+CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s
 
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: ../srcs/init_structs.c
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/so_long_42.dir/srcs/init_structs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/so_long_42.dir/srcs/init_structs.c.o"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -MF CMakeFiles/so_long_42.dir/srcs/init_structs.c.o.d -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c
 
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.i: cmake_force
@@ -349,33 +335,19 @@ CMakeFiles/so_long_42.dir/srcs/init_structs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/init_structs.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.s
 
-CMakeFiles/so_long_42.dir/srcs/print_functions.c.o: CMakeFiles/so_long_42.dir/flags.make
-CMakeFiles/so_long_42.dir/srcs/print_functions.c.o: ../srcs/print_functions.c
-CMakeFiles/so_long_42.dir/srcs/print_functions.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/so_long_42.dir/srcs/print_functions.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/print_functions.c.o -MF CMakeFiles/so_long_42.dir/srcs/print_functions.c.o.d -o CMakeFiles/so_long_42.dir/srcs/print_functions.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c
+CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/flags.make
+CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: ../srcs/validations_map.c
+CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/so_long_42.dir/srcs/validations_map.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -MF CMakeFiles/so_long_42.dir/srcs/validations_map.c.o.d -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c
 
-CMakeFiles/so_long_42.dir/srcs/print_functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/print_functions.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c > CMakeFiles/so_long_42.dir/srcs/print_functions.c.i
+CMakeFiles/so_long_42.dir/srcs/validations_map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/validations_map.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c > CMakeFiles/so_long_42.dir/srcs/validations_map.c.i
 
-CMakeFiles/so_long_42.dir/srcs/print_functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/print_functions.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/print_functions.c -o CMakeFiles/so_long_42.dir/srcs/print_functions.c.s
-
-CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/flags.make
-CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: ../srcs/get_map_and_validate_items.c
-CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -MF CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o.d -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c
-
-CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c > CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i
-
-CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s
+CMakeFiles/so_long_42.dir/srcs/validations_map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/validations_map.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.s
 
 # Object files for target so_long_42
 so_long_42_OBJECTS = \
@@ -395,12 +367,10 @@ so_long_42_OBJECTS = \
 "CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o" \
 "CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o" \
 "CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o" \
-"CMakeFiles/so_long_42.dir/srcs/validations_map.c.o" \
 "CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o" \
-"CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o" \
+"CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o" \
 "CMakeFiles/so_long_42.dir/srcs/init_structs.c.o" \
-"CMakeFiles/so_long_42.dir/srcs/print_functions.c.o" \
-"CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o"
+"CMakeFiles/so_long_42.dir/srcs/validations_map.c.o"
 
 # External object files for target so_long_42
 so_long_42_EXTERNAL_OBJECTS =
@@ -421,15 +391,13 @@ so_long_42: CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o
 so_long_42: CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o
 so_long_42: CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o
 so_long_42: CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o
-so_long_42: CMakeFiles/so_long_42.dir/srcs/validations_map.c.o
 so_long_42: CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o
-so_long_42: CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o
-so_long_42: CMakeFiles/so_long_42.dir/srcs/init_structs.c.o
-so_long_42: CMakeFiles/so_long_42.dir/srcs/print_functions.c.o
 so_long_42: CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o
+so_long_42: CMakeFiles/so_long_42.dir/srcs/init_structs.c.o
+so_long_42: CMakeFiles/so_long_42.dir/srcs/validations_map.c.o
 so_long_42: CMakeFiles/so_long_42.dir/build.make
 so_long_42: CMakeFiles/so_long_42.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking C executable so_long_42"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking C executable so_long_42"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/so_long_42.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

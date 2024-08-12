@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 18:13:38 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 01:07:02 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdlib.h>
 
 /* *************VALIDATIONS MAP **********/
-void		validate_file_and_edge_of_map(char *av);
+void        validate_file_and_edge_of_map(char *av1);
 int         can_open_fd(char *path_map);
 
 // ********** FT_FREE_ERRORS.C ***********************

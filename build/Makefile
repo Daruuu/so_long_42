@@ -513,30 +513,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/main.c.s
 .PHONY : main.c.s
 
-srcs/ft_aux.o: srcs/ft_aux.c.o
-.PHONY : srcs/ft_aux.o
-
-# target to build an object file
-srcs/ft_aux.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/ft_aux.c.o
-.PHONY : srcs/ft_aux.c.o
-
-srcs/ft_aux.i: srcs/ft_aux.c.i
-.PHONY : srcs/ft_aux.i
-
-# target to preprocess a source file
-srcs/ft_aux.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/ft_aux.c.i
-.PHONY : srcs/ft_aux.c.i
-
-srcs/ft_aux.s: srcs/ft_aux.c.s
-.PHONY : srcs/ft_aux.s
-
-# target to generate assembly for a file
-srcs/ft_aux.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/ft_aux.c.s
-.PHONY : srcs/ft_aux.c.s
-
 srcs/ft_free_errors.o: srcs/ft_free_errors.c.o
 .PHONY : srcs/ft_free_errors.o
 
@@ -608,30 +584,6 @@ srcs/init_structs.s: srcs/init_structs.c.s
 srcs/init_structs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/init_structs.c.s
 .PHONY : srcs/init_structs.c.s
-
-srcs/print_functions.o: srcs/print_functions.c.o
-.PHONY : srcs/print_functions.o
-
-# target to build an object file
-srcs/print_functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.o
-.PHONY : srcs/print_functions.c.o
-
-srcs/print_functions.i: srcs/print_functions.c.i
-.PHONY : srcs/print_functions.i
-
-# target to preprocess a source file
-srcs/print_functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.i
-.PHONY : srcs/print_functions.c.i
-
-srcs/print_functions.s: srcs/print_functions.c.s
-.PHONY : srcs/print_functions.s
-
-# target to generate assembly for a file
-srcs/print_functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long_42.dir/build.make CMakeFiles/so_long_42.dir/srcs/print_functions.c.s
-.PHONY : srcs/print_functions.c.s
 
 srcs/validations_map.o: srcs/validations_map.c.o
 .PHONY : srcs/validations_map.o
@@ -714,9 +666,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... srcs/ft_aux.o"
-	@echo "... srcs/ft_aux.i"
-	@echo "... srcs/ft_aux.s"
 	@echo "... srcs/ft_free_errors.o"
 	@echo "... srcs/ft_free_errors.i"
 	@echo "... srcs/ft_free_errors.s"
@@ -726,9 +675,6 @@ help:
 	@echo "... srcs/init_structs.o"
 	@echo "... srcs/init_structs.i"
 	@echo "... srcs/init_structs.s"
-	@echo "... srcs/print_functions.o"
-	@echo "... srcs/print_functions.i"
-	@echo "... srcs/print_functions.s"
 	@echo "... srcs/validations_map.o"
 	@echo "... srcs/validations_map.i"
 	@echo "... srcs/validations_map.s"
