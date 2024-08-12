@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 17:11:32 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/12 18:13:38 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int         can_open_fd(char *path_map);
 void		if_not_exist_free_pointer(char **ptr);
 void		exit_and_message(char *message);
 void        free_struct_map_and_exit(t_map *map);
+void        free_ptr(char *message, char *ptr);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
 char 		*get_map_from_file(char *path);

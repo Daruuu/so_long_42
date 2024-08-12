@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 16:11:01 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/12 19:48:04 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,11 @@ void	validate_file_and_edge_of_map(char *av1)
 	char	*ptr_map;
 
 	new_map = init_map();
-	ptr_map = NULL;
+	if (new_map != NULL)
+	{
+		ft_printf("error al init map\n");
+		return ;
+	}
 	if (!(validate_filename_map(av1)))
 	{
 		ft_printf("file extension Ok\n");
@@ -109,9 +113,16 @@ void	validate_file_and_edge_of_map(char *av1)
 			ft_printf("rows map: %d \n", new_map->rows);
 		}
 		ptr_map = get_map_from_file(av1);
-		add_map_to_matrix(ptr_map, new_map);
-		check_minim_items_in_map(new_map);
+		if (ptr_map != NULL)
+		{
+			add_map_to_matrix(ptr_map, new_map);
+			check_minim_items_in_map(new_map);
+			free(ptr_map);
+		}
+		else
+			ft_printf("error al cargar el mapa desde el file\n");
 	}
 	else
 		ft_printf("file no compatible\n");
+	free_struct_map_and_exit(new_map);
 }

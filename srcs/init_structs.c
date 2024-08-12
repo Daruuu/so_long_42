@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 17:19:03 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/12 19:38:29 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ t_map	*init_map(void)
 {
 	t_map	*new_map;
 
-	new_map = malloc(sizeof(t_map));
+	new_map = (t_map *) malloc(sizeof(t_map));
 	if (!new_map)
 		return (NULL);
-	// *new_map = NULL;
 	new_map->matrix_map = NULL;
 	new_map->rows = 0;
 	new_map->columns = 0;

@@ -7,46 +7,6 @@ in other terminal:
     gdb so_long
     target remote | /usr/bin/vgdb --pid=xxxx
 
+make && valgrind --leak-check=full --show-leak-kinds=all ./so_long assets/maps/a.ber
 
-en una funcion validar las columnas y rows
-si es OKay
-creo el mapa / error exit
-al crear al mapa check items del mapa
-
-
-
-// Prototipos de funciones adicionales (asumiendo que existen en tu proyecto)
-
-int	check_edge_of_map(char *av, t_map *map)
-{
-	int		fd;
-	char	*line;
-	int		len_line;
-	int		i = 0;
-
-	fd = can_open_fd(av);
-	map->columns = -1;
-
-	while ((line = get_next_line(fd)))
-	{
-		len_line = (int)ft_strlen(line);
-		if (line[len_line - 1] == '\n')
-			line[--len_line] = '\0';  // Simplificación para eliminar '\n'
-
-		if (len_line < 3)
-			exit_and_message("len line < 3\n");
-		if (map->columns == -1)
-			map->columns = len_line;
-		else if (len_line != map->columns)
-			exit_and_message("error map columns no OK\n");
-
-		if (!check_first_and_last_line_map(line, i, map->rows))
-			exit_and_message("error walls map\n");
-
-		map->rows++;
-		free(line);
-		i++;
-	}
-	close(fd);
-	return (1);
-}
+make && valgrind --leak-check=full --show-leak-kinds=reachable ./so_long assets/maps/a.ber

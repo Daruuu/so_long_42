@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_free_errors.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 12:26:32 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 17:13:19 by  dasalaza        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../include/so_long.h"
 
@@ -47,4 +36,31 @@ void	free_struct_map_and_exit(t_map *map)
 	}
 	free(map);
 	exit(1);
+}
+
+void	free_matrix_and_exit(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(*map);
+	exit(1);
+}
+
+void	free_ptr(char *message, char *ptr)
+{
+	if (message == 0)
+	{
+		free(ptr);
+		ptr = NULL;
+		exit (1);
+	}
+	ft_printf(message);
+	free(ptr);
+	ptr = NULL;
 }

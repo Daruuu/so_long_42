@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 16:20:02 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/12 19:50:34 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*get_map_from_file(char *path)
 		exit_and_message("empty file\n");
 	new_map = (char *) malloc(i + 1);
 	if (!new_map)
-		ft_printf("error allocations\n");
+		free_ptr("error allocation malloc()\n", new_map);
 	fd = open(path, O_RDONLY);
 	read (fd, new_map, i);
 	new_map[i] = '\0';
@@ -42,6 +42,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	int	j;
 
 	map->matrix_map = ft_split(map_ptr, '\n');
+	free(map_ptr);
 	if (!map->matrix_map)
 		exit_and_message("error memory allocation of MATRIX IN MAP STRUCT\n");
 	i = 0;
@@ -50,7 +51,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	if (map->rows != i)
 	{
 		ft_printf("matrix ROWS no correct!!");
-        //TODO: call free of matrix here
+		free_struct_map_and_exit(map);
 	}
 	i = 0;
 	while (i < map->rows)
@@ -61,7 +62,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 		if (j != map->columns)
 		{
 			ft_printf("matrix COLUMNS not correct!!");
-			//TODO: add free matrix error
+			free_struct_map_and_exit(map);
 		}
 		i++;
 	}
@@ -91,6 +92,7 @@ void	check_minim_items_in_map(t_map *map)
 	if (map->players > 1 || map->exits > 1 || map->coins == 0)
 	{
 		ft_printf("ERROR MINIM COINS OR MAX EXITS OR MAX PLAYERS\n");
+		free_struct_map_and_exit(map);
 		// free of structure and exit ERROR
 	}
 	else
