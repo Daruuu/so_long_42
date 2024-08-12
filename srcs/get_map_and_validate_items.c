@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:44 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:20:02 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,9 @@ void	check_minim_items_in_map(t_map *map)
 	}
 	if (map->players > 1 || map->exits > 1 || map->coins == 0)
 	{
-		ft_printf("ERROR MINIM COINS OR MAX EXITS OR MAX PLAYERS");
+		ft_printf("ERROR MINIM COINS OR MAX EXITS OR MAX PLAYERS\n");
 		// free of structure and exit ERROR
 	}
+	else
+		ft_printf("MINIM ITEMS IN MAP ARE CORRECT\n");
 }

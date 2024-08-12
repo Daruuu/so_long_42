@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_so_long.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 22:37:24 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:57:29 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ typedef struct s_game
 	int			player_sprite;// Identificador del sprite del jugador
 	t_map		map;// Información del mapa
     /* Imágenes*/
-	t_image		wall;// Imagen para las paredes
-	t_image    floor;            // Imagen para el suelo
-    t_image    coins;            // Imagen para las monedas
-    t_image    open_exit;        // Imagen para la salida abierta
-    t_image    exit_closed;      // Imagen para la salida cerrada
+	t_image		wall;			// Imagen para las paredes
+	t_image    floor;           // Imagen para el suelo
+    t_image    coins;           // Imagen para las monedas
+    t_image    open_exit;       // Imagen para la salida abierta
+    t_image    exit_closed;     // Imagen para la salida cerrada
 
     // Imágenes del jugador
     t_image    player_front;     // Imagen del jugador mirando hacia adelante

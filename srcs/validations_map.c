@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/11 23:29:31 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:11:01 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	validate_filename_map(char *av1)
 
 	type_file = ".ber";
 	len_file = (int) ft_strlen(av1);
+	//	a.ber
 	if (len_file < 4)
 		return (1);
 	if (ft_strncmp(av1 + len_file - 4, type_file, 4) != 0)
@@ -60,7 +61,7 @@ int	can_open_fd(char *path_map)
 	return (fd);
 }
 
-int	check_edge_of_map(char *av1, t_map *map)
+static int	check_edge_of_map(char *av1, t_map *map)
 {
 	int		fd;
 	char	*line;
