@@ -6,10 +6,11 @@
             "command": "cmake",
             "args": [
                 "--build",
-                "${workspaceFolder}/build"
+                "${workspaceFolder}"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                // "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
