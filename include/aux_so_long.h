@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 14:15:20 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 16:29:44 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ typedef struct s_game
     t_image    player_right;     // Imagen del jugador mirando hacia la derecha
     t_image    player_back;      // Imagen del jugador mirando hacia atrás
 }   t_game;
+
 // t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado
 /********Definición de t_bool si no está definida********/
 // typedef struct  s_bool_true_false

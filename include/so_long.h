@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.    +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:12:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 01:07:02 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:30:16 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void        free_ptr(char *message, char *ptr);
 char 		*get_map_from_file(char *path);
 void        check_minim_items_in_map(t_map *map);
 void        add_map_to_matrix(char *map_ptr, t_map *map);
+void        flood_fill(t_map *map, int x, int y);
 
 // ********** FT_AUX.C ***********************
 void		*ft_realloc(void *ptr, size_t new_size);

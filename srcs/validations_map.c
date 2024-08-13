@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 12:06:59 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 16:31:41 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void	validate_file_and_edge_of_map(char *av1)
 		{
 			add_map_to_matrix(ptr_map, new_map);
 			check_minim_items_in_map(new_map);
+			flood_fill(new_map, new_map->player_pos.x, new_map->player_pos.y);
 		}
 		else
 			ft_printf("error al cargar el mapa desde el file\n");

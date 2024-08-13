@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 14:46:47 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 16:38:49 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,19 +147,29 @@ DETERMINACION:
 
 */
 
-void	check_map_player_to_exit(t_map *map, int x, int y, char to_fill) 
+
+// (map, map->player_pos->x, map->player_pos->y)
+static void	fill(t_map *map, int x, int y)
 {
+	if (x < 0 || x >= map->columns - 1 ||
+		y < 0 || y >= map->rows || map->matrix_map[y][x] == WALL ||
+		map->matrix_map[y][x] == 'F')	
+		return ;
+	if (map->matrix_map[y][x] == COLLECTIONABLE)
+		map->coins --;
+	map->matrix_map[y][x] = 'F';
+	fill(map, x + 1, y);
+	fill(map, x - 1, y);
+	fill(map, x, y + 1);
+	fill(map, x, y - 1);
+}
 
-	
-	while ((map->rows - 1) > 0)
+void	flood_fill(t_map *map, int x, int y)
+{
+	fill(map, x, y);
+	if (map->coins == 0)
 	{
-		while ((map->columns - 1) > 0)
-		{
-			if (map->matrix_map[map->player_pos.x][map->player_pos.y])
-
-			map->columns --;
-		}
-		map->rows --;
+		ft_printf("VALID FLOOD FILL !!!\n");
 	}
 
 }
