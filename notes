@@ -59,3 +59,9 @@ Podrás compilar todo el proyecto en lugar de archivos individuales
     CMake: Run para gestionar la compilación y ejecución
     de tu proyecto.
 
+
+Esto generará el ejecutable en el directorio build.
+cmake -S . -B build
+cmake --build build
+
+
