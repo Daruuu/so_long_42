@@ -108,7 +108,7 @@ void	validate_file_and_edge_of_map(char *av1)
 	{
 		ft_printf("file extension Ok\n");
 		if (check_edge_of_map(av1, new_map) == 0)
-			ft_printf("\ncolumns: %d\nrows: %d", new_map->columns, new_map->rows);
+			ft_printf("\ncolumns: %d\nrows: %d\n", new_map->columns, new_map->rows);
 		ptr_map = get_map_from_file(av1);
 		if (ptr_map != NULL)
 		{

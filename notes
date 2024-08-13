@@ -10,3 +10,5 @@ in other terminal:
 make && valgrind --leak-check=full --show-leak-kinds=all ./so_long assets/maps/a.ber
 
 make && valgrind --leak-check=full --show-leak-kinds=reachable ./so_long assets/maps/a.ber
+
+/so_long_42 ~/CLionProjects/so_long_42/assets/maps/a.ber
