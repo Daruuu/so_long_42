@@ -86,8 +86,8 @@ static void	get_positions_player_and_exit(t_map *map)
 			}
 			if (map->matrix_map[i][j] == EXIT_GAME)
 			{
-				map->player_pos.x = i;
-				map->player_pos.y = j;
+				map->exit_pos.x = i;
+				map->exit_pos.y = j;
 			}
 			j++;
 		}
@@ -116,17 +116,15 @@ void	check_minim_items_in_map(t_map *map)
 		}
 		i++;
 	}
+	get_positions_player_and_exit(map);
 	if (map->players > 1 || map->exits > 1 || map->coins == 0)
 	{
 		ft_printf("ERROR MINIM COINS OR MAX EXITS OR MAX PLAYERS\n");
 		free_struct_map_and_exit(map);
 	}
 	else
-		ft_printf("MINIM ITEMS IN MAP ARE CORRECT\n");
-	//	reset de items 
-	get_positions_player_and_exit(map);	
+		ft_printf("ITEMS IN MAP ARE CORRECT\n");
 }
-
 
 /* VALIDATE MAP WITH FLOOD FILL
 INICIALIZACION:
@@ -144,32 +142,42 @@ REPETICION:
 	repetir accion hasta encontrar la posicion E
 DETERMINACION:
 	si 'E' se encuentra, el algoritmo se detiene y puede reconstruir el camino de E a P
-
 */
 
-
 // (map, map->player_pos->x, map->player_pos->y)
-static void	fill(t_map *map, int x, int y)
+void fill(t_map *map, int x, int y, int *exit_reachable)
 {
-	if (x < 0 || x >= map->columns - 1 ||
-		y < 0 || y >= map->rows || map->matrix_map[y][x] == WALL ||
-		map->matrix_map[y][x] == 'F')	
+	if (x < 0 || x > map->rows || y < 0 || y > map->columns ||
+		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
 		return ;
-	if (map->matrix_map[y][x] == COLLECTIONABLE)
+	if (map->matrix_map[x][y] == COLLECTIONABLE)
 		map->coins --;
-	map->matrix_map[y][x] = 'F';
-	fill(map, x + 1, y);
-	fill(map, x - 1, y);
-	fill(map, x, y + 1);
-	fill(map, x, y - 1);
+	if (map->matrix_map[x][y] == EXIT_GAME) {
+		printf("x: %d, y: %d\n", x, y);
+		*exit_reachable = *exit_reachable + 1;
+	}
+	map->matrix_map[x][y] = 'F';
+
+//	print_map(map);
+
+	fill(map, x + 1, y, exit_reachable);
+	fill(map, x - 1, y, exit_reachable);
+	fill(map, x, y + 1, exit_reachable);
+	fill(map, x, y - 1, exit_reachable);
 }
 
 void	flood_fill(t_map *map, int x, int y)
 {
-	fill(map, x, y);
+	int exit_reachable;
+
+	exit_reachable = 0; // not reachable
+	fill(map, x, y, &exit_reachable);
+	if (exit_reachable > 0) {
+		// Se puede llegar de player a exit.
+		printf("number of paths: %d\n", exit_reachable);
+	}
 	if (map->coins == 0)
 	{
 		ft_printf("VALID FLOOD FILL !!!\n");
 	}
-
 }

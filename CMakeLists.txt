@@ -34,11 +34,11 @@ add_executable(so_long_42 main.c
         srcs/get_map_and_validate_items.c
         srcs/init_structs.c
         srcs/validations_map.c
+        srcs/print_functions.c
         # NO USING
         # srcs/ft_aux.c
         # srcs/graphics.c
         # srcs/map.c
-        # srcs/print_functions.c
         # srcs/so_long.c
 )
 # Establecer la salida del ejecutable en el directorio raíz del proyecto

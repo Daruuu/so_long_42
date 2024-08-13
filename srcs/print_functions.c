@@ -12,14 +12,22 @@
 
 #include "../include/so_long.h"
 
-void	print_map(char *av)
+void	print_map(t_map *map)
 {
-	int	i;
+	int	x;
+	int	y;
 
-	i = 0;
-	while (av[i] != '\0')
+	y = 0;
+	while (y < map->rows)
 	{
-		ft_printf("%s", av[i]);
-		i++;
+		x = 0;
+		while (x < map->columns)
+		{
+			putchar( map->matrix_map[y][x]);
+			x++;
+		}
+		putchar('\n');
+		y++;
 	}
+	putchar('\n');
 }

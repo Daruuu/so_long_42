@@ -32,6 +32,9 @@ void		exit_and_message(char *message);
 void        free_struct_map_and_exit(t_map *map);
 void        free_ptr(char *message, char *ptr);
 
+// ********** PRINT_FUNCTIONS.C ***********************
+void		print_map(t_map *map);
+
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
 char 		*get_map_from_file(char *path);
 void        check_minim_items_in_map(t_map *map);
