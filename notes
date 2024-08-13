@@ -12,3 +12,50 @@ make && valgrind --leak-check=full --show-leak-kinds=all ./so_long assets/maps/a
 make && valgrind --leak-check=full --show-leak-kinds=reachable ./so_long assets/maps/a.ber
 
 /so_long_42 ~/CLionProjects/so_long_42/assets/maps/a.ber
+
+*************************************************************************************
+SET UP VSCODE CMAKE:
+As you go through the tutorial, you will create three files in a .vscode folder in the workspace:
+
+tasks.json (compiler build settings)
+launch.json (debugger settings)
+c_cpp_properties.json (compiler path and IntelliSense settings)
+
+
+CONFIGURACION DEL ENTORNO EN VSCODE:
+
+1.Configurar el kit de compilación:
+
+    Pulsa F1 y selecciona CMake: Select a Kit.
+
+    Elige el compilador que quieres usar (por ejemplo, GCC o Clang).
+
+2.Configurar la variante de compilación:
+
+    Pulsa F1 y selecciona CMake: Select Build Variant.
+
+    Elige entre Debug, Release, etc., dependiendo de tus necesidades.
+
+3.Configurar la carpeta de construcción:
+
+    Pulsa F1 y selecciona CMake: Configure.
+
+    Esto generará los archivos de configuración necesarios
+    en la carpeta de construcción (por ejemplo, build).
+
+4.Compilar el proyecto:
+
+    Pulsa F1 y selecciona CMake: Build.
+
+    Esto compilará el proyecto usando los archivos fuente
+    y configuraciones definidas en CMakeLists.txt.
+
+5.Compilar y ejecutar:
+    Con el CMakeLists.txt configurado
+    y la extensión de CMake Tools
+Podrás compilar todo el proyecto en lugar de archivos individuales
+
+    CMake: Build
+    CMake: Run para gestionar la compilación y ejecución
+    de tu proyecto.
+

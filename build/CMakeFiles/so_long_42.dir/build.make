@@ -73,281 +73,281 @@ CMakeFiles/so_long_42.dir/main.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/main.c.o: ../main.c
 CMakeFiles/so_long_42.dir/main.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/so_long_42.dir/main.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/main.c.o -MF CMakeFiles/so_long_42.dir/main.c.o.d -o CMakeFiles/so_long_42.dir/main.c.o -c /home/daruuu/CLionProjects/so_long_42/main.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/main.c.o -MF CMakeFiles/so_long_42.dir/main.c.o.d -o CMakeFiles/so_long_42.dir/main.c.o -c /home/daruuu/CLionProjects/so_long_42/main.c
 
 CMakeFiles/so_long_42.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/main.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/main.c > CMakeFiles/so_long_42.dir/main.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/main.c > CMakeFiles/so_long_42.dir/main.c.i
 
 CMakeFiles/so_long_42.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/main.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/main.c -o CMakeFiles/so_long_42.dir/main.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/main.c -o CMakeFiles/so_long_42.dir/main.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o: ../libs/libft/ft_strlen.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strlen.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strlen.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o: ../libs/libft/ft_strncmp.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strncmp.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strncmp.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o: ../libs/libft/ft_memcpy.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c > CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c > CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_memcpy.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_memcpy.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o: ../libs/libft/ft_split.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c > CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c > CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_split.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_split.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o: ../libs/libft/ft_strchr.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c > CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_strchr.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_strchr.c.s
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o: ../libs/libft/ft_substr.c
 CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o -MF CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o.d -o CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c > CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c > CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.i
 
 CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/libft/ft_substr.c -o CMakeFiles/so_long_42.dir/libs/libft/ft_substr.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o: ../libs/printf/ft_printf.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c > CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c > CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_printf.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_printf.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o: ../libs/printf/ft_put_ptr.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_ptr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_ptr.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o: ../libs/printf/ft_put_uint_nbr.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_put_uint_nbr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_put_uint_nbr.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o: ../libs/printf/ft_putchar_n.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putchar_n.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putchar_n.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o: ../libs/printf/ft_puthexa_nbr.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_puthexa_nbr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_puthexa_nbr.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o: ../libs/printf/ft_putnbr_n.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putnbr_n.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putnbr_n.c.s
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o: ../libs/printf/ft_putstr.c
 CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o -MF CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o.d -o CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c > CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.i
 
 CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/printf/ft_putstr.c -o CMakeFiles/so_long_42.dir/libs/printf/ft_putstr.c.s
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o: ../libs/get_next_line/get_next_line.c
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o -MF CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o.d -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o -MF CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o.d -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c > CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c > CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.i
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line.c -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line.c.s
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o: ../libs/get_next_line/get_next_line_utils.c
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o -MF CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o.d -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o -MF CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o.d -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.o -c /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c > CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c > CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.i
 
 CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/libs/get_next_line/get_next_line_utils.c -o CMakeFiles/so_long_42.dir/libs/get_next_line/get_next_line_utils.c.s
 
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: ../srcs/ft_free_errors.c
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -MF CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o.d -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -MF CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o.d -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c
 
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c > CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c > CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.i
 
 CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/ft_free_errors.c -o CMakeFiles/so_long_42.dir/srcs/ft_free_errors.c.s
 
 CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: ../srcs/get_map_and_validate_items.c
 CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -MF CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o.d -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -MF CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o.d -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c
 
 CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c > CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c > CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.i
 
 CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/get_map_and_validate_items.c -o CMakeFiles/so_long_42.dir/srcs/get_map_and_validate_items.c.s
 
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: ../srcs/init_structs.c
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/so_long_42.dir/srcs/init_structs.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -MF CMakeFiles/so_long_42.dir/srcs/init_structs.c.o.d -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -MF CMakeFiles/so_long_42.dir/srcs/init_structs.c.o.d -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c
 
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/init_structs.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c > CMakeFiles/so_long_42.dir/srcs/init_structs.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c > CMakeFiles/so_long_42.dir/srcs/init_structs.c.i
 
 CMakeFiles/so_long_42.dir/srcs/init_structs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/init_structs.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/init_structs.c -o CMakeFiles/so_long_42.dir/srcs/init_structs.c.s
 
 CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/flags.make
 CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: ../srcs/validations_map.c
 CMakeFiles/so_long_42.dir/srcs/validations_map.c.o: CMakeFiles/so_long_42.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daruuu/CLionProjects/so_long_42/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/so_long_42.dir/srcs/validations_map.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -MF CMakeFiles/so_long_42.dir/srcs/validations_map.c.o.d -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -MF CMakeFiles/so_long_42.dir/srcs/validations_map.c.o.d -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.o -c /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c
 
 CMakeFiles/so_long_42.dir/srcs/validations_map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long_42.dir/srcs/validations_map.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c > CMakeFiles/so_long_42.dir/srcs/validations_map.c.i
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c > CMakeFiles/so_long_42.dir/srcs/validations_map.c.i
 
 CMakeFiles/so_long_42.dir/srcs/validations_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long_42.dir/srcs/validations_map.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.s
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/daruuu/CLionProjects/so_long_42/srcs/validations_map.c -o CMakeFiles/so_long_42.dir/srcs/validations_map.c.s
 
 # Object files for target so_long_42
 so_long_42_OBJECTS = \

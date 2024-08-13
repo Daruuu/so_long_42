@@ -5,7 +5,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [/home/dasalaza/cursus_42/git_daruuu/so_long_42/assets/maps/map_01.ber],
+            "args": [
+                "assets/maps/map_01.ber"
+            ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
