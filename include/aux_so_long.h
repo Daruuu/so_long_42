@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 16:57:29 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 14:15:20 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ typedef struct s_map
 	int			exits;// Número de salidas en el mapa
 	int			players;// Número de jugadores en el mapa
 	t_position	player_pos; // Posición del jugador
+	t_position	exit_pos; // Posición del jugador
 }	t_map;
 
-/********Estructura principal del juego****/
+/* *******Estructura principal del juego*** */
 typedef struct s_game
 {
 	void		*mlx_ptr;// Puntero a la instancia de MiniLibX o similar

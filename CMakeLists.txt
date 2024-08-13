@@ -40,5 +40,4 @@ add_executable(so_long_42 main.c
         # srcs/map.c
         # srcs/print_functions.c
         # srcs/so_long.c
-
 )

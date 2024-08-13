@@ -1,5 +1,5 @@
 valgrind with GDB:
-    valgrin --vgdb-error=0 ./so_long
+    valgrind --vgdb-error=0 ./so_long
 check the line:
     target remote
 in other terminal:

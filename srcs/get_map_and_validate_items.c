@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 19:50:34 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 14:46:47 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,33 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	}
 }
 
+static void	get_positions_player_and_exit(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < map->rows)
+	{
+		j = 1;
+		while (j < map->columns)
+		{
+			if (map->matrix_map[i][j] == PLAYER)
+			{
+				map->player_pos.x = i;
+				map->player_pos.y = j;
+			}
+			if (map->matrix_map[i][j] == EXIT_GAME)
+			{
+				map->player_pos.x = i;
+				map->player_pos.y = j;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 void	check_minim_items_in_map(t_map *map)
 {
 	int	i;
@@ -93,8 +120,46 @@ void	check_minim_items_in_map(t_map *map)
 	{
 		ft_printf("ERROR MINIM COINS OR MAX EXITS OR MAX PLAYERS\n");
 		free_struct_map_and_exit(map);
-		// free of structure and exit ERROR
 	}
 	else
 		ft_printf("MINIM ITEMS IN MAP ARE CORRECT\n");
+	//	reset de items 
+	get_positions_player_and_exit(map);	
+}
+
+
+/* VALIDATE MAP WITH FLOOD FILL
+INICIALIZACION:
+	start: posicion de P
+	marcar la posicion P[x][x] como visitado
+EXPLORACION:
+	explorar todos los vecinos de P posicion
+	celdas:
+		arriba
+		abajo
+		izquierda
+		derecha
+	mirar que sean caminos abierto '0'
+REPETICION:
+	repetir accion hasta encontrar la posicion E
+DETERMINACION:
+	si 'E' se encuentra, el algoritmo se detiene y puede reconstruir el camino de E a P
+
+*/
+
+void	check_map_player_to_exit(t_map *map, int x, int y, char to_fill) 
+{
+
+	
+	while ((map->rows - 1) > 0)
+	{
+		while ((map->columns - 1) > 0)
+		{
+			if (map->matrix_map[map->player_pos.x][map->player_pos.y])
+
+			map->columns --;
+		}
+		map->rows --;
+	}
+
 }

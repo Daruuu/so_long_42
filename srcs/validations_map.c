@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/12 20:24:43 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/13 12:06:59 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,8 @@ void	validate_file_and_edge_of_map(char *av1)
 	char	*ptr_map;
 
 	new_map = init_map();
-	// if (new_map == NULL)
-	// {
-	// 	ft_printf("error al init map\n");
-	// 	return ;
-	// }
+	if (new_map == NULL)
+		return ;
 	if (!(validate_filename_map(av1)))
 	{
 		ft_printf("file extension Ok\n");
