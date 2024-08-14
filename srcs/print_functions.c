@@ -3,31 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   print_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 17:05:46 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/09 17:06:38 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/14 19:24:51 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+static void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
 
 void	print_map(t_map *map)
 {
 	int	x;
 	int	y;
 
-	y = 0;
-	while (y < map->rows)
+	x = 0;
+	while (x < map->rows)
 	{
-		x = 0;
-		while (x < map->columns)
+		y = 0;
+		while (y < map->columns)
 		{
-			putchar( map->matrix_map[y][x]);
-			x++;
+			ft_putchar(map->matrix_map[x][y]);
+			y++;
 		}
-		putchar('\n');
-		y++;
+		ft_putchar('\n');
+		x++;
 	}
-	putchar('\n');
+	ft_putchar('\n');
 }
+
