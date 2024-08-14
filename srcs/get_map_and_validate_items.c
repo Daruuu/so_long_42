@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/13 16:38:49 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/14 13:39:10 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	check_minim_items_in_map(t_map *map)
 		ft_printf("ITEMS IN MAP ARE CORRECT\n");
 }
 
-/* VALIDATE MAP WITH FLOOD FILL
+/* VALIDATE MAP WITH FLOOD fill_player_to_exit
 INICIALIZACION:
 	start: posicion de P
 	marcar la posicion P[x][x] como visitado
@@ -142,28 +142,52 @@ REPETICION:
 	repetir accion hasta encontrar la posicion E
 DETERMINACION:
 	si 'E' se encuentra, el algoritmo se detiene y puede reconstruir el camino de E a P
+(map, map->player_pos->x, map->player_pos->y)
 */
 
-// (map, map->player_pos->x, map->player_pos->y)
-void fill(t_map *map, int x, int y, int *exit_reachable)
+void	fill_player_to_exit(t_map *map, int x, int y, int *exit_reachable)
 {
 	if (x < 0 || x > map->rows || y < 0 || y > map->columns ||
 		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
 		return ;
 	if (map->matrix_map[x][y] == COLLECTIONABLE)
 		map->coins --;
-	if (map->matrix_map[x][y] == EXIT_GAME) {
-		printf("x: %d, y: %d\n", x, y);
+	if (map->matrix_map[x][y] == EXIT_GAME)
+	{
+		ft_printf("FILL PLAYER TO EXIT()\n");
+		ft_printf("x: %d, y: %d\n", x, y);
 		*exit_reachable = *exit_reachable + 1;
 	}
 	map->matrix_map[x][y] = 'F';
 
-//	print_map(map);
+	// print_map(map);
 
-	fill(map, x + 1, y, exit_reachable);
-	fill(map, x - 1, y, exit_reachable);
-	fill(map, x, y + 1, exit_reachable);
-	fill(map, x, y - 1, exit_reachable);
+	fill_player_to_exit(map, x + 1, y, exit_reachable);
+	fill_player_to_exit(map, x - 1, y, exit_reachable);
+	fill_player_to_exit(map, x, y + 1, exit_reachable);
+	fill_player_to_exit(map, x, y - 1, exit_reachable);
+}
+
+void	fill_player_to_coins(t_map *map, int x, int y, int * coins_reachable)
+{
+	if (x < 0 || x > map->rows || y < 0 || y > map->columns ||
+		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'A')
+		return ;
+	// if (map->matrix_map[x][y] == COLLECTIONABLE)
+	// 	map->coins --;
+	if (map->matrix_map[x][y] == EXIT_GAME) {
+		ft_printf("FILL PLAYER TO COINS()\n");
+		*coins_reachable ++;
+	}
+
+	map->matrix_map[x][y] = 'F';
+
+	// print_map(map);
+
+	fill_player_to_coins(map, x + 1, y, coins_reachable);
+	fill_player_to_coins(map, x - 1, y, coins_reachable);
+	fill_player_to_coins(map, x, y + 1, coins_reachable);
+	fill_player_to_coins(map, x, y - 1, coins_reachable);
 }
 
 void	flood_fill(t_map *map, int x, int y)
@@ -171,13 +195,13 @@ void	flood_fill(t_map *map, int x, int y)
 	int exit_reachable;
 
 	exit_reachable = 0; // not reachable
-	fill(map, x, y, &exit_reachable);
+	fill_player_to_exit(map, x, y, &exit_reachable);
 	if (exit_reachable > 0) {
 		// Se puede llegar de player a exit.
 		printf("number of paths: %d\n", exit_reachable);
 	}
 	if (map->coins == 0)
 	{
-		ft_printf("VALID FLOOD FILL !!!\n");
+		ft_printf("VALID FLOOD fill_player_to_exit !!!\n");
 	}
 }
