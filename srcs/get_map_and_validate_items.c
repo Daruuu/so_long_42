@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 19:02:13 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/14 18:29:05by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/15 00:06:34 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/15 00:09:06 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	while (map->matrix_map[i] != NULL)
 		i++;
 	if (map->rows != i)
-	{
-		ft_printf("matrix rows no correct!!");
-		free_struct_map_and_exit(map);
-	}
+		free_struct_map_and_exit(ERROR_IN_MATRIX, map);
 	i = 0;
 	while (i < map->rows)
 	{
@@ -60,10 +57,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 		while (map->matrix_map[i][j] != '\0')
 			j++;
 		if (j != map->columns)
-		{
-			ft_printf("matrix columns not correct!!");
-			free_struct_map_and_exit(map);
-		}
+			free_struct_map_and_exit(ERROR_IN_MATRIX, map);
 		i++;
 	}
 }
@@ -95,7 +89,7 @@ static void	get_positions_player_and_exit(t_map *map)
 	}
 }
 
-static int	check_map_item_coins_and_exit(t_map *map)
+static int	check_map_items_coins_and_exit(t_map *map)
 {
 	int	x;
 	int	y;
@@ -106,7 +100,7 @@ static int	check_map_item_coins_and_exit(t_map *map)
 		y = 0;
 		while (y < map->columns)
 		{
-			if (map->matrix_map[x][y] == EXIT_GAME ||
+			if (map->matrix_map[x][y] == EXIT_GAME || \
 				map->matrix_map[x][y] == COLLECTIONABLE)
 				return (1);
 			y++;
@@ -139,12 +133,7 @@ void	check_minim_items_in_map(t_map *map)
 	}
 	get_positions_player_and_exit(map);
 	if (map->players > 1 || map->exits > 1 || map->coins == 0)
-	{
-		ft_printf("error minim coins or max exits or max players\n");
-		free_struct_map_and_exit(map);
-	}
-	else
-		ft_printf("items in map are correct\n");
+		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
 }
 
 /* validate map with flood fill_player_to_exit
@@ -168,11 +157,11 @@ determinacion:
 
 void	fill_player_and_coins(t_map *map, int x, int y)
 {
-	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns ||
-		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'f')
+	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \
+		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
 		return ;
-	map->matrix_map[x][y] = 'f';
-	print_map(map);
+	map->matrix_map[x][y] = 'F';
+//	print_map(map);
 	fill_player_and_coins(map, x + 1, y);
 	fill_player_and_coins(map, x - 1, y);
 	fill_player_and_coins(map, x, y + 1);
@@ -191,66 +180,16 @@ void	flood_fill(t_map *map, int x, int y)
 	while (i < map->rows)
 	{
 		map_copy.matrix_map[i] = ft_strdup(map->matrix_map[i]);
+		if (map_copy.matrix_map[i] == NULL)
+		{
+			free_map_copy(&map_copy, NULL);
+			return ;
+		}
 		i++;
 	}
-
+	map_copy.rows = map->rows;
+	map_copy.columns = map->columns;
 	fill_player_and_coins(&map_copy, x, y);
-
-	if (check_map_item_coins_and_exit(&map_copy) == 0)
-		ft_printf("ALL VALIDATIONS OKAY\n");
-	else
-		ft_printf("INVALID MAPP \n");
+	if (check_map_items_coins_and_exit(&map_copy) == 1)
+		free_map_copy(&map_copy, ERROR_INVALID_MAP);
 }
-
-/*
-void	flood_fill(t_map *map, int x, int y)
-{
-	t_map	map_case_exit;
-	t_map	map_case_coins;
-	int		i;
-
-	i = 0;
-	map_case_exit.matrix_map = malloc(sizeof(char *) * map->rows);
-	map_case_coins.matrix_map = malloc(sizeof(char *) * map->columns);
-
-	while (i < map->rows)
-	{
-		map_case_exit.matrix_map[i] = ft_strdup(map->matrix_map[i]);
-		map_case_exit.matrix_map[i] = ft_strdup(map->matrix_map[i]);
-		i++;
-	}
-	map_case_exit.rows = map->rows;
-	map_case_exit.columns = map->columns;
-
-	map_case_coins.rows = map->rows;
-	map_case_coins.columns = map->columns;
-
-	int	exit_reachable;
-	int	coins_reachable;
-
-	exit_reachable = 0;
-	fill_player_to_exit(&map_case_exit, x, y, &exit_reachable);
-
-	if (exit_reachable > 0)
-	{
-		// Se puede llegar de player a exit.
-		ft_printf("number of paths to exits: %d\n", exit_reachable);
-	}
-
-	coins_reachable = 0;
-	fill_player_search_coins(&map_case_coins, x, y, &coins_reachable);
-
-	if (map->coins == coins_reachable)
-	{
-		ft_printf("VALID FLOOD fill_player_to_exit !!!\n");
-	}
-	while (i < map->rows)
-	{
-		free(map_case_exit.matrix_map[i]);
-		free(map_case_coins.matrix_map[i]);
-		i ++;
-	}
-	free(map_case_exit.matrix_map);
-	free(map_case_coins.matrix_map);
-}
-*/

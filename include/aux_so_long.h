@@ -18,6 +18,9 @@
 # define EXIT_GAME 'E'
 # define COLLECTIONABLE 'C'
 # define WALL '1'
+# define ERROR_INVALID_MAP "INVALID MAP\n"
+# define ERROR_ITEMS_IN_MAP "INVALID ITEMS IN MAP\n"
+# define ERROR_IN_MATRIX "ERROR DATA IN MATRIX \n"
 # define EMPTY '0'
 
 //  GAME OBJECTS

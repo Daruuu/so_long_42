@@ -118,5 +118,5 @@ void	validate_file_and_edge_of_map(char *av1)
 	}
 	else
 		ft_printf("file no compatible\n");
-	free_struct_map_and_exit(new_map);
+	free_struct_map_and_exit(NULL, new_map);
 }

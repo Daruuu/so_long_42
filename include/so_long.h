@@ -29,8 +29,9 @@ int         can_open_fd(char *path_map);
 // ********** FT_FREE_ERRORS.C ***********************
 void		if_not_exist_free_pointer(char **ptr);
 void		exit_and_message(char *message);
-void        free_struct_map_and_exit(t_map *map);
+void free_struct_map_and_exit(char *message, t_map *map);
 void        free_ptr(char *message, char *ptr);
+void free_map_copy(t_map *map_copy, char *message);
 
 // ********** PRINT_FUNCTIONS.C ***********************
 void		print_map(t_map *map);
