@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 00:06:34 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/15 00:09:06 by dasalaza         ###   ########.fr       */
+/*   Created: 2024/08/15 17:52:09 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/16 00:58:21 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	map->matrix_map = ft_split(map_ptr, '\n');
 	free(map_ptr);
 	if (!map->matrix_map)
-		exit_and_message("error memory allocation of matrix in map struct\n");
+		exit_and_message(ERROR_MEMORY_ALLOCATION);
 	i = 0;
 	while (map->matrix_map[i] != NULL)
 		i++;
@@ -89,7 +89,7 @@ static void	get_positions_player_and_exit(t_map *map)
 	}
 }
 
-static int	check_map_items_coins_and_exit(t_map *map)
+int	check_map_items_coins_and_exit(t_map *map)
 {
 	int	x;
 	int	y;
@@ -134,62 +134,4 @@ void	check_minim_items_in_map(t_map *map)
 	get_positions_player_and_exit(map);
 	if (map->players > 1 || map->exits > 1 || map->coins == 0)
 		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-}
-
-/* validate map with flood fill_player_to_exit
-inicializacion:
-	start: posicion de p
-	marcar la posicion p[x][x] como visitado
-exploracion:
-	explorar todos los vecinos de p posicion
-	celdas:
-		arriba
-		abajo
-		izquierda
-		derecha
-	mirar que sean caminos abierto '0'
-repeticion:
-	repetir accion hasta encontrar la posicion e
-determinacion:
-	si 'e' se encuentra, el algoritmo se detiene y puede reconstruir el camino de e a p
-(map, map->player_pos->x, map->player_pos->y)
-*/
-
-void	fill_player_and_coins(t_map *map, int x, int y)
-{
-	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \
-		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
-		return ;
-	map->matrix_map[x][y] = 'F';
-//	print_map(map);
-	fill_player_and_coins(map, x + 1, y);
-	fill_player_and_coins(map, x - 1, y);
-	fill_player_and_coins(map, x, y + 1);
-	fill_player_and_coins(map, x, y - 1);
-}
-
-void	flood_fill(t_map *map, int x, int y)
-{
-	t_map	map_copy;
-	int		i;
-
-	map_copy.matrix_map = malloc(sizeof(char *) * map->rows);
-	if (map_copy.matrix_map == NULL)
-		return ;
-	i = 0;
-	while (i < map->rows)
-	{
-		map_copy.matrix_map[i] = ft_strdup(map->matrix_map[i]);
-		if (map_copy.matrix_map[i] == NULL)
-		{
-			free_map_copy(&map_copy, NULL);
-			return ;
-		}
-		i++;
-	}
-	map_copy.rows = map->rows;
-	map_copy.columns = map->columns;
-	fill_player_and_coins(&map_copy, x, y);
-	if (check_map_items_coins_and_exit(&map_copy) == 1)
-		free_map_copy(&map_copy, ERROR_INVALID_MAP);
 }

@@ -18,14 +18,15 @@ SO_LONG_H = include/so_long.h
 
 # SRC = $(wildcard $(SRC_DIR)/*.c) main.c
 SRC =	main.c	\
-		$(SRC_DIR)/validations_map.c \
-		$(SRC_DIR)/ft_free_errors.c \
-		$(SRC_DIR)/init_structs.c \
-		$(SRC_DIR)/get_map_and_validate_items.c \
-		$(SRC_DIR)/map.c \
-		$(SRC_DIR)/graphics.c \
-		$(SRC_DIR)/so_long.c \
-		$(SRC_DIR)/print_functions.c \
+		$(SRC_DIR)/*.c
+#		$(SRC_DIR)/validations_map.c \
+#		$(SRC_DIR)/ft_free_errors.c \
+#		$(SRC_DIR)/init_structs.c \
+#		$(SRC_DIR)/get_map_and_validate_items.c \
+#		$(SRC_DIR)/map.c \
+#		$(SRC_DIR)/graphics.c \
+#		$(SRC_DIR)/so_long.c \
+#		$(SRC_DIR)/print_functions.c \
 
 OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
 

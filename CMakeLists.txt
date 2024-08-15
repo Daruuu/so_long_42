@@ -43,4 +43,4 @@ add_executable(so_long_42 main.c
         # srcs/so_long.c
 )
 # Establecer la salida del ejecutable en el directorio raíz del proyecto
-set_target_properties(so_long_42 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+#set_target_properties(so_long_42 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})

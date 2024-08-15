@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 17:53:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/14 13:29:08 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/16 00:23:11 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/16 01:34:09 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	validate_filename_map(char *av1)
 
 	type_file = ".ber";
 	len_file = (int) ft_strlen(av1);
-	//	a.ber
 	if (len_file < 4)
 		return (1);
 	if (ft_strncmp(av1 + len_file - 4, type_file, 4) != 0)
@@ -60,6 +59,9 @@ int	can_open_fd(char *path_map)
 		exit_and_message("fd < 0");
 	return (fd);
 }
+/*
+ * NORMINNETE
+*/
 
 static int	check_edge_of_map(char *av1, t_map *map)
 {
@@ -95,28 +97,21 @@ static int	check_edge_of_map(char *av1, t_map *map)
 
 void	validate_file_and_edge_of_map(char *av1)
 {
-	t_map	*new_map;
+	t_map	*n_map;
 	char	*ptr_map;
 
-	new_map = init_map();
-	if (new_map == NULL)
+	n_map = init_map();
+	if (n_map == NULL)
 		return ;
 	if (!(validate_filename_map(av1)))
-	{
-		ft_printf("file extension Ok\n");
-		if (check_edge_of_map(av1, new_map) == 0)
-			ft_printf("\ncolumns: %d\nrows: %d\n", new_map->columns, new_map->rows);
-		ptr_map = get_map_from_file(av1);
-		if (ptr_map != NULL)
-		{
-			add_map_to_matrix(ptr_map, new_map);
-			check_minim_items_in_map(new_map);
-			flood_fill(new_map, new_map->player_pos.x, new_map->player_pos.y);
-		}
-		else
-			ft_printf("error al cargar el mapa desde el file\n");
-	}
-	else
-		ft_printf("file no compatible\n");
-	free_struct_map_and_exit(NULL, new_map);
+		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, n_map);
+	if (!check_edge_of_map(av1, n_map))
+		free_struct_map_and_exit(ERROR_EDGE_MAP, n_map);
+	ptr_map = get_map_from_file(av1);
+	if (ptr_map == NULL)
+		free_struct_map_and_exit(ERROR_LOADING_MAP, n_map);
+	add_map_to_matrix(ptr_map, n_map);
+	free_ptr(NULL, ptr_map);
+	check_minim_items_in_map(n_map);
+	flood_fill(n_map, n_map->player_pos.x, n_map->player_pos.y);
 }

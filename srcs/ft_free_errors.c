@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free_errors.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.co  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 01:31:20 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/16 01:31:25 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/so_long.h"
 
@@ -17,7 +28,7 @@ void	exit_and_message(char *message)
 	exit(1);
 }
 
-void free_struct_map_and_exit(char *message, t_map *map)
+void	free_struct_map_and_exit(char *message, t_map *map)
 {
 	int	i;
 
@@ -35,22 +46,8 @@ void free_struct_map_and_exit(char *message, t_map *map)
 			}
 			free(map->matrix_map);
 		}
+		free(map);
 	}
-	free(map);
-	exit(1);
-}
-
-void	free_matrix_and_exit(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-		i++;
-	}
-	free(*map);
 	exit(1);
 }
 
@@ -61,12 +58,12 @@ void	free_ptr(char *message, char *ptr)
 	if (ptr != NULL)
 	{
 		free(ptr);
-//		ptr = NULL;
+		ptr = NULL;
 	}
 	exit (1);
 }
 
-void free_map_copy(t_map *map_copy, char *message)
+void	free_map_copy(t_map *map_copy, char *message)
 {
 	int	i;
 
@@ -81,6 +78,6 @@ void free_map_copy(t_map *map_copy, char *message)
 			i++;
 		}
 		free(map_copy->matrix_map);
-		free(map_copy);
 	}
+	free(map_copy);
 }

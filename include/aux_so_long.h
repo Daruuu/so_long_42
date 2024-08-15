@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   aux_so_long.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/16 00:38:02 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_so_long.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
@@ -18,10 +30,13 @@
 # define EXIT_GAME 'E'
 # define COLLECTIONABLE 'C'
 # define WALL '1'
-# define ERROR_INVALID_MAP "INVALID MAP\n"
-# define ERROR_ITEMS_IN_MAP "INVALID ITEMS IN MAP\n"
-# define ERROR_IN_MATRIX "ERROR DATA IN MATRIX \n"
-# define EMPTY '0'
+# define ERROR_INVALID_MAP "Error INVALID MAP\n"
+# define ERROR_ITEMS_IN_MAP "Error INVALID ITEMS IN MAP\n"
+# define ERROR_IN_MATRIX "Error DATA IN MATRIX\n"
+# define ERROR_MEMORY_ALLOCATION "Error DATA IN MATRIX\n"
+# define ERROR_INVALID_EXTENSION_MAP "Error INVALID EXTENSION_MAP\n"
+# define ERROR_EDGE_MAP "Error EDGE OF MAP\n"
+# define ERROR_LOADING_MAP "Error LOADING MAP\n"
 
 //  GAME OBJECTS
 # define ESC 
