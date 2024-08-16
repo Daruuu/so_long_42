@@ -12,6 +12,16 @@
 
 #include "../include/so_long.h"
 
+int	can_open_fd(char *path_map)
+{
+	int	fd;
+
+	fd = open(path_map, O_RDONLY);
+	if (fd < 0)
+		exit_and_message("fd < 0");
+	return (fd);
+}
+
 void	fill_player_and_coins(t_map *map, int x, int y)
 {
 	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \

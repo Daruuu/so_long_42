@@ -35,7 +35,8 @@
 # define ERROR_IN_MATRIX "Error DATA IN MATRIX\n"
 # define ERROR_MEMORY_ALLOCATION "Error DATA IN MATRIX\n"
 # define ERROR_INVALID_EXTENSION_MAP "Error INVALID EXTENSION_MAP\n"
-# define ERROR_EDGE_MAP "Error EDGE OF MAP\n"
+# define ERROR_COLUMNS_MAP "Error COLUMNS OF MAP\n"
+# define ERROR_ROWS_MAP "Error ROWS OF MAP\n"
 # define ERROR_LOADING_MAP "Error LOADING MAP\n"
 
 //  GAME OBJECTS
@@ -90,14 +91,15 @@ typedef struct s_game
 	int			count_moves;// Contador de movimientos
 	int			player_sprite;// Identificador del sprite del jugador
 	t_map		map;// Información del mapa
-    /* Imágenes*/
+
+    /*	Imágenes	*/
 	t_image		wall;			// Imagen para las paredes
 	t_image    floor;           // Imagen para el suelo
     t_image    coins;           // Imagen para las monedas
     t_image    open_exit;       // Imagen para la salida abierta
     t_image    exit_closed;     // Imagen para la salida cerrada
 
-    // Imágenes del jugador
+    /*	Imágenes del jugador	*/
     t_image    player_front;     // Imagen del jugador mirando hacia adelante
     t_image    player_left;      // Imagen del jugador mirando hacia la izquierda
     t_image    player_right;     // Imagen del jugador mirando hacia la derecha
