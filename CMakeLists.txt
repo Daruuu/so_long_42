@@ -36,6 +36,7 @@ add_executable(so_long_42 main.c
         srcs/init_structs.c
         srcs/validations_map.c
         srcs/print_functions.c
+        srcs/flood_fill.c
         # NO USING
         # srcs/ft_aux.c
         # srcs/graphics.c

@@ -59,10 +59,12 @@ int	can_open_fd(char *path_map)
 		exit_and_message("fd < 0");
 	return (fd);
 }
+
 /*
  * NORMINNETE
 */
 
+/*
 static int	check_edge_of_map(char *av1, t_map *map)
 {
 	int		fd;
@@ -94,6 +96,57 @@ static int	check_edge_of_map(char *av1, t_map *map)
 	}
 	return (0);
 }
+*/
+static int check_line_length(char *line, int expected_length)
+{
+	int len_line;
+
+	len_line = (int) ft_strlen(line);
+	if (line[len_line - 1] == '\n')
+		len_line --;
+	if (len_line < 3 || (expected_length != -1 && len_line != expected_length))
+	{
+		free(line);
+		ft_printf(ERROR_INVALID_MAP);
+	}
+	return (len_line);
+}
+
+static int	check_edge_of_map(char *av1, t_map *map)
+{
+	int		fd;
+	char	*line;
+	int		len_line;
+	int		i;
+
+	fd = can_open_fd(av1);
+	map->columns = -1;
+	i = 0;
+	line = get_next_line(fd);
+	while (line)
+	{
+		len_line = check_line_length(line, map->columns);
+		if (len_line < 0)
+		{
+			free(line);
+			close(fd);
+			return (len_line);
+		}
+		if (map->columns == -1)
+			map->columns = len_line;
+		if (check_first_and_last_line_map(line, i, map->rows) != 0)
+		{
+			free(line);
+			close(fd);
+			return (ft_printf(ERROR_EDGE_MAP));
+		}
+		map->rows ++;
+		free(line);
+		line = get_next_line(fd);
+		i++;
+	}
+	return (0);
+}
 
 void	validate_file_and_edge_of_map(char *av1)
 {
@@ -103,9 +156,10 @@ void	validate_file_and_edge_of_map(char *av1)
 	n_map = init_map();
 	if (n_map == NULL)
 		return ;
-	if (!(validate_filename_map(av1)))
+	if ((validate_filename_map(av1)) == 1)
 		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, n_map);
-	if (!check_edge_of_map(av1, n_map))
+//	if (check_edge_of_map(av1, n_map) == 1)
+	check_edge_of_map(av1, n_map);
 		free_struct_map_and_exit(ERROR_EDGE_MAP, n_map);
 	ptr_map = get_map_from_file(av1);
 	if (ptr_map == NULL)
