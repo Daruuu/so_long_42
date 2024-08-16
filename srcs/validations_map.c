@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 static int	validate_filename_map(char *av1)
 {
@@ -26,7 +26,7 @@ static int	validate_filename_map(char *av1)
 	return (0);
 }
 
-static int	check_all_ones(char *line, t_map *map)
+static int	check_all_ones(const char *line, t_map *map)
 {
 	int	j;
 

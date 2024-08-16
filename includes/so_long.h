@@ -33,6 +33,7 @@
 # include <fcntl.h>// read
 # include <string.h>// strerror
 # include <stdlib.h>
+//# includes "../libs/MLX42/MLX42.h"
 
 /* *************VALIDATIONS MAP **********/
 void		validate_file_and_edge_of_map(char *av1);

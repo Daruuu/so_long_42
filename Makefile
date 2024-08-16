@@ -1,6 +1,7 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -10,9 +11,11 @@ OBJ_DIR = objs
 LIBFT_DIR = libs/libft
 PRINTF_DIR = libs/printf
 GNL_DIR = libs/get_next_line
-MLX_DIR = libs/minilibx-linux
+#MLX_DIR = libs/minilibx-linux
+# CODAM MLX
+MLX_DIR = libs/MLX42
 
-SO_LONG_H = include/so_long.h
+SO_LONG_H = includes/so_long.h
 
 #------------------------ FONT FILES & OBJECTS --------------------------------
 
@@ -36,13 +39,14 @@ OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
 LIB_LIBFT = $(LIBFT_DIR)/libft.a
 LIB_PRINTF = $(PRINTF_DIR)/printf.a
 LIB_GNL = $(GNL_DIR)/get_next_line.a
-LIB_MLX = -L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+#LIB_MLX = -L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+LIB_MLX = -L$(MLX_DIR)/build -lmlx42 -ldl -lglfw -pthread -lm
 
 ALL_LIBS = $(LIB_LIBFT) $(LIB_PRINTF) $(LIB_GNL)
 
 # ========================= RULES SO_LONG =================================
 
-all: $(ALL_LIBS) $(MLX_DIR)/libmlx_Linux.a $(NAME)
+all: $(ALL_LIBS) $(MLX_DIR)/build/libmlx42.a $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(ALL_LIBS) $(LIB_MLX) -o $(NAME)
@@ -58,12 +62,13 @@ $(PRINTF_DIR)/printf.a:
 $(GNL_DIR)/get_next_line.a:
 	@$(MAKE) -C $(GNL_DIR)
 
-$(MLX_DIR)/libmlx_Linux.a:
-	@$(MAKE) -C $(MLX_DIR)
+#$(MLX_DIR)/libmlx_Linux.a:
+$(MLX_DIR)/build/libmlx42.a:
+	@cmake -S $(MLX_DIR) -B $(MLX_DIR)/build
+	@cmake --build $(MLX_DIR)/build
 
 # ---------------------------- COMPILE OBJECTS  -------------------------------
 
-#$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(SO_LONG_H)
 $(OBJ_DIR)/%.o: %.c $(SO_LONG_H)
 	@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -76,13 +81,16 @@ clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
 	$(MAKE) -C $(PRINTF_DIR) clean
 	$(MAKE) -C $(GNL_DIR) clean
-	$(MAKE) -C $(MLX_DIR) clean
-	rm -f $(OBJ_DIR)/*.o
+	#$(MAKE) -C $(MLX_DIR) clean
+	rm -rf $(OBJ_DIR)/*.o
+	rm -rf $(MLX_DIR)/build
+	rm -rf objs/
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(MAKE) -C $(PRINTF_DIR) fclean
 	$(MAKE) -C $(GNL_DIR) fclean
+	#$(MAKE) -C $(MLX_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all

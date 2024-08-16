@@ -69,7 +69,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 /*
-#include <stdio.h>
+#includes <stdio.h>
 
 int	main()
 {
