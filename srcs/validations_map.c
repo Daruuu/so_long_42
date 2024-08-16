@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:23:11 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 12:47:03 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:46:34 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,21 @@ void	validate_file_and_edge_of_map(char *av1)
 		return ;
 	if ((validate_filename_map(av1)) == 1)
 		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, n_map);
+
 	if (check_columns_of_map(av1, n_map) == 1)
 		free_struct_map_and_exit(ERROR_COLUMNS_MAP, n_map);
+
 	if (check_first_and_last_line_map(av1, n_map) == 1)
 		free_struct_map_and_exit(ERROR_ROWS_MAP, n_map);
+
 	ptr_map = get_map_from_file(av1);
 	if (ptr_map == NULL)
-		free_struct_map_and_exit(ERROR_LOADING_MAP, n_map);
+	{
+		free(ptr_map);
+		free_struct_map_and_exit(NULL, n_map);
+	}
 	add_map_to_matrix(ptr_map, n_map);
-	free_ptr(NULL, ptr_map);
+	// free_ptr(NULL, ptr_map);
 	check_minim_items_in_map(n_map);
 	flood_fill(n_map, n_map->player_pos.x, n_map->player_pos.y);
 }

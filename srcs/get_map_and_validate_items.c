@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:52:09 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 00:58:21 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:47:41 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	map->matrix_map = ft_split(map_ptr, '\n');
 	free(map_ptr);
 	if (!map->matrix_map)
+	{
+		// free_map_copy(NULL, map->matrix_map);
+		free_map_copy(map, NULL);
 		exit_and_message(ERROR_MEMORY_ALLOCATION);
+	}
 	i = 0;
 	while (map->matrix_map[i] != NULL)
 		i++;

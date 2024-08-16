@@ -54,3 +54,5 @@ dkms.conf
 cmake-build-debug/
 objs/
 build/
+so_long
+so_long_42

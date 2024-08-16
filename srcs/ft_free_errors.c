@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_errors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 01:31:20 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 01:31:25 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:35:04 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	if_not_exist_free_pointer(char **ptr)
 void	exit_and_message(char *message)
 {
 	ft_printf(message);
-	exit(1);
+	exit(2);
 }
 
 void	free_struct_map_and_exit(char *message, t_map *map)
@@ -48,7 +48,7 @@ void	free_struct_map_and_exit(char *message, t_map *map)
 		}
 		free(map);
 	}
-	exit(1);
+	exit(2);
 }
 
 void	free_ptr(char *message, char *ptr)
