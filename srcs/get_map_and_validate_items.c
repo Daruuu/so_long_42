@@ -45,7 +45,6 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	free(map_ptr);
 	if (!map->matrix_map)
 	{
-		// free_map_copy(NULL, map->matrix_map);
 		free_map_copy(map, NULL);
 		exit_and_message(ERROR_MEMORY_ALLOCATION);
 	}

@@ -44,6 +44,7 @@ t_map	*init_map(void)
 	new_map->exits = 0;
 	new_map->players = 0;
 	new_map->player_pos = init_positions();
+	new_map->exit_pos = init_positions();
 	return (new_map);
 }
 
