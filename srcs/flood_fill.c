@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 01:58:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 01:58:04 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/17 20:41:48 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	flood_fill(t_map *map, int x, int y)
 	map_copy = fill_copy_matrix(map);
 	if (map_copy == NULL)
 	{
+		free(map_copy);
 		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
 		return ;
 	}
@@ -83,6 +84,6 @@ void	flood_fill(t_map *map, int x, int y)
 	else
 	{
 		free_map_copy(map_copy, NULL);
-		ft_printf("ALL VALIDATIONS OKAY\n");
+		ft_printf("ALL VALIDATIONS IN MAP OKAY\n");
 	}
 }

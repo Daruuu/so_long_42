@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:44:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/06 14:19:31 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/17 18:58:12 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ char	*get_next_line(int fd)
 	if (!line)
 	{
 		free(storage);
+		free(line);
 		storage = NULL;
 		return (NULL);
 	}
 	storage = ft_update_storage(storage);
 	return (line);
 }
+
 /*
 #includes <stdio.h>
 

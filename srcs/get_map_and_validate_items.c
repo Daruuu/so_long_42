@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:52:09 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 14:47:41 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/08/17 23:00:38 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_map_from_file(char *path)
 		i ++;
 	close(fd);
 	if (i == 0)
-		exit_and_message("empty file\n");
+		exit_and_message(ERROR_INVALID_MAP);
 	new_map = (char *) malloc(i + 1);
 	if (!new_map)
 		free_ptr("error allocation malloc()\n", new_map);
@@ -49,10 +49,20 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 		exit_and_message(ERROR_MEMORY_ALLOCATION);
 	}
 	i = 0;
-	while (map->matrix_map[i] != NULL)
+	// quiero que si es'\0' te lo saltes
+	// 
+	while (map->matrix_map[i] != NULL) 
+	{
+		if (map->matrix_map[i][0] == '\0')
+			continue ;
 		i++;
+	}
+	ft_printf("\nmap->rows : %d\n", map->rows);
+	ft_printf("i: %d\n", i);
+
 	if (map->rows != i)
 		free_struct_map_and_exit(ERROR_IN_MATRIX, map);
+
 	i = 0;
 	while (i < map->rows)
 	{

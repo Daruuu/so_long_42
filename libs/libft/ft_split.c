@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:27:19 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/06/13 13:45:30 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/17 18:18:36 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,18 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-/*
 static char	**free_table(char **table, int i)
 {
 	while (i >= 0)
 		free(table[i--]);
 	free(table);
-	return (0);
+	return (NULL);
 }
-*/
 
-char	**ft_split(char const *s, char c)
+char	**split(char **table, const char *s, char c, size_t size_word)
 {
-	char	**table;
-	int		i;
-	size_t	size_word;
+	int	i;
 
-	table = (char **)malloc((sizeof(char *) * (ft_count_words(s, c) + 1)));
-	if (!table || !s)
-		return (NULL);
 	i = 0;
 	while (*s)
 	{
@@ -64,6 +57,8 @@ char	**ft_split(char const *s, char c)
 			else
 				size_word = ft_strchr(s, c) - s;
 			table[i] = ft_substr(s, 0, size_word);
+			if (!table[i])
+				return (free_table(table, i - 1));
 			s += size_word;
 			i++;
 		}
@@ -71,6 +66,22 @@ char	**ft_split(char const *s, char c)
 	table[i] = NULL;
 	return (table);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**table;
+	size_t	size_word;
+
+	if (!s)
+		return (NULL);
+	table = (char **)malloc((sizeof(char *) * (ft_count_words(s, c) + 1)));
+	if (!table)
+		return (NULL);
+	size_word = 0;
+	table = split(table, s, c, size_word);
+	return (table);
+}
+
 /*
 int	main(void)
 {

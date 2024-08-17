@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:03:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/04/23 11:31:22 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/17 17:56:27 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*ft_strdup_n(const char *s1)
 		return (NULL);
 	ptr = malloc(sizeof(char) * (size_s1 + 1));
 	if (!ptr)
-		return (free(ptr), NULL);
+		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
 	{
@@ -60,7 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = size_s;
 	substr = (char *) malloc(sizeof(char) * (len + 1));
 	if (!substr)
-		return (free(substr), NULL);
+		return (NULL);
 	i = 0;
 	while (i < len && s[start + i])
 	{
