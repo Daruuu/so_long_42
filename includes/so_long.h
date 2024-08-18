@@ -21,7 +21,7 @@
 # include <fcntl.h>// read
 # include <string.h>// strerror
 # include <stdlib.h>
-//# include "../libs/MLX42/MLX42.h"
+#include "../libs/MLX42/include/MLX42/MLX42.h"
 
 /* *************VALIDATIONS MAP **********/
 
