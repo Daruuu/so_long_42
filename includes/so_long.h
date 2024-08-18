@@ -21,36 +21,44 @@
 # include <fcntl.h>// read
 # include <string.h>// strerror
 # include <stdlib.h>
-//# includes "../libs/MLX42/MLX42.h"
+//# include "../libs/MLX42/MLX42.h"
 
 /* *************VALIDATIONS MAP **********/
-void		validate_file_and_edge_of_map(char *av1);
-int			can_open_fd(char *path_map);
+
+void		validate_file_and_edge_of_map(char *av1, t_map **map);
 
 // ********** FT_FREE_ERRORS.C ***********************
-void		if_not_exist_free_pointer(char **ptr);
+
 void		exit_and_message(char *message);
-void		free_struct_map_and_exit(char *message, t_map *map);
 void		free_ptr(char *message, char *ptr);
 void		free_map_copy(t_map *map_copy, char *message);
+void		free_struct_map_and_exit(char *message, t_map *map);
+void		free_struct_game(t_game *game);
 
 // ********** PRINT_FUNCTIONS.C ***********************
+
 void		print_map(t_map *map);
+void		print_map_data(t_map *map);
+void		print_game_data(t_game *game);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
+
 char		*get_map_from_file(char *path);
 void		add_map_to_matrix(char *map_ptr, t_map *map);
 int			check_map_items_coins_and_exit(t_map *map);
 void		check_minim_items_in_map(t_map *map);
-void		flood_fill(t_map *map, int x, int y);
 
 // ********** FLOOD_FILL.C ***********************
+
+int			can_open_fd(char *path_map);
+void		flood_fill(t_map *map, int x, int y);
+
 
 // ********** INIT_STRUCTS.C ***********************
 
 t_position	init__positions(void);
-t_image		init_window(void);
+t_image		*init_window(void);
 t_map		*init_map(void);
-t_game		init_game(void);
+t_game		*init_game(void);
 
 #endif

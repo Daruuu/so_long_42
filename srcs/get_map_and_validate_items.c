@@ -40,7 +40,6 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 {
 	int	i;
 	int	j;
-
 	map->matrix_map = ft_split(map_ptr, '\n');
 	free(map_ptr);
 	if (!map->matrix_map)
@@ -49,20 +48,10 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 		exit_and_message(ERROR_MEMORY_ALLOCATION);
 	}
 	i = 0;
-	// quiero que si es'\0' te lo saltes
-	// 
-	while (map->matrix_map[i] != NULL) 
-	{
-		if (map->matrix_map[i][0] == '\0')
-			continue ;
+	while (map->matrix_map[i] != NULL)
 		i++;
-	}
-	ft_printf("\nmap->rows : %d\n", map->rows);
-	ft_printf("i: %d\n", i);
-
 	if (map->rows != i)
 		free_struct_map_and_exit(ERROR_IN_MATRIX, map);
-
 	i = 0;
 	while (i < map->rows)
 	{

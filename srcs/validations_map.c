@@ -58,8 +58,6 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 	{
 		free(line);
 		line = get_next_line(fd);
-		ft_printf("i en check_first_and_last(): %d\n", i);
-		ft_printf("rows: %d\n", map->rows);
 		if (i == map->rows && check_all_ones(line, map) == 1)
 		{
 			free(line);
@@ -67,7 +65,6 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 		}
 		i++;
 	}
-	ft_printf("rows final check_first_and_last(): %d\n", map->rows);
 	return (0);
 }
 
@@ -81,16 +78,14 @@ static int	check_columns_of_map(char *av1, t_map *map)
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
 	map->columns = (int) ft_strlen(line) - 1;
-
-	ft_printf("COLUMNSS: %d\n", map->columns);
-
 	i = 0;
 	while (line)
 	{
 		len_line = (int) ft_strlen(line);
 		if (line[len_line - 1] == '\n')
 			len_line = len_line - 1;
-		if (len_line < 3 || len_line != map->columns || (line[0] != WALL || line[len_line - 1] != WALL))
+		if (len_line < 3 || len_line != map->columns || \
+			(line[0] != WALL || line[len_line - 1] != WALL))
 		{
 			free(line);
 			return (1);
@@ -103,37 +98,26 @@ static int	check_columns_of_map(char *av1, t_map *map)
 	return (0);
 }
 
-void	validate_file_and_edge_of_map(char *av1)
+void	validate_file_and_edge_of_map(char *av1, t_map **map)
 {
-	t_map	*n_map;
 	char	*ptr_map;
 
-	n_map = init_map();
-	// ft_printf("rows: %d\n", &n_map->rows);
-
-	if (n_map == NULL)
-		return ;
-
-	if ((validate_filename_map(av1)) == 1)
-		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, n_map);
-
-	// ft_printf("rows: %d\n", &n_map->rows);
-
-	if (check_first_and_last_line_map(av1, n_map) == 1)
-		free_struct_map_and_exit(ERROR_ROWS_MAP, n_map);
-
-	// ft_printf("rows: %d\n", &n_map->rows);
-
-	if (check_columns_of_map(av1, n_map) == 1)
-		free_struct_map_and_exit(ERROR_COLUMNS_MAP, n_map);
-
-	// ptr_map = get_map_from_file(av1);
-	ptr_map = NULL;
-	if (ptr_map == NULL)
+	*map = init_map();
+	if (*map== NULL)
 	{
-		free_struct_map_and_exit(NULL, n_map);
+		free_map_copy(*map, NULL);
+		return ;
 	}
-	// add_map_to_matrix(ptr_map, n_map);
-	// check_minim_items_in_map(n_map);
-	// flood_fill(n_map, n_map->player_pos.x, n_map->player_pos.y);
+	if ((validate_filename_map(av1)) == 1)
+		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map);
+	if (check_columns_of_map(av1, *map) == 1)
+		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map);
+	if (check_first_and_last_line_map(av1, *map) == 1)
+		free_struct_map_and_exit(ERROR_ROWS_MAP, *map);
+	ptr_map = get_map_from_file(av1);
+	if (ptr_map == NULL)
+		free_struct_map_and_exit(NULL, *map);
+	add_map_to_matrix(ptr_map, *map);
+	check_minim_items_in_map(*map);
+	flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y);
 }

@@ -56,3 +56,4 @@ objs/
 build/
 so_long
 so_long_42
+cmake-build-debug-coverage/

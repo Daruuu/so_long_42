@@ -22,7 +22,7 @@ int	can_open_fd(char *path_map)
 	return (fd);
 }
 
-void	fill_player_and_coins(t_map *map, int x, int y)
+static void	fill_player_and_coins(t_map *map, int x, int y)
 {
 	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \
 		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
@@ -34,7 +34,7 @@ void	fill_player_and_coins(t_map *map, int x, int y)
 	fill_player_and_coins(map, x, y - 1);
 }
 
-t_map	*fill_copy_matrix(t_map *map)
+static t_map	*fill_copy_matrix(t_map *map)
 {
 	t_map	*map_copy;
 	int		i;

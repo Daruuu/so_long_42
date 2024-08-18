@@ -78,7 +78,7 @@ typedef struct s_game
 	void		*win_ptr;// Puntero a la ventana del juego
 	int			count_moves;// Contador de movimientos
 	int			player_sprite;// Identificador del sprite del jugador
-	t_map		map;// Información del mapa
+	t_map		*map;// Información del mapa
 
     /*	Imágenes	*/
 	t_image		wall;			// Imagen para las paredes

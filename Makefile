@@ -2,9 +2,10 @@ NAME = so_long
 CC = cc
 #CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
-CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -g
+#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
-# CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
 
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -51,7 +52,7 @@ ALL_LIBS = $(LIB_LIBFT) $(LIB_PRINTF) $(LIB_GNL)
 
 all: $(ALL_LIBS) $(MLX_DIR)/build/libmlx42.a $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	$(CC) $(CFLAGS) $(OBJ) $(ALL_LIBS) $(LIB_MLX) -o $(NAME)
 
 # ---------------------------- COMPILE OF LIBS -------------------------------

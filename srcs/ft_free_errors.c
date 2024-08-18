@@ -51,8 +51,17 @@ void	free_map_copy(t_map *map_copy, char *message)
 
 void	free_struct_map_and_exit(char *message, t_map *map)
 {
-	// if (message != NULL)
-	// 	ft_printf(message);
 	free_map_copy(map, message);
 	exit(2);
+}
+
+void	free_struct_game(t_game *game)
+{
+	free_map_copy(game->map, NULL);
+	if (game->mlx_ptr != NULL || game->win_ptr)
+	{
+		free(game->mlx_ptr);
+		free(game->win_ptr);
+	}
+	free(game);
 }

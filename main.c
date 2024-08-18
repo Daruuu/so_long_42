@@ -15,10 +15,21 @@
 
 int	main(int ac, char **av)
 {
-	printf("Hello, World!\n");
+	ft_printf("Hello, World!\n");
+	t_game	*game;
+
+	game = init_game();
+	if (game == NULL)
+	{
+		free_struct_game(game);
+		exit(2);
+	}
 	if (ac == 2)
 	{
-		validate_file_and_edge_of_map(av[1]);
+		validate_file_and_edge_of_map(av[1], &(game->map));
 	}
+//	print_map(game->map);
+//	print_map_data(game->map);
+	free_struct_game(game);
 	return (0);
 }
