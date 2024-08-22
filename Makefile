@@ -1,11 +1,13 @@
 NAME = so_long
 CC = cc
-#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+#CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
+
+#INCLUDES = -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
 #CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -g
-#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
-CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
+#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
 
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -15,9 +17,10 @@ OBJ_DIR = objs
 LIBFT_DIR = libs/libft
 PRINTF_DIR = libs/printf
 GNL_DIR = libs/get_next_line
-#MLX_DIR = libs/minilibx-linux
+MLX_DIR = libs/minilibx-linux
+NO_PRINT_DIRS = --no-print-directory
 # CODAM MLX
-MLX_DIR = libs/MLX42
+#MLX_DIR = libs/MLX42
 
 SO_LONG_H = includes/so_long.h
 
@@ -43,14 +46,15 @@ OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
 LIB_LIBFT = $(LIBFT_DIR)/libft.a
 LIB_PRINTF = $(PRINTF_DIR)/printf.a
 LIB_GNL = $(GNL_DIR)/get_next_line.a
-#LIB_MLX = -L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
-LIB_MLX = -L$(MLX_DIR)/build -lmlx42 -ldl -lglfw -pthread -lm
+LIB_MLX = -L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+#LIB_MLX = -L$(MLX_DIR)/build -lmlx42 -ldl -lglfw -pthread -lm		// codam mlx
 
 ALL_LIBS = $(LIB_LIBFT) $(LIB_PRINTF) $(LIB_GNL)
 
 # ========================= RULES SO_LONG =================================
 
-all: $(ALL_LIBS) $(MLX_DIR)/build/libmlx42.a $(NAME)
+#all: $(ALL_LIBS) $(MLX_DIR)/build/libmlx42.a $(NAME)
+all: $(ALL_LIBS) $(MLX_DIR)/libmlx_Linux.a $(NAME)
 
 $(NAME): $(OBJ) Makefile
 	$(CC) $(CFLAGS) $(OBJ) $(ALL_LIBS) $(LIB_MLX) -o $(NAME)
@@ -58,18 +62,19 @@ $(NAME): $(OBJ) Makefile
 # ---------------------------- COMPILE OF LIBS -------------------------------
 
 $(LIBFT_DIR)/libft.a:
-	@$(MAKE) -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) $(NO_PRINT_DIRS)
 
 $(PRINTF_DIR)/printf.a:
-	@$(MAKE) -C $(PRINTF_DIR)
+	@$(MAKE) -C $(PRINTF_DIR) $(NO_PRINT_DIRS)
 
 $(GNL_DIR)/get_next_line.a:
-	@$(MAKE) -C $(GNL_DIR)
+	@$(MAKE) -C $(GNL_DIR) $(NO_PRINT_DIRS)
 
-#$(MLX_DIR)/libmlx_Linux.a:
-$(MLX_DIR)/build/libmlx42.a:
-	@cmake -S $(MLX_DIR) -B $(MLX_DIR)/build
-	@cmake --build $(MLX_DIR)/build
+#$(MLX_DIR)/build/libmlx42.a:
+#	@cmake -S $(MLX_DIR) -B $(MLX_DIR)/build
+#	@cmake --build $(MLX_DIR)/build
+$(MLX_DIR)/libmlx_Linux.a:
+	@$(MAKE) -C $(MLX_DIR) $(NO_PRINT_DIRS)
 
 # ---------------------------- COMPILE OBJECTS  -------------------------------
 
@@ -85,10 +90,9 @@ clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
 	$(MAKE) -C $(PRINTF_DIR) clean
 	$(MAKE) -C $(GNL_DIR) clean
-	#$(MAKE) -C $(MLX_DIR) clean
-	rm -rf $(OBJ_DIR)/*.o
-	rm -rf $(MLX_DIR)/build
-	rm -rf objs/
+	rm -rf $(OBJ_DIR)
+#	rm -rf $(OBJ_DIR)/*.o
+#	rm -rf $(MLX_DIR)/build
 
 fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean

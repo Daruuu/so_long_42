@@ -11,6 +11,7 @@ add_executable(so_long_42 main.c
         libs/libft/libft.h
         libs/printf/ft_printf.h
         libs/get_next_line/get_next_line.h
+        libs/minilibx-linux/mlx.h
 #       LIBFT
         libs/libft/ft_strlen.c
         libs/libft/ft_strncmp.c
@@ -37,11 +38,13 @@ add_executable(so_long_42 main.c
         srcs/validations_map.c
         srcs/print_functions.c
         srcs/flood_fill.c
+        srcs/graphics.c
         # NO USING
         # srcs/ft_aux.c
         # srcs/graphics.c
         # srcs/map.c
         # srcs/so_long.c
 )
+
 # Establecer la salida del ejecutable en el directorio raíz del proyecto
 #set_target_properties(so_long_42 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})

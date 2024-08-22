@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:56:26 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 00:59:06 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:30:16 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # include <fcntl.h>// read
 # include <string.h>// strerror
 # include <stdlib.h>
-#include "../libs/MLX42/include/MLX42/MLX42.h"
+# include "../libs/minilibx-linux/mlx.h"
+//# include "../libs/MLX42/include/MLX42/MLX42.h"
 
 /* *************VALIDATIONS MAP **********/
 
@@ -60,5 +61,8 @@ t_position	init__positions(void);
 t_image		*init_window(void);
 t_map		*init_map(void);
 t_game		*init_game(void);
+
+// ********** GRAPHICS.C ***********************
+void		init_graphics(void);
 
 #endif

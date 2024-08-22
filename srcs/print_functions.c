@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   print_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/20 13:09:13 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_functions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 17:05:46 by dasalaza          #+#    #+#             */
@@ -24,6 +36,7 @@ void	print_map(t_map *map)
 
 	x = 0;
 	ft_printf("PRINT MATRIX MAP:\n");
+	ft_printf("----------------------\n");
 	while (x < map->rows)
 	{
 		y = 0;
@@ -36,11 +49,13 @@ void	print_map(t_map *map)
 		x++;
 	}
 	ft_putchar('\n');
+	ft_printf("----------------------\n");
 }
 
 void	print_map_data(t_map *map)
 {
 	ft_printf("DATA OF MAP:\n");
+	ft_printf("----------------------\n");
 	ft_printf("rows: %d\n", map->rows);
 	ft_printf("columns: %d\n", map->columns);
 	ft_printf("coins: %d\n", map->coins);
@@ -50,6 +65,7 @@ void	print_map_data(t_map *map)
 	ft_printf("player_pos.y: %d\n", map->player_pos.y);
 	ft_printf("exit_pos.x: %d\n", map->exit_pos.x);
 	ft_printf("exit_pos.y: %d\n", map->exit_pos.y);
+	ft_printf("----------------------\n");
 }
 
 void	print_game_data(t_game *game)
