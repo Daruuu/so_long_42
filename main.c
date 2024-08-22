@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/20 16:27:13 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:37:33 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(int ac, char **av)
 		print_map(game->map);
 		print_map_data(game->map);
 	}
-	init_graphics();
+	//	CALL CONNECTION
+	init_connection(game);
 
 	free_struct_game(game);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/16 00:38:02 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:56:13 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ typedef struct s_game
 
     /*	Imágenes	*/
 	t_image		wall;			// Imagen para las paredes
-	t_image    floor;           // Imagen para el suelo
-    t_image    coins;           // Imagen para las monedas
-    t_image    open_exit;       // Imagen para la salida abierta
-    t_image    exit_closed;     // Imagen para la salida cerrada
+	t_image		floor;			// Imagen para el suelo
+    t_image		coins;			// Imagen para las monedas
+    t_image		open_exit;		// Imagen para la salida abierta
+    t_image		exit_closed;	// Imagen para la salida cerrada
 
     /*	Imágenes del jugador	*/
     t_image    player_front;     // Imagen del jugador mirando hacia adelante
