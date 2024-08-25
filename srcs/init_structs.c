@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/25 14:12:09 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 16:20:51 by dasalaza          #+#    #+#             */
@@ -58,9 +70,23 @@ t_game	*init_game(void)
 		return (NULL);
 	new_game->mlx_ptr = NULL;
 	new_game->win_ptr = NULL;
-	new_game->count_moves = 0;	//int
-	new_game->player_sprite = 0;	//int
+
+	new_game->count_moves = 0;
+	new_game->player_sprite = 0;
+
 	new_game->map = NULL;
-//	new_game->wall = NULL; //init_window();
+
+	new_game->wall.xpm_ptr = NULL;
+	new_game->floor.xpm_ptr = NULL;
+	new_game->coins.xpm_ptr = NULL;
+
+	new_game->open_exit.xpm_ptr = NULL;
+	new_game->exit_closed.xpm_ptr = NULL;
+
+	new_game->player_front.xpm_ptr = NULL;
+	new_game->player_left.xpm_ptr = NULL;
+	new_game->player_right.xpm_ptr = NULL;
+	new_game->player_back.xpm_ptr = NULL;
+
 	return (new_game);
 }
