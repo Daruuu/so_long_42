@@ -348,7 +348,8 @@ void	*mlx_xpm_to_image(t_xvar *xvar,char **xpm_data,int *width,int *height)
 {
 		t_img	*img;
 
-		if (img = mlx_int_parse_xpm(xvar,xpm_data,0,mlx_int_static_line))
+	img = mlx_int_parse_xpm(xvar, xpm_data, 0, mlx_int_static_line);
+	if (img)
 		{
 				*width = img->width;
 				*height = img->height;

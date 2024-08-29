@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx_int.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/20 16:22:22 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/28 16:06:46 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 ** mlx_int.h for mlx in 
 ** 
@@ -30,7 +42,7 @@
 # include <sys/shm.h>
 # include <X11/extensions/XShm.h>
 # include <X11/XKBlib.h>
-/* #include	<X11/xpm.h> */
+# include <X11/xpm.h>
 
 
 # define MLX_TYPE_SHM_PIXMAP 3

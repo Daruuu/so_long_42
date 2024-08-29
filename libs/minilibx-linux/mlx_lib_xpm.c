@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 16:22:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/22 15:58:50 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:15:11 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include	"mlx_int.h"
 
-
+int	mlx_int_egal_img(XImage *img1,XImage *img2);
 
 
 void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,
@@ -51,6 +51,7 @@ void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,
     }
   *width = img1->width;
   *height = img1->height;
+
   if (mlx_int_egal_img(im2->image,img1))
     {
       bcopy(img1->data,im2->data,img1->height*img1->bytes_per_line);
@@ -77,7 +78,6 @@ void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,
   return (im2);
 }
 
-
 int	mlx_int_egal_img(XImage *img1,XImage *img2)
 {
   if (img1->width!=img2->width || img1->height!=img2->height ||
@@ -95,10 +95,9 @@ int	mlx_int_egal_img(XImage *img1,XImage *img2)
 }
 
 
-void	*mlx_xpm_file_to_image(t_xvar *xvar,char *filename,
-			       int *width,int *height)
+void	*mlx_xpm_file_to_image(t_xvar *xvar,char *filename, int *width,int *height)
 {
-  return (mlx_int_xpm_f_image(xvar,width,height,XpmReadFileToImage,filename));
+	return (mlx_int_xpm_f_image(xvar,width,height,XpmReadFileToImage,filename));
 }
 
 

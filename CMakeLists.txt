@@ -1,19 +1,27 @@
 cmake_minimum_required(VERSION 3.22)
 
-# cmake_minimum_required(VERSION 3.28)
 project(so_long_42 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(so_long_42 main.c
-#       HEADERS
+# Comando para compilar libmlx.a
+add_custom_target(libmlx ALL
+        COMMAND make
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs/minilibx-linux
+        COMMENT "Compilando libmlx.a"
+)
+
+# Añadir el ejecutable
+add_executable(so_long_42
+        main.c
+        # HEADERS
         includes/so_long.h
         libs/libft/libft.h
         libs/printf/ft_printf.h
         libs/get_next_line/get_next_line.h
         libs/minilibx-linux/mlx.h
         libs/minilibx-linux/mlx_int.h
-#       LIBFT
+        # LIBFT
         libs/libft/ft_strlen.c
         libs/libft/ft_strncmp.c
         libs/libft/ft_memcpy.c
@@ -21,7 +29,7 @@ add_executable(so_long_42 main.c
         libs/libft/ft_strchr.c
         libs/libft/ft_substr.c
         libs/libft/ft_strdup.c
-#       PRINTF
+        # PRINTF
         libs/printf/ft_printf.c
         libs/printf/ft_put_ptr.c
         libs/printf/ft_put_uint_nbr.c
@@ -29,10 +37,10 @@ add_executable(so_long_42 main.c
         libs/printf/ft_puthexa_nbr.c
         libs/printf/ft_putnbr_n.c
         libs/printf/ft_putstr.c
-#       GET_NEXT_LINE
+        # GET_NEXT_LINE
         libs/get_next_line/get_next_line.c
         libs/get_next_line/get_next_line_utils.c
-#       SO_LONG
+        # SO_LONG
         srcs/ft_free_errors.c
         srcs/get_map_and_validate_items.c
         srcs/init_structs.c
@@ -49,7 +57,7 @@ add_executable(so_long_42 main.c
         libs/minilibx-linux/mlx_int_get_visual.c
         libs/minilibx-linux/mlx_destroy_image.c
         libs/minilibx-linux/mlx_string_put.c
-        libs/minilibx-linux/mlx_lib_xpm.c
+#        libs/minilibx-linux/mlx_lib_xpm.c
         libs/minilibx-linux/mlx_ext_randr.c
         libs/minilibx-linux/mlx_rgb.c
         libs/minilibx-linux/mlx_pixel_put.c
@@ -73,12 +81,16 @@ add_executable(so_long_42 main.c
         libs/minilibx-linux/mlx_xpm.c
         libs/minilibx-linux/mlx_int_param_event.c
         libs/minilibx-linux/mlx_expose_hook.c
-        # NO USING
-        # srcs/ft_aux.c
-        # srcs/map.c
-        # srcs/so_long.c
 )
-target_link_libraries(so_long_42 PRIVATE /libs/minilibx-linux/libmlx.a -lX11 -lXext -lm)
 
-# Establecer la salida del ejecutable en el directorio raíz del proyecto
-#set_target_properties(so_long_42 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+# Asegurarse de que el target so_long_42 dependa de libmlx.a
+add_dependencies(so_long_42 libmlx)
+
+# Enlazar el ejecutable con libmlx.a y las bibliotecas X11 y Xext
+target_link_libraries(so_long_42
+        ${CMAKE_CURRENT_SOURCE_DIR}/libs/minilibx-linux/libmlx_Linux.a
+        X11
+        Xext
+        Xpm
+        Xrandr
+)

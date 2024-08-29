@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/25 14:53:55 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/28 15:49:30 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ int	main(int ac, char **av)
 //	img = mlx_new_image(mlx, 300, 300);
 	ft_printf("Hello, World!\n");
 //	mlx_loop(game->mlx_ptr);
-
-
-
-
-
-
-
 
 
 
