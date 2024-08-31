@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:56:26 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/22 17:31:45 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/31 15:35:40 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,12 @@ void		flood_fill(t_map *map, int x, int y);
 t_position	init__positions(void);
 t_image		*init_window(void);
 t_map		*init_map(void);
-t_game		*init_game(void);
+t_game		*init_game_map(void);
+void		init_game_windows_data(t_game *game);
+void		load_textures_game(t_game *game);
 
 // ********** GRAPHICS.C ***********************
-void		init_connection(t_game *game);
+int			close_window(t_game *game);
+void	identify_images(t_game *game);
 
 #endif

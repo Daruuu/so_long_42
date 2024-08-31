@@ -81,6 +81,7 @@ add_executable(so_long_42
         libs/minilibx-linux/mlx_xpm.c
         libs/minilibx-linux/mlx_int_param_event.c
         libs/minilibx-linux/mlx_expose_hook.c
+        includes/aux_so_long.h
 )
 
 # Asegurarse de que el target so_long_42 dependa de libmlx.a

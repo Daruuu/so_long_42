@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/22 16:56:13 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/08/31 14:51:24 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # define EXIT_GAME 'E'
 # define COLLECTIONABLE 'C'
 # define WALL '1'
+# define FLOOR '0'
+
 # define ERROR_INVALID_MAP "Error INVALID MAP\n"
 # define ERROR_ITEMS_IN_MAP "Error INVALID ITEMS IN MAP\n"
 # define ERROR_IN_MATRIX "Error DATA IN MATRIX\n"
@@ -28,18 +30,30 @@
 # define ERROR_LOADING_MAP "Error LOADING MAP\n"
 
 //  GAME OBJECTS
-# define ESC 
-# define W
-# define S
-# define A
-# define D
-# define UP
-# define RIGHT
-# define LEFT 
-# define DOWN 
-# define RESTART 
+# define ESC		65307
+# define W			119
+# define S			115
+# define A			97
+# define D			100
+
+# define LEFT		65361
+# define UP			65362
+# define RIGHT		65363
+# define DOWN		65364
+# define RESTART	114
+
+# define WALL_XPM "../assets/sprites/Tiles/blockSimple.xpm"
+# define FLOOR_XPM "../assets/sprites/Tiles/midBlocks_02.xpm"
+
+# define COLLECT_XPM "../assets/sprites/Collectibles/star_01.xpm"
+
+# define PLAYER_XPM "../assets/sprites/Player/idle_00.xpm"
+
+# define EXIT_OPEN_XPM "../assets/sprites/Exit/exit_open_01.xpm"
+# define EXIT_CLOSED_XPM "../assets/sprites/Exit/exit_close_01.xpm"
 
 # define CELL_SIZE 32
+# define TITLE_WINDOWS "So_long by Dasalaza"
 
 /********Estructura para posiciones en 2D*****/
 
@@ -79,20 +93,18 @@ typedef struct s_game
 	int			count_moves;// Contador de movimientos
 	int			player_sprite;// Identificador del sprite del jugador
 	t_map		*map;// Información del mapa
-
-    /*	Imágenes	*/
+	/*	Imágenes	*/
 	t_image		wall;			// Imagen para las paredes
 	t_image		floor;			// Imagen para el suelo
-    t_image		coins;			// Imagen para las monedas
-    t_image		open_exit;		// Imagen para la salida abierta
-    t_image		exit_closed;	// Imagen para la salida cerrada
-
-    /*	Imágenes del jugador	*/
-    t_image    player_front;     // Imagen del jugador mirando hacia adelante
-    t_image    player_left;      // Imagen del jugador mirando hacia la izquierda
-    t_image    player_right;     // Imagen del jugador mirando hacia la derecha
-    t_image    player_back;      // Imagen del jugador mirando hacia atrás
-}   t_game;
+	t_image		coins;			// Imagen para las monedas
+	t_image		exit_open;		// Imagen para la salida abierta
+	t_image		exit_closed;	// Imagen para la salida cerrada
+	/*	player images	*/
+	t_image		player_front;	// Imagen del jugador mirando hacia adelante
+	t_image		player_left;	// Imagen del jugador mirando hacia la izquierda
+	t_image		player_right;	// Imagen del jugador mirando hacia la derecha
+	t_image		player_back;		// Imagen del jugador mirando hacia atrás
+}	t_game;
 
 // t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado
 /********Definición de t_bool si no está definida********/
@@ -102,4 +114,4 @@ typedef struct s_game
 //     int true;
 // }   t_bool;
 
-#endif
+# endif

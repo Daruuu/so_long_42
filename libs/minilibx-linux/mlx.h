@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/20 16:22:22 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/08/30 19:59:45 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 ** mlx.h for MinilibX in 
 ** 
@@ -72,8 +84,7 @@ char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel,
 **  endian : 0 = sever X is little endian, 1 = big endian
 **  for mlx_new_image2, 2nd arg of mlx_get_data_addr is number_of_planes
 */
-int	mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
-				int x, int y);
+int	mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,int x, int y);
 int	mlx_get_color_value(void *mlx_ptr, int color);
 
 
