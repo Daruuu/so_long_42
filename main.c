@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/31 15:36:13 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 00:29:26 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int	main(int ac, char **av)
 	{
 		validate_file_and_edge_of_map(av[1], &(game->map));
 		init_game_windows_data(game);
-		identify_images(game);
+		draw_map_sprites(game);
+
+		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);
 		mlx_loop(game->mlx_ptr);
 	}

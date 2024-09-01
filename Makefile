@@ -38,6 +38,7 @@ SRC =	main.c	\
 		$(SRC_DIR)/so_long.c \
 		$(SRC_DIR)/print_functions.c \
 		$(SRC_DIR)/flood_fill.c \
+		$(SRC_DIR)/moves_game.c \
 
 OBJ =	$(SRC:%.c=$(OBJ_DIR)/%.o)
 

@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/31 14:51:24 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 00:14:29 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 
 //  GAME OBJECTS
 # define ESC		65307
-# define W			119
-# define S			115
-# define A			97
-# define D			100
+# define KEY_W			119
+# define KEY_S			115
+# define KEY_A			97
+# define KEY_D			100
 
 # define LEFT		65361
 # define UP			65362
@@ -54,6 +54,7 @@
 
 # define CELL_SIZE 32
 # define TITLE_WINDOWS "So_long by Dasalaza"
+# define WIN_GAME "You win the game!!\n"
 
 /********Estructura para posiciones en 2D*****/
 
