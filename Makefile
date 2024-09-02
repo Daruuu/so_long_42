@@ -1,11 +1,10 @@
 NAME = so_long
 CC = cc
-#CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
 
 #INCLUDES = -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
 
-#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -g
 CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -g
 
 #CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
 
@@ -28,14 +27,12 @@ SO_LONG_H = includes/so_long.h
 
 # SRC = $(wildcard $(SRC_DIR)/*.c) main.c
 #		$(SRC_DIR)/*.c
-SRC =	main.c	\
+SRC =	$(SRC_DIR)/so_long.c \
 		$(SRC_DIR)/validations_map.c \
 		$(SRC_DIR)/ft_free_errors.c \
 		$(SRC_DIR)/init_structs.c \
 		$(SRC_DIR)/get_map_and_validate_items.c \
-		$(SRC_DIR)/map.c \
 		$(SRC_DIR)/graphics.c \
-		$(SRC_DIR)/so_long.c \
 		$(SRC_DIR)/print_functions.c \
 		$(SRC_DIR)/flood_fill.c \
 		$(SRC_DIR)/moves_game.c \
@@ -79,12 +76,9 @@ $(MLX_DIR)/libmlx_Linux.a:
 
 # ---------------------------- COMPILE OBJECTS  -------------------------------
 
+#$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(SO_LONG_H)
 $(OBJ_DIR)/%.o: %.c $(SO_LONG_H)
 	@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR)/main.o: main.c $(SO_LONG_H)
-	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

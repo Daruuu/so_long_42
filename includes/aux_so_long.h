@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 00:14:29 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:38:24 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@
 # define ERROR_LOADING_MAP "Error LOADING MAP\n"
 
 //  GAME OBJECTS
-# define ESC		65307
+# define ESC			65307
+# define KEY_Q			113
+
 # define KEY_W			119
 # define KEY_S			115
 # define KEY_A			97
@@ -40,7 +42,7 @@
 # define UP			65362
 # define RIGHT		65363
 # define DOWN		65364
-# define RESTART	114
+// # define RESTART	114
 
 # define WALL_XPM "../assets/sprites/Tiles/blockSimple.xpm"
 # define FLOOR_XPM "../assets/sprites/Tiles/midBlocks_02.xpm"
@@ -55,6 +57,7 @@
 # define CELL_SIZE 32
 # define TITLE_WINDOWS "So_long by Dasalaza"
 # define WIN_GAME "You win the game!!\n"
+# define CLOSE_GAME "Close game with Escape or Q!!\n"
 
 /********Estructura para posiciones en 2D*****/
 

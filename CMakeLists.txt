@@ -12,10 +12,10 @@ add_custom_target(libmlx ALL
 )
 
 # Añadir el ejecutable
-add_executable(so_long_42
-        main.c
+add_executable(so_long_42 srcs/so_long.c
         # HEADERS
         includes/so_long.h
+        includes/aux_so_long.h
         libs/libft/libft.h
         libs/printf/ft_printf.h
         libs/get_next_line/get_next_line.h
@@ -41,6 +41,7 @@ add_executable(so_long_42
         libs/get_next_line/get_next_line.c
         libs/get_next_line/get_next_line_utils.c
         # SO_LONG
+#        srcs/so_long.c
         srcs/ft_free_errors.c
         srcs/get_map_and_validate_items.c
         srcs/init_structs.c
@@ -48,6 +49,8 @@ add_executable(so_long_42
         srcs/print_functions.c
         srcs/flood_fill.c
         srcs/graphics.c
+        srcs/moves_game.c
+        # MINILIB_LINUX
         libs/minilibx-linux/mlx_int_wait_first_expose.c
         libs/minilibx-linux/mlx_get_data_addr.c
         libs/minilibx-linux/mlx_screen_size.c
@@ -81,8 +84,6 @@ add_executable(so_long_42
         libs/minilibx-linux/mlx_xpm.c
         libs/minilibx-linux/mlx_int_param_event.c
         libs/minilibx-linux/mlx_expose_hook.c
-        includes/aux_so_long.h
-        srcs/moves_game.c
 )
 
 # Asegurarse de que el target so_long_42 dependa de libmlx.a

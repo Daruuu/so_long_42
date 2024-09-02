@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:16:43 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 14:37:39 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:48:55 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,12 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		validate_file_and_edge_of_map(av[1], &(game->map));
+		/*
+		if (game->map->columns >= 1080 || game->map->rows >= 1920)
+			ft_printf("Error: Map is too large\n");
+		*/
 		init_game_windows_data(game);
 		draw_map_sprites(game);
-
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);
 		mlx_loop(game->mlx_ptr);

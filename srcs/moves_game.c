@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:34:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 13:20:20 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:21:19 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,10 @@ int	handle_event_keyboard(int keysym, t_game *game)
 		move_player(game, game->map->player_pos.x + 1, game->map->player_pos.y);
 	else if (keysym == KEY_D || keysym == RIGHT)
 		move_player(game, game->map->player_pos.x, game->map->player_pos.y + 1);
+	else if (keysym == KEY_Q || keysym == ESC)
+	{
+		ft_printf(CLOSE_GAME);
+		close_game(game);
+	}
 	return (0);
 }
