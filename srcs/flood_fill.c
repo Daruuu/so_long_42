@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 01:58:03 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/17 20:41:48 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/02 13:00:16 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

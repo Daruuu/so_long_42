@@ -6,9 +6,8 @@
 /*   By:  dasalaza < dasalaza@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 13:56:11 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/03 14:41:31 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/02 13:16:43 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-

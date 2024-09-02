@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:23:11 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/17 23:30:59 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/02 13:18:41 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	char	*ptr_map;
 
 	*map = init_map();
-	if (*map== NULL)
+	if (*map == NULL)
 	{
 		free_map_copy(*map, NULL);
 		return ;

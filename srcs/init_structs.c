@@ -6,13 +6,13 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/01 18:10:38 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:01:27 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static t_position	init_positions(void)
+static	t_position	init_positions(void)
 {
 	t_position	new_positions;
 
@@ -48,10 +48,8 @@ t_game	*init_game_map(void)
 		return (NULL);
 	new_game->mlx_ptr = NULL;
 	new_game->win_ptr = NULL;
-
 	new_game->count_moves = 0;
 	new_game->player_sprite = 0;
-
 	new_game->map = NULL;
 	return (new_game);
 }

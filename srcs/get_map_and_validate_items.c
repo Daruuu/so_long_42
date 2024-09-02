@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:52:09 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/17 23:00:38 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/02 13:02:11 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 {
 	int	i;
 	int	j;
+
 	map->matrix_map = ft_split(map_ptr, '\n');
 	free(map_ptr);
 	if (!map->matrix_map)

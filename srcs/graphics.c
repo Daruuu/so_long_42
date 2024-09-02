@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/01 18:01:34 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:05:58 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,9 @@ int	close_window(t_game *game)
 void	load_textures_game(t_game *game)
 {
 	check_image_texture(game, &game->player_front.xpm_ptr, PLAYER_XPM);
-
 	check_image_texture(game, &game->floor.xpm_ptr, FLOOR_XPM);
 	check_image_texture(game, &game->coins.xpm_ptr, COLLECT_XPM);
 	check_image_texture(game, &game->wall.xpm_ptr, WALL_XPM);
-
 	check_image_texture(game, &game->exit_open.xpm_ptr, EXIT_OPEN_XPM);
 	check_image_texture(game, &game->exit_closed.xpm_ptr, EXIT_CLOSED_XPM);
 }
