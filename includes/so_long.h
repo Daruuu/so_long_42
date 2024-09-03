@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:56:26 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 16:31:56 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 19:17:49 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ void		free_map_copy(t_map *map_copy, char *message);
 void		free_struct_map_and_exit(char *message, t_map *map);
 void		free_struct_game(t_game *game, char* message);
 
+// ********** FT_FREE_PTR.C ***********************
+
 void		free_game_ptr(t_game *game, char* message);
+
+void        free_game_complete(t_game *game);
+void        free_images_xpm(t_game *game);
 
 // ********** PRINT_FUNCTIONS.C ***********************
 

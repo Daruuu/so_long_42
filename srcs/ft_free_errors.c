@@ -3,22 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_errors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 16:37:05 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_free_errors.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 01:31:20 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/17 19:48:05 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/03 19:14:42 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +68,7 @@ void	free_struct_game(t_game *game, char* message)
 
 void	free_game_ptr(t_game *game, char* message)
 {
-	if ( message)
+	if (message)
 		ft_printf(message);
 	if (game->win_ptr)
 		mlx_clear_window(game->mlx_ptr, game->win_ptr);

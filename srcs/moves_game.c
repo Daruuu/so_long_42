@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:34:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 17:21:19 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:07:59y  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 static void	close_game(t_game *game)
 {
 	if (game->mlx_ptr && game->win_ptr)
+	{
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	}
 	if (game->mlx_ptr)
 	{
 		mlx_destroy_display(game->mlx_ptr);
@@ -32,8 +34,8 @@ static void	close_game(t_game *game)
 
 void	game_victory(t_game *game)
 {
-	ft_printf(WIN_GAME);
-	close_game(game);
+	free_game_complete(game);
+	ft_printf(WIN_GAME " with %d moves\n", game->count_moves);
 }
 
 /*
