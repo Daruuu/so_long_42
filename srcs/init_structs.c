@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/03 16:37:35 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
@@ -71,7 +83,7 @@ void	init_game_windows_data(t_game *game)
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
 	{
-		ft_printf("Error init mlx_ptr\n");
+		free_game_ptr(game, ERROR_MLX_PTR);
 		exit(EXIT_FAILURE);
 	}
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
@@ -80,7 +92,7 @@ void	init_game_windows_data(t_game *game)
 	if (!game->win_ptr)
 	{
 		mlx_destroy_display(game->mlx_ptr);
-		ft_printf("Error init win_ptr\n");
+		ft_printf(ERROR_WIN_PTR);
 		exit(EXIT_FAILURE);
 	}
 	init_images_game_to_null(game);

@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/03 16:43:12 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:23:11 by dasalaza          #+#    #+#             */
@@ -105,7 +117,7 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	*map = init_map();
 	if (*map == NULL)
 	{
-		free_map_copy(*map, NULL);
+		// free_map_copy(*map, NULL);
 		return ;
 	}
 	if ((validate_filename_map(av1)) == 1)

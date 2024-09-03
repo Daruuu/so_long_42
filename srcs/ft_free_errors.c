@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 12:52:41 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:37:05 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,28 @@ void	free_struct_map_and_exit(char *message, t_map *map)
 	exit(2);
 }
 
-void	free_struct_game(t_game *game)
+void	free_struct_game(t_game *game, char* message)
 {
-	free_map_copy(game->map, NULL);
-	if (game->mlx_ptr != NULL || game->win_ptr)
+	free_map_copy(game->map, message);
+	if (game->mlx_ptr != NULL && game->win_ptr != NULL)
 	{
 		free(game->mlx_ptr);
 		free(game->win_ptr);
 	}
 	free(game);
+}
+
+void	free_game_ptr(t_game *game, char* message)
+{
+	if ( message)
+		ft_printf(message);
+	if (game->win_ptr)
+		mlx_clear_window(game->mlx_ptr, game->win_ptr);
+	if (game->mlx_ptr)
+	{
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		free(game->mlx_ptr);
+	}
+	if (game->map)
+		free_map_copy(game->map, message);
 }

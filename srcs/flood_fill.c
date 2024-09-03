@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 13:14:51 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:15:13 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	can_open_fd(char *path_map)
 
 	fd = open(path_map, O_RDONLY);
 	if (fd < 0)
-		exit_and_message("Error fd < 0");
+		exit_and_message(ERROR_FD);
 	return (fd);
 }
 
@@ -69,21 +69,17 @@ void	flood_fill(t_map *map, int x, int y)
 	map_copy = fill_copy_matrix(map);
 	if (map_copy == NULL)
 	{
-		free(map_copy);
 		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
 		return ;
 	}
 	map_copy->rows = map->rows;
 	map_copy->columns = map->columns;
 	fill_player_and_coins(map_copy, x, y);
-	if (check_map_items_coins_and_exit(map_copy) == 1)
+	if (check_map_items_coins_and_exit(map_copy) != 0)
 	{
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
 		free_struct_map_and_exit(NULL, map);
 	}
 	else
-	{
-		free_map_copy(map_copy, NULL);
-		ft_printf("ALL VALIDATIONS IN MAP OKAY\n");
-	}
+		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
 }

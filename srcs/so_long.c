@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 13:16:43 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 10:21:55 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/03 16:38:29 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	game = init_game_map();
 	if (game == NULL)
 	{
-		free_struct_game(game);
+		free_struct_game(game, NULL);
 		exit(2);
 	}
 	if (ac == 2)

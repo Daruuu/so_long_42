@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   aux_so_long.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/03 16:17:20 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_so_long.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
@@ -29,6 +41,9 @@
 # define ERROR_ROWS_MAP "Error ROWS OF MAP\n"
 # define ERROR_LOADING_MAP "Error LOADING MAP\n"
 # define ERROR_FD "Error FD < 0!\n"
+# define ERROR_MLX_PTR "Error init mlx_ptr\n"
+# define ERROR_WIN_PTR "Error init win_ptr\n"
+# define ALL_VALIDATIONS_OK "All VALIDATIONS IN MAP ARE CORRECT!\n"
 
 //  GAME OBJECTS
 # define ESC			65307
