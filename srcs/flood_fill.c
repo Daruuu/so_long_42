@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 13:00:16 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:14:51 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	can_open_fd(char *path_map)
 
 	fd = open(path_map, O_RDONLY);
 	if (fd < 0)
-		exit_and_message("fd < 0");
+		exit_and_message("Error fd < 0");
 	return (fd);
 }
 

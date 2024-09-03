@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 13:01:27 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:11:36 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static	t_position	init_positions(void)
+static t_position	init_positions(void)
 {
 	t_position	new_positions;
 
@@ -49,9 +49,21 @@ t_game	*init_game_map(void)
 	new_game->mlx_ptr = NULL;
 	new_game->win_ptr = NULL;
 	new_game->count_moves = 0;
-	new_game->player_sprite = 0;
 	new_game->map = NULL;
 	return (new_game);
+}
+
+static void	init_images_game_to_null(t_game *game)
+{
+	game->wall.xpm_ptr = NULL;
+	game->floor.xpm_ptr = NULL;
+	game->coins.xpm_ptr = NULL;
+	game->exit_open.xpm_ptr = NULL;
+	game->exit_closed.xpm_ptr = NULL;
+	game->player_front.xpm_ptr = NULL;
+	game->player_left.xpm_ptr = NULL;
+	game->player_back.xpm_ptr = NULL;
+	game->player_right.xpm_ptr = NULL;
 }
 
 void	init_game_windows_data(t_game *game)
@@ -71,18 +83,6 @@ void	init_game_windows_data(t_game *game)
 		ft_printf("Error init win_ptr\n");
 		exit(EXIT_FAILURE);
 	}
+	init_images_game_to_null(game);
 	load_textures_game(game);
-}
-
-void	check_image_texture(t_game *game, void **image, char *path)
-{
-	int	width;
-	int	height;
-
-	*image = mlx_xpm_file_to_image(game->mlx_ptr, path, &width, &height);
-	if (*image == NULL)
-	{
-		free(image);
-		ft_printf("Error en init images!\n");
-	}
 }

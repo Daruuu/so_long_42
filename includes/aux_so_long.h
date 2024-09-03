@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_so_long.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:33:42 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 17:38:24 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:15:43 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define ERROR_COLUMNS_MAP "Error COLUMNS OF MAP\n"
 # define ERROR_ROWS_MAP "Error ROWS OF MAP\n"
 # define ERROR_LOADING_MAP "Error LOADING MAP\n"
+# define ERROR_FD "Error FD < 0!\n"
 
 //  GAME OBJECTS
 # define ESC			65307
@@ -44,15 +45,17 @@
 # define DOWN		65364
 // # define RESTART	114
 
-# define WALL_XPM "../assets/sprites/Tiles/blockSimple.xpm"
-# define FLOOR_XPM "../assets/sprites/Tiles/midBlocks_02.xpm"
+# define WALL_XPM "assets/sprites/Tiles/blockSimple.xpm"
+# define FLOOR_XPM "assets/sprites/Tiles/midBlocks_02.xpm"
+# define COLLECT_XPM "assets/sprites/Collectibles/star_01.xpm"
 
-# define COLLECT_XPM "../assets/sprites/Collectibles/star_01.xpm"
+# define PLAYER_FRONT_XPM "assets/sprites/Player/idle_00.xpm"
+# define PLAYER_LEFT_XPM "assets/sprites/Player/walkLeft_00.xpm"
+# define PLAYER_DOWN_XPM "assets/sprites/Player/walkDown_00.xpm"
+# define PLAYER_RIGHT_XPM "assets/sprites/Player/walkRight_00.xpm"
 
-# define PLAYER_XPM "../assets/sprites/Player/idle_00.xpm"
-
-# define EXIT_OPEN_XPM "../assets/sprites/Exit/exit_open_01.xpm"
-# define EXIT_CLOSED_XPM "../assets/sprites/Exit/exit_close_01.xpm"
+# define EXIT_OPEN_XPM "assets/sprites/Exit/exit_open_01.xpm"
+# define EXIT_CLOSED_XPM "assets/sprites/Exit/exit_close_01.xpm"
 
 # define CELL_SIZE 32
 # define TITLE_WINDOWS "So_long by Dasalaza"
@@ -107,7 +110,7 @@ typedef struct s_game
 	t_image		player_front;	// Imagen del jugador mirando hacia adelante
 	t_image		player_left;	// Imagen del jugador mirando hacia la izquierda
 	t_image		player_right;	// Imagen del jugador mirando hacia la derecha
-	t_image		player_back;		// Imagen del jugador mirando hacia atrás
+	t_image		player_back;	// Imagen del jugador mirando hacia atrás
 }	t_game;
 
 // t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado

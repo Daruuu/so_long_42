@@ -1,12 +1,21 @@
+ROOT_DIR := $(shell pwd)
+
+ASSETS_DIR := $(ROOT_DIR)/assets/sprites
+
+TILES_DIR := $(ASSETS_DIR)/Tiles
+COLLECTIBLES_DIR := $(ASSETS_DIR)/Collectibles
+PLAYER_DIR := $(ASSETS_DIR)/Player
+EXIT_DIR := $(ASSETS_DIR)/Exit
+
 NAME = so_long
 CC = cc
 
-#INCLUDES = -I includes -I$(MLX_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
-
-CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
-#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -g
-
-#CFLAGS = -Wall -Wextra -Werror -I includes -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I includes \
+			-I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+			-DTILES_DIR=\"$(TILES_DIR)\" \
+			-DCOLLECTIBLES_DIR=\"$(COLLECTIBLES_DIR)\" \
+			-DPLAYER_DIR=\"$(PLAYER_DIR)\" \
+			-DEXIT_DIR=\"$(EXIT_DIR)"
 
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -18,6 +27,7 @@ PRINTF_DIR = libs/printf
 GNL_DIR = libs/get_next_line
 MLX_DIR = libs/minilibx-linux
 NO_PRINT_DIRS = --no-print-directory
+
 # CODAM MLX
 #MLX_DIR = libs/MLX42
 
