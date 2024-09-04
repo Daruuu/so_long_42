@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 00:56:26 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 19:17:49 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/04 23:49:25 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,3 @@ int			handle_event_keyboard(int keysym, t_game *game);
 void		update_floor_or_coins(t_game *game, int new_x, int new_y);
 
 # endif
-

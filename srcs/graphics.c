@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 18:38:07 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/04 22:49:35 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,11 @@ void	draw_map_sprites(t_game *game)
 int	close_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	// free game
 	free_map_copy(game->map, NULL);
+	free_images_xpm(game);
 	free(game);
 	exit(0);
+	return (0);
 }
 
 void	load_textures_game(t_game *game)

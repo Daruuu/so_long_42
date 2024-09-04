@@ -10,9 +10,8 @@ EXIT_DIR := $(ASSETS_DIR)/Exit
 NAME = so_long
 CC = cc
 
-# -I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address 
 CFLAGS = -Wall -Wextra -Werror -I includes \
-			-I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR)
+			-I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) #-fsanitize=address
 			-DTILES_DIR=\"$(TILES_DIR)\" \
 			-DCOLLECTIBLES_DIR=\"$(COLLECTIBLES_DIR)\" \
 			-DPLAYER_DIR=\"$(PLAYER_DIR)\" \
