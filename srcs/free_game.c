@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 22:41:23 by  dasalaza        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
 #include "../includes/so_long.h"
 
 void    free_game_complete(t_game *game)
@@ -20,11 +7,9 @@ void    free_game_complete(t_game *game)
 	if (game->mlx_ptr && game->win_ptr)
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	if (game->mlx_ptr)
-	{
 		mlx_destroy_display(game->mlx_ptr);
-	}
 	free(game);
-	exit(0);
+    exit(0);
 }
 
 void    free_images_xpm(t_game *game)

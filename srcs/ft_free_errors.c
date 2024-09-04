@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 22:33:58 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/05 00:13:11 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	free_struct_map_and_exit(char *message, t_map *map)
 	free_map_copy(map, message);
 	exit(2);
 }
-void	free_game_ptr(t_game *game, char* message)
+
+void	free_game_ptr(t_game *game, char *message)
 {
 	if (message)
 		ft_printf(message);
@@ -69,7 +70,7 @@ void	free_game_ptr(t_game *game, char* message)
 		free_map_copy(game->map, message);
 }
 
-void	free_struct_game(t_game *game, char* message)
+void	free_struct_game(t_game *game, char *message)
 {
 	free_map_copy(game->map, message);
 	free_images_xpm(game);

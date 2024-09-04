@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 20:02:15 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/04 23:59:01 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ void	flood_fill(t_map *map, int x, int y)
 
 	map_copy = fill_copy_matrix(map);
 	if (map_copy == NULL)
-	{
 		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
-		// return ;
-	}
 	map_copy->rows = map->rows;
 	map_copy->columns = map->columns;
 	fill_player_and_coins(map_copy, x, y);

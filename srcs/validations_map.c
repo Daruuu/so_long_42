@@ -6,19 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 19:53:23 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   validations_map.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 00:23:11 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/02 13:18:41 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 00:12:07 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +59,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 	{
 		free(line);
 		line = get_next_line(fd);
-		if (i == map->rows && line &&check_all_ones(line, map) == 1)
+		if (i == map->rows && line && check_all_ones(line, map) == 1)
 		{
 			free(line);
 			close(fd);

@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 23:49:56 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/05 00:15:21 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ void	init_game_windows_data(t_game *game)
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
 	{
-		// free_game_complete(game);
-		// free_game_ptr(game, ERROR_MLX_PTR);
 		free(game->mlx_ptr);
 		exit(EXIT_FAILURE);
 	}
@@ -85,7 +83,6 @@ void	init_game_windows_data(t_game *game)
 	{
 		mlx_destroy_display(game->mlx_ptr);
 		free(game->mlx_ptr);
-		// free_game_complete(game);
 		exit(EXIT_FAILURE);
 	}
 	load_textures_game(game);
