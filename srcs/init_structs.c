@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 16:37:35 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:12:13 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,6 @@ t_map	*init_map(void)
 	return (new_map);
 }
 
-t_game	*init_game_map(void)
-{
-	t_game	*new_game;
-
-	new_game = (t_game *) malloc(sizeof(t_game));
-	if (new_game == NULL)
-		return (NULL);
-	new_game->mlx_ptr = NULL;
-	new_game->win_ptr = NULL;
-	new_game->count_moves = 0;
-	new_game->map = NULL;
-	return (new_game);
-}
-
 static void	init_images_game_to_null(t_game *game)
 {
 	game->wall.xpm_ptr = NULL;
@@ -78,12 +64,29 @@ static void	init_images_game_to_null(t_game *game)
 	game->player_right.xpm_ptr = NULL;
 }
 
+t_game	*init_game(void)
+{
+	t_game	*new_game;
+
+	new_game = (t_game *) malloc(sizeof(t_game));
+	if (new_game == NULL)
+		return (NULL);
+	new_game->mlx_ptr = NULL;
+	new_game->win_ptr = NULL;
+	new_game->count_moves = 0;
+	new_game->player_sprite = 0;
+	new_game->map = NULL;
+	init_images_game_to_null(new_game);
+	return (new_game);
+}
+
 void	init_game_windows_data(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
 	{
-		free_game_ptr(game, ERROR_MLX_PTR);
+		free_game_complete(game);
+		// free_game_ptr(game, ERROR_MLX_PTR);
 		exit(EXIT_FAILURE);
 	}
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
@@ -92,9 +95,10 @@ void	init_game_windows_data(t_game *game)
 	if (!game->win_ptr)
 	{
 		mlx_destroy_display(game->mlx_ptr);
-		ft_printf(ERROR_WIN_PTR);
+		free(game->mlx_ptr);
+		free_game_complete(game);
 		exit(EXIT_FAILURE);
 	}
-	init_images_game_to_null(game);
+	// init_images_game_to_null(game);
 	load_textures_game(game);
 }

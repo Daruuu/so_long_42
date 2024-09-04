@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_game.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/04 16:06:00 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../includes/so_long.h"
 
@@ -14,7 +26,6 @@ void    free_game_complete(t_game *game)
         free_images_xpm(game);
 	}
 	free(game->map->matrix_map);
-
 	free(game);
 	exit(0);
 }
@@ -39,4 +50,19 @@ void    free_images_xpm(t_game *game)
         mlx_destroy_image(game->mlx_ptr, game->player_right.xpm_ptr);
     if (game->player_back.xpm_ptr)
         mlx_destroy_image(game->mlx_ptr, game->player_back.xpm_ptr);
+}
+
+void	free_game_ptr(t_game *game, char* message)
+{
+	if (message)
+		ft_printf(message);
+	if (game->win_ptr)
+		mlx_clear_window(game->mlx_ptr, game->win_ptr);
+	if (game->mlx_ptr)
+	{
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		free(game->mlx_ptr);
+	}
+	if (game->map)
+		free_map_copy(game->map, message);
 }

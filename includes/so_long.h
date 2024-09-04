@@ -65,7 +65,7 @@ void		flood_fill(t_map *map, int x, int y);
 // ********** INIT_STRUCTS.C ***********************
 
 t_map		*init_map(void);
-t_game		*init_game_map(void);
+t_game		*init_game(void);
 void		init_game_windows_data(t_game *game);
 void		check_image_texture(t_game *game, void **image, char *path);
 

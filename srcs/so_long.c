@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 18:05:04 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/04 15:40:39 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	main(int ac, char **av)
 {
 	t_game		*game;
 
-	game = init_game_map();
+	game = init_game();
 	if (game == NULL)
 	{
-		free_struct_game(game, NULL);
+		// free_struct_game(game, NULL);
 		exit(2);
 	}
 	if (ac == 2)
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);
 		mlx_loop(game->mlx_ptr);
-		free_game_ptr(game, NULL);
 	}
+	free_struct_game(game, NULL);
 	return (0);
 }

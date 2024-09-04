@@ -84,6 +84,7 @@ add_executable(so_long_42 srcs/so_long.c
         libs/minilibx-linux/mlx_xpm.c
         libs/minilibx-linux/mlx_int_param_event.c
         libs/minilibx-linux/mlx_expose_hook.c
+        srcs/free_game.c
 )
 
 # Asegurarse de que el target so_long_42 dependa de libmlx.a
