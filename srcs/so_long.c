@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 15:40:39 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/04 18:51:52 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int ac, char **av)
 	game = init_game();
 	if (game == NULL)
 	{
+		free(game);
 		// free_struct_game(game, NULL);
 		exit(2);
 	}
@@ -36,5 +37,6 @@ int	main(int ac, char **av)
 		mlx_loop(game->mlx_ptr);
 	}
 	free_struct_game(game, NULL);
+	// free(game);
 	return (0);
 }

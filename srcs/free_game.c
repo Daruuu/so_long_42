@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 16:06:00 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/04 18:27:31 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 
 void    free_game_complete(t_game *game)
 {
+	free_images_xpm(game);
     free_map_copy(game->map, NULL);
 	if (game->mlx_ptr && game->win_ptr)
-	{
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	}
 	if (game->mlx_ptr)
 	{
 		mlx_destroy_display(game->mlx_ptr);
-        free_images_xpm(game);
 	}
-	free(game->map->matrix_map);
 	free(game);
 	exit(0);
 }
@@ -52,6 +49,7 @@ void    free_images_xpm(t_game *game)
         mlx_destroy_image(game->mlx_ptr, game->player_back.xpm_ptr);
 }
 
+/*
 void	free_game_ptr(t_game *game, char* message)
 {
 	if (message)
@@ -66,3 +64,4 @@ void	free_game_ptr(t_game *game, char* message)
 	if (game->map)
 		free_map_copy(game->map, message);
 }
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 13:09:56 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/04 18:38:07 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	draw_map_sprites(t_game *game)
 int	close_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	mlx_destroy_image(game->mlx_ptr, game->player_front.xpm_ptr);
+	// free game
+	free_map_copy(game->map, NULL);
+	free(game);
 	exit(0);
 }
 
@@ -61,7 +63,6 @@ void	load_textures_game(t_game *game)
 	check_image_texture(game, &game->player_left.xpm_ptr, PLAYER_LEFT_XPM);
 	check_image_texture(game, &game->player_back.xpm_ptr, PLAYER_DOWN_XPM);
 	check_image_texture(game, &game->player_right.xpm_ptr, PLAYER_RIGHT_XPM);
-
 	check_image_texture(game, &game->floor.xpm_ptr, FLOOR_XPM);
 	check_image_texture(game, &game->coins.xpm_ptr, COLLECT_XPM);
 	check_image_texture(game, &game->wall.xpm_ptr, WALL_XPM);
@@ -78,6 +79,6 @@ void	check_image_texture(t_game *game, void **image, char *path)
 	if (*image == NULL)
 	{
 		free(image);
-		ft_printf("Error en init images!\n");
+		// ft_printf("Error en init images!\n");
 	}
 }

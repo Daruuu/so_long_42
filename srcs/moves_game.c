@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/01 18:34:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/03 18:07:59y  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/04 18:48:37 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * function to finish game correct if all coins was taken
  */
 
-static void	close_game(t_game *game)
+void	close_game(t_game *game)
 {
 	if (game->mlx_ptr && game->win_ptr)
 	{
@@ -93,7 +93,7 @@ int	handle_event_keyboard(int keysym, t_game *game)
 	else if (keysym == KEY_Q || keysym == ESC)
 	{
 		ft_printf(CLOSE_GAME);
-		close_game(game);
+		close_window(game);
 	}
 	return (0);
 }
