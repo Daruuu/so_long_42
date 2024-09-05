@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 12:36:21 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:53:28 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
-	if (!line || check_all_ones(line, map) == 1)
+	if (line == NULL || check_all_ones(line, map) == 1)
 	{
 		free_and_close(line, fd);
 		return (1);
@@ -77,6 +77,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
+	free_and_exit_file_columns_map(line);
 	map->columns = (int) ft_strlen(line) - 1;
 	while (line)
 	{

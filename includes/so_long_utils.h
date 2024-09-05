@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 11:23:14 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:50:12 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define FLOOR '0'
 
 # define ERROR_INVALID_MAP "Error INVALID MAP\n"
+# define ERROR_EMPTY_FILE "Error EMPTY FILE\n"
 # define ERROR_ITEMS_IN_MAP "Error INVALID ITEMS IN MAP\n"
 # define ERROR_IN_MATRIX "Error DATA IN MATRIX\n"
 # define ERROR_MEMORY_ALLOCATION "Error DATA IN MATRIX\n"

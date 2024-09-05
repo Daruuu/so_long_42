@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 11:30:16 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:52:22 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void		print_map(t_map *map);
 void		print_map_data(t_map *map);
 void		print_game_data(t_game *game);
 void		free_and_close(char *line, int fd);
+void        free_and_exit_file_columns_map(char *line);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
 
