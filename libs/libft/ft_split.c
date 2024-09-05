@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:27:19 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/08/17 18:18:36 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/05 19:53:39 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ static int	ft_count_words(char const *s, char c)
 static char	**free_table(char **table, int i)
 {
 	while (i >= 0)
-		free(table[i--]);
+	{
+		free(table[i]);
+		i--;
+	}
 	free(table);
 	return (NULL);
 }

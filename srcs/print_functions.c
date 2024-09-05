@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 17:51:56 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/05 19:16:41 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,7 @@ void	free_and_close(char *line, int fd)
 
 void	free_and_exit_file_columns_map(char *line)
 {
-	if (!line)
-	{
-		free(line);
-		ft_printf(ERROR_EMPTY_FILE);
-		exit(EXIT_FAILURE);
-	}
+	free(line);
+	ft_printf(ERROR_EMPTY_FILE);
+	exit(1);
 }
