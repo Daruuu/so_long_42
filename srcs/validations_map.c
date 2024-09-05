@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 11:27:54 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 12:36:21 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		if (line[len_line - 1] == '\n')
 			len_line = len_line - 1;
 		if (len_line < 3 || len_line != map->columns || \
-			(line[0] != WALL || line[len_line - 1] != WALL))
+			(line[0] != WALL || line[len_line - 1] != WALL) || (len_line == 0))
 		{
 			free(line);
-			return (1);
+			return (2);
 		}
 		map->rows ++;
 		free(line);
@@ -109,7 +109,7 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	}
 	if ((validate_filename_map(av1)) == 1)
 		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map);
-	if (check_columns_of_map(av1, *map, 0) == 1)
+	if (check_columns_of_map(av1, *map, 0) == 2)
 		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map);
 	if (check_first_and_last_line_map(av1, *map) == 1)
 		free_struct_map_and_exit(ERROR_ROWS_MAP, *map);
