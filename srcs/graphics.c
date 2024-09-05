@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/05 09:39:41 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   graphics.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
@@ -17,14 +29,11 @@ static void	put_image_to_window(t_game *game, void *image, int x, int y)
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, image, x, y);
 }
 
-void	draw_map_sprites(t_game *game)
+void	draw_map_sprites(t_game *game, int i, int j)
 {
-	int	i;
-	int	j;
 	int	x;
 	int	y;
 
-	i = 0;
 	while (i < game->map->rows)
 	{
 		j = 0;

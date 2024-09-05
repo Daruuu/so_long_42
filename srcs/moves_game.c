@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 00:35:06 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/05 11:01:45 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	game_victory(t_game *game)
 
 /*
  *	function to validate new move of the PLAYER
- *
 */
 
 void	move_player(t_game *game, int new_x, int new_y)
@@ -76,7 +75,7 @@ void	update_floor_or_coins(t_game *game, int new_x, int new_y)
 		game->map->matrix_map[new_x][new_y] = PLAYER;
 		game->count_moves ++;
 		ft_printf("count moves: %d \n", game->count_moves);
-		draw_map_sprites(game);
+		draw_map_sprites(game, 0, 0);
 	}
 }
 

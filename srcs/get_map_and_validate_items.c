@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 22:23:12 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/05 11:29:48 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

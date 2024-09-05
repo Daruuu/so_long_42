@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux_so_long.h                                      :+:      :+:    :+:   */
+/*   so_long_utils.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 23:53:33 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/05 11:23:14 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AUX_SO_LONG_h
-# define AUX_SO_LONG_h 
+#ifndef SO_LONG_UTILS_H
+# define SO_LONG_UTILS_H
 
 //  GAME OBJECTS
 # define PLAYER 'P'
@@ -46,7 +46,6 @@
 # define UP			65362
 # define RIGHT		65363
 # define DOWN		65364
-// # define RESTART	114
 
 # define WALL_XPM "assets/sprites/Tiles/blockSimple.xpm"
 # define FLOOR_XPM "assets/sprites/Tiles/midBlocks_02.xpm"
@@ -116,12 +115,4 @@ typedef struct s_game
 	t_image		player_back;	// Imagen del jugador mirando hacia atrás
 }	t_game;
 
-// t_bool      map_alloc;// Bandera para verificar si el mapa ha sido alocado
-/********Definición de t_bool si no está definida********/
-// typedef struct  s_bool_true_false
-// {
-//     int false;
-//     int true;
-// }   t_bool;
-
-# endif
+#endif

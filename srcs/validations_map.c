@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 00:12:07 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:27:54 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 	line = get_next_line(fd);
 	if (!line || check_all_ones(line, map) == 1)
 	{
-		free(line);
-		close(fd);
+		free_and_close(line, fd);
 		return (1);
 	}
 	i = 2;
@@ -61,28 +60,24 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 		line = get_next_line(fd);
 		if (i == map->rows && line && check_all_ones(line, map) == 1)
 		{
-			free(line);
-			close(fd);
+			free_and_close(line, fd);
 			return (1);
 		}
 		i++;
 	}
-	free(line);
-	close(fd);
+	free_and_close(line, fd);
 	return (0);
 }
 
-static int	check_columns_of_map(char *av1, t_map *map)
+static int	check_columns_of_map(char *av1, t_map *map, int i)
 {
 	int		fd;
 	char	*line;
 	int		len_line;
-	int		i;
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
 	map->columns = (int) ft_strlen(line) - 1;
-	i = 0;
 	while (line)
 	{
 		len_line = (int) ft_strlen(line);
@@ -114,7 +109,7 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	}
 	if ((validate_filename_map(av1)) == 1)
 		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map);
-	if (check_columns_of_map(av1, *map) == 1)
+	if (check_columns_of_map(av1, *map, 0) == 1)
 		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map);
 	if (check_first_and_last_line_map(av1, *map) == 1)
 		free_struct_map_and_exit(ERROR_ROWS_MAP, *map);

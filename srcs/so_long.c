@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/04 18:51:52 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 09:46:40 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 	if (game == NULL)
 	{
 		free(game);
-		// free_struct_game(game, NULL);
 		exit(2);
 	}
 	if (ac == 2)
@@ -31,12 +30,11 @@ int	main(int ac, char **av)
 			ft_printf("Error: Map is too large\n");
 		*/
 		init_game_windows_data(game);
-		draw_map_sprites(game);
+		draw_map_sprites(game, 0, 0);
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);
 		mlx_loop(game->mlx_ptr);
 	}
 	free_struct_game(game, NULL);
-	// free(game);
 	return (0);
 }

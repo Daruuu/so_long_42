@@ -15,7 +15,7 @@ add_custom_target(libmlx ALL
 add_executable(so_long_42 srcs/so_long.c
         # HEADERS
         includes/so_long.h
-        includes/aux_so_long.h
+        includes/so_long_utils.h
         libs/libft/libft.h
         libs/printf/ft_printf.h
         libs/get_next_line/get_next_line.h

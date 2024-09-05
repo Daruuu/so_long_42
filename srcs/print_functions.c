@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/01 16:47:13 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:02:23 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,10 @@ void	print_game_data(t_game *game)
 	ft_printf("count_moves: %d\n", game->count_moves);
 	ft_printf("columns: %d\n", game->player_sprite);
 	ft_printf("coins: %d\n", game->coins);
+}
+
+void	free_and_close(char *line, int fd)
+{
+	free(line);
+	close(fd);
 }
