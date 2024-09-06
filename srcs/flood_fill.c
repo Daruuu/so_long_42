@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 11:38:32 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/06 14:29:22 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	can_open_fd(char *path_map)
 static void	fill_player_and_coins(t_map *map, int x, int y)
 {
 	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \
-		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F')
+		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F') 
 		return ;
+	// if (map->matrix_map[x][y] == 'E')
+	// 	return ;
 	map->matrix_map[x][y] = 'F';
 	fill_player_and_coins(map, x + 1, y);
 	fill_player_and_coins(map, x - 1, y);

@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 11:51:49 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/06 14:16:29 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,9 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map);
 	}
 	if (check_first_and_last_line_map(av1, *map) == 1)
+	{
 		free_struct_map_and_exit(ERROR_ROWS_MAP, *map);
+	}
 	ptr_map = get_map_from_file(av1);
 	if (ptr_map == NULL)
 		free_struct_map_and_exit(NULL, *map);

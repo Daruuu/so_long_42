@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 20:19:47 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/06 13:09:53 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,16 +125,24 @@ void	check_minim_items_in_map(t_map *map)
 		while (j < map->columns)
 		{
 			if (map->matrix_map[i][j] == PLAYER)
+			{
 				map->players ++;
+				if (map->players > 1)
+					free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
+			}
 			else if (map->matrix_map[i][j] == COLLECTIONABLE)
 				map->coins++;
 			else if (map->matrix_map[i][j] == EXIT_GAME)
+			{
 				map->exits++;
+				if (map->exits > 1)
+					free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
+			}
 			j++;
 		}
 		i++;
 	}
 	get_positions_player_and_exit(map);
-	if (map->players > 1 || map->exits > 1 || map->coins == 0)
+	if (map->players != 1 || map->exits != 1 || map->coins == 0)
 		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
 }
