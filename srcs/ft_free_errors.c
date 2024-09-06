@@ -6,19 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 20:43:49 by  dasalaza        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_free_errors.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 00:13:11 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:37:34 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +33,16 @@ void	free_ptr(char *message, char *ptr)
 void	free_map_copy(t_map *map_copy, char *message)
 {
 	int	i;
-	// printf("Entro aqui\n");
+
 	if (message != NULL)
 		ft_printf(message);
-	i = 0;
 	if (map_copy != NULL)
 	{
 		if (map_copy->matrix_map != NULL)
 		{
-			// printf("map copy no e snull\n");
 			i = 0;
-			while (map_copy->matrix_map[i] != NULL)
+			while (i < map_copy->rows && map_copy->matrix_map[i] != NULL)
 			{
-				// printf("free col %d\n", i);
 				free(map_copy->matrix_map[i]);
 				i++;
 			}

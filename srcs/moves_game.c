@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 11:01:45 by dasalaza         ###   ########.fr       */
+/*   Created: 2024/09/06 11:55:31 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/06 11:55:34 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

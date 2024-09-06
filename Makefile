@@ -11,7 +11,7 @@ NAME = so_long
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I includes \
-			-I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) #-fsanitize=address
+			-I$(MLX_DIR)/include -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(GNL_DIR) -fsanitize=address
 			-DTILES_DIR=\"$(TILES_DIR)\" \
 			-DCOLLECTIBLES_DIR=\"$(COLLECTIBLES_DIR)\" \
 			-DPLAYER_DIR=\"$(PLAYER_DIR)\" \

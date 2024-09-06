@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 19:40:44 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 09:46:40 by dasalaza         ###   ########.fr       */
+/*   Created: 2024/09/06 10:40:40 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/06 10:40:58 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		validate_file_and_edge_of_map(av[1], &(game->map));
-		/*
-		if (game->map->columns >= 1080 || game->map->rows >= 1920)
-			ft_printf("Error: Map is too large\n");
-		*/
 		init_game_windows_data(game);
 		draw_map_sprites(game, 0, 0);
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
