@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:36:22 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 14:29:22 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/06 16:36:40 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ int	can_open_fd(char *path_map)
 
 static void	fill_player_and_coins(t_map *map, int x, int y)
 {
-	if (x < 0 || x > map->rows || y < 0 || y > map->columns || \
-		map->matrix_map[x][y] == WALL || map->matrix_map[x][y] == 'F') 
+	// if (x < 0 || x > map->rows || y < 0 || y > map->columns ||
+	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns || \
+		map->matrix_map[x][y] == WALL || \
+		map->matrix_map[x][y] == 'X')
+	{
 		return ;
-	// if (map->matrix_map[x][y] == 'E')
-	// 	return ;
-	map->matrix_map[x][y] = 'F';
+	}
+	// print_map_data(map);
+	map->matrix_map[x][y] = 'X';
 	fill_player_and_coins(map, x + 1, y);
 	fill_player_and_coins(map, x - 1, y);
 	fill_player_and_coins(map, x, y + 1);
@@ -73,7 +76,10 @@ void	flood_fill(t_map *map, int x, int y)
 		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
 	map_copy->rows = map->rows;
 	map_copy->columns = map->columns;
+
 	fill_player_and_coins(map_copy, x, y);
+	print_map(map_copy);
+
 	if (check_map_items_coins_and_exit(map_copy) == 1)
 	{
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
