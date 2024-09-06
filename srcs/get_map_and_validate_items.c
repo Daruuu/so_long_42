@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 13:09:53 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/06 17:59:35 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,9 @@ int	check_map_items_coins_and_exit(t_map *map)
 		y = 0;
 		while (y < map->columns)
 		{
-			if (map->matrix_map[x][y] == EXIT_GAME || \
-				map->matrix_map[x][y] == COLLECTIONABLE)
+			if (map->matrix_map[x][y] == '0')
+			// if (map->matrix_map[x][y] == EXIT_GAME ||
+			// 	map->matrix_map[x][y] == COLLECTIONABLE)
 				return (1);
 			y++;
 		}
@@ -142,7 +143,7 @@ void	check_minim_items_in_map(t_map *map)
 		}
 		i++;
 	}
-	get_positions_player_and_exit(map);
-	if (map->players != 1 || map->exits != 1 || map->coins == 0)
+	if (map->coins == 0)
 		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
+	get_positions_player_and_exit(map);
 }

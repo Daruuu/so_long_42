@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 11:55:04 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:53:10 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	check_image_texture(t_game *game, void **image, char *path)
 
 	*image = mlx_xpm_file_to_image(game->mlx_ptr, path, &width, &height);
 	if (*image == NULL)
-		free(image);
+		ft_printf("error image texture creating !!!\n");
+		// free(image);
 }

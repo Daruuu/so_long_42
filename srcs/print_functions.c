@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 17:51:29 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 11:07:25 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/06 18:12:31 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/06 18:12:51 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	free_and_close(char *line, int fd)
 	close(fd);
 }
 
-void	free_and_exit_file_columns_map(char *line, char *message)
+void	free_exit_file_columns_map(char *line, char *message)
 {
 	free(line);
 	ft_printf(message);

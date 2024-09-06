@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/06 18:25:44 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
@@ -48,6 +60,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
+//	ft_printf("LINE MAP: %s\n", line);
 	if (line == NULL || check_all_ones(line, map) == 1)
 	{
 		free_and_close(line, fd);
@@ -65,6 +78,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 		}
 		i++;
 	}
+//	ft_printf("LINE MAP %i: %s\n", i, line);
 	free_and_close(line, fd);
 	return (0);
 }
@@ -78,7 +92,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
 	if (!line)
-		free_and_exit_file_columns_map(line, ERROR_INVALID_MAP);
+		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
 	map->columns = (int) ft_strlen(line) - 1;
 	while (line)
 	{
@@ -88,7 +102,8 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		if (len_line < 3 || len_line != map->columns || \
 			(line[0] != WALL || line[len_line - 1] != WALL))
 		{
-			free_and_exit_file_columns_map(line, ERROR_INVALID_MAP);
+			free_exit_file_columns_map(line, ERROR_INVALID_MAP);
+			return (1);
 		}
 		map->rows ++;
 		free(line);
@@ -108,7 +123,7 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 		free_map_copy(*map, NULL);
 		return ;
 	}
-	if ((validate_filename_map(av1)) == 1)
+	if (validate_filename_map(av1) == 1)
 		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map);
 	if (check_columns_of_map(av1, *map, 0) == 1)
 	{
