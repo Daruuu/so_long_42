@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 18:25:44 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/07 14:52:44 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,10 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
 	if (!line)
+	{
+		ft_printf("ENTRA EN check _columns_of_map 1\n");
 		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
+	}
 	map->columns = (int) ft_strlen(line) - 1;
 	while (line)
 	{
@@ -102,6 +105,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		if (len_line < 3 || len_line != map->columns || \
 			(line[0] != WALL || line[len_line - 1] != WALL))
 		{
+			ft_printf("ENTRA EN check _columns_of_map 2\n");
 			free_exit_file_columns_map(line, ERROR_INVALID_MAP);
 			return (1);
 		}
@@ -137,6 +141,9 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	if (ptr_map == NULL)
 		free_struct_map_and_exit(NULL, *map);
 	add_map_to_matrix(ptr_map, *map);
-	check_minim_items_in_map(*map);
+
+	//asdfasjdfhasdfjkasjkfdhasdfhjh
+	// TODO: errroooooooooooooooooooooooooorrrrrrrrrrrrr aquiiiiiiiiiiiiiiiiiiii
+	// check_minim_items_in_map(*map);
 	flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y);
 }

@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/05 00:15:21 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/07 14:42:00 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_map	*init_map(void)
 	new_map->rows = 0;
 	new_map->columns = 0;
 	new_map->coins = 0;
-	new_map->exits = 0;
+	new_map->exits = -1;
 	new_map->players = 0;
 	new_map->player_pos = init_positions();
 	new_map->exit_pos = init_positions();

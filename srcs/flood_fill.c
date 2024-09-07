@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 17:51:40 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/07 15:05:52 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	can_open_fd(char *path_map)
 	return (fd);
 }
 
-static void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
+void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 {
-	if (x < 0 || x > map->rows || y < 0 || y > map->columns)
+	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns)
 		return ;
 	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'X' \
 		|| map->matrix_map[x][y] == 'E')
@@ -32,7 +32,7 @@ static void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 		return ;
 	}
 	if (map->matrix_map[x][y] == 'C')
-		coins_flood++;
+		(*coins_flood)++;
 	map->matrix_map[x][y] = 'X';
 	fill_player_and_coins(map, x + 1, y, coins_flood);
 	fill_player_and_coins(map, x - 1, y, coins_flood);
@@ -68,7 +68,8 @@ static t_map	*fill_copy_matrix(t_map *map)
 	return (map_copy);
 }
 
-/*static int	iterate_matrix_after_flood_fill(t_map *map)
+/*
+static int	iterate_map_items(t_map *map)
 {
 	int	x;
 	int	y;
@@ -79,14 +80,15 @@ static t_map	*fill_copy_matrix(t_map *map)
 		y = 1;
 		while (y < map->columns)
 		{
-			if (map->matrix_map[x][y] == '0')
+			// if (map->matrix_map[x][y] == '0')
 				return (1);
 			y++;
 		}
 		x++;
 	}
 	return (0);
-}*/
+}
+*/
 
 void	flood_fill(t_map *map, int x, int y)
 {
@@ -102,11 +104,24 @@ void	flood_fill(t_map *map, int x, int y)
 	map_copy->columns = map->columns;
 	// print_map_data(map);
 	coins_flood = 0;
+
+	ft_printf("map BEFORE de flood_fill()");
+	print_map(map_copy);
+
 	fill_player_and_coins(map_copy, x, y, &coins_flood);
-	// check el map copy
-	if (coins_flood != map->coins)
+
+	ft_printf("map AFTER de flood_fill()");
+	print_map(map_copy);
+	ft_printf("\n--------------------------------\n");
+
+
+
+
+	ft_printf("coins map: %d\n", map->coins);
+	ft_printf("coins_flood copy_map: %d\n", coins_flood);
+	if (map->coins != coins_flood )
 	{
-		// ft_printf("Error coins no valids!\n");
+		ft_printf("Error coins no valids!\n");
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
 		free_struct_map_and_exit(NULL, map);
 		// exit(2);
@@ -114,7 +129,7 @@ void	flood_fill(t_map *map, int x, int y)
 	// print_map(map_copy);
 	if (check_map_items_coins_and_exit(map_copy) == 1)
 	{
-		ft_printf("ENTRA AQUIIIIII\n");
+		ft_printf("ENTRA en flood_filll()\n");
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
 		free_struct_map_and_exit(NULL, map);
 	}
