@@ -1,3 +1,15 @@
+	/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/09 01:30:22 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -24,7 +36,7 @@ int	can_open_fd(char *path_map)
 
 void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 {
-	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns)
+	if (x < 0 || x > map->rows || y < 0 || y > map->columns)
 		return ;
 	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'X' \
 		|| map->matrix_map[x][y] == 'E')
@@ -97,39 +109,32 @@ void	flood_fill(t_map *map, int x, int y)
 
 	map_copy = fill_copy_matrix(map);
 	if (map_copy == NULL)
+	{
 		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
-	// ft_printf("alksdjfklasdfjjkljsdlkfkasjld map_rows: %d\n", map->rows);
-	// ft_printf("map_columns: %d\n", map->columns);
+		return ;
+	}
 	map_copy->rows = map->rows;
 	map_copy->columns = map->columns;
-	// print_map_data(map);
 	coins_flood = 0;
-
-	ft_printf("map BEFORE de flood_fill()");
-	print_map(map_copy);
 
 	fill_player_and_coins(map_copy, x, y, &coins_flood);
 
 	ft_printf("map AFTER de flood_fill()");
 	print_map(map_copy);
-	ft_printf("\n--------------------------------\n");
-
-
-
 
 	ft_printf("coins map: %d\n", map->coins);
 	ft_printf("coins_flood copy_map: %d\n", coins_flood);
-	if (map->coins != coins_flood )
+
+	if (map->coins != coins_flood)
 	{
-		ft_printf("Error coins no valids!\n");
+		ft_printf("Error: ¡El número de monedas no es válido!\n");
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
 		free_struct_map_and_exit(NULL, map);
-		// exit(2);
+		return ;
 	}
-	// print_map(map_copy);
 	if (check_map_items_coins_and_exit(map_copy) == 1)
 	{
-		ft_printf("ENTRA en flood_filll()\n");
+		ft_printf("Error en la validación del mapa dentro de flood_fill()\n");
 		free_map_copy(map_copy, ERROR_INVALID_MAP);
 		free_struct_map_and_exit(NULL, map);
 	}

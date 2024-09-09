@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 14:52:44 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/09 01:05:31 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 13:18:47 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 14:16:29 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/07 14:52:44 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,8 +142,9 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 		free_struct_map_and_exit(NULL, *map);
 	add_map_to_matrix(ptr_map, *map);
 
-	//asdfasjdfhasdfjkasjkfdhasdfhjh
-	// TODO: errroooooooooooooooooooooooooorrrrrrrrrrrrr aquiiiiiiiiiiiiiiiiiiii
+//	print_map(*map);
+	print_map_data(*map);
+
 	// check_minim_items_in_map(*map);
 	flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y);
 }
