@@ -1,4 +1,4 @@
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
@@ -6,19 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 01:30:22 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   flood_fill.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 15:05:52 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/09 19:15:35 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +26,20 @@ void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 {
 	if (x < 0 || x > map->rows || y < 0 || y > map->columns)
 		return ;
-	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'X' \
+	if (*coins_flood == map->coins && map->matrix_map[x][y] == 'E')
+	{
+		ft_printf("entra en coinss validation E-------------\n");
+		map->matrix_map[x][y] = 'V';
+	}
+	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'V' \
 		|| map->matrix_map[x][y] == 'E')
 	{
 		return ;
 	}
 	if (map->matrix_map[x][y] == 'C')
-		(*coins_flood)++;
-	map->matrix_map[x][y] = 'X';
+		*coins_flood = *coins_flood + 1;
+		// (*coins_flood)++;
+	map->matrix_map[x][y] = 'V';
 	fill_player_and_coins(map, x + 1, y, coins_flood);
 	fill_player_and_coins(map, x - 1, y, coins_flood);
 	fill_player_and_coins(map, x, y + 1, coins_flood);
@@ -115,11 +109,13 @@ void	flood_fill(t_map *map, int x, int y)
 	}
 	map_copy->rows = map->rows;
 	map_copy->columns = map->columns;
+	map_copy->coins = map->coins;
 	coins_flood = 0;
+	// ft_printf("\nLLEGA AQUIII FLOOD_FILL *****************\n");
 
 	fill_player_and_coins(map_copy, x, y, &coins_flood);
 
-	ft_printf("map AFTER de flood_fill()");
+	// ft_printf("map AFTER de flood_fill()\n");
 	print_map(map_copy);
 
 	ft_printf("coins map: %d\n", map->coins);
@@ -132,6 +128,8 @@ void	flood_fill(t_map *map, int x, int y)
 		free_struct_map_and_exit(NULL, map);
 		return ;
 	}
+	//TODO: erroe cuando encuentra todos los coins
+	// y E es la ultima posicion en encontrar
 	if (check_map_items_coins_and_exit(map_copy) == 1)
 	{
 		ft_printf("Error en la validación del mapa dentro de flood_fill()\n");
@@ -140,4 +138,4 @@ void	flood_fill(t_map *map, int x, int y)
 	}
 	else
 		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
-}
+	}

@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/09 16:20:14 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
@@ -32,7 +44,7 @@ t_map	*init_map(void)
 	new_map->rows = 0;
 	new_map->columns = 0;
 	new_map->coins = 0;
-	new_map->exits = -1;
+	new_map->exits = 0;
 	new_map->players = 0;
 	new_map->player_pos = init_positions();
 	new_map->exit_pos = init_positions();

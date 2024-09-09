@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 01:05:31 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/09 18:25:20 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,27 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 	return (0);
 }
 
+int	check_all_line(char *line, int len_line,  t_map *map)
+{
+	int i;
+
+	if (len_line < 3 || len_line != map->columns || \
+			(line[0] != WALL || line[len_line - 1] != WALL))
+	{
+		return (1);
+	}
+	i = 0;
+	while (i < len_line)
+	{
+		if (line[i] != WALL && line[i] != PLAYER && line[i] != COLLECTIONABLE && line[i] != EXIT_GAME && line[i] != FLOOR)
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 static int	check_columns_of_map(char *av1, t_map *map, int i)
 {
 	int		fd;
@@ -102,8 +123,9 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		len_line = (int) ft_strlen(line);
 		if (line[len_line - 1] == '\n')
 			len_line = len_line - 1;
-		if (len_line < 3 || len_line != map->columns || \
-			(line[0] != WALL || line[len_line - 1] != WALL))
+		if (check_all_line(line, len_line, map))
+		// if (len_line < 3 || len_line != map->columns ||
+		// 	(line[0] != WALL || line[len_line - 1] != WALL))
 		{
 			ft_printf("ENTRA EN check _columns_of_map 2\n");
 			free_exit_file_columns_map(line, ERROR_INVALID_MAP);
@@ -116,6 +138,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	}
 	return (0);
 }
+
 
 void	validate_file_and_edge_of_map(char *av1, t_map **map)
 {
@@ -145,6 +168,8 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 //	print_map(*map);
 	print_map_data(*map);
 
-	// check_minim_items_in_map(*map);
+	check_minim_items_in_map(*map);
+	// ft_printf("entra aquiiiiii validate_file_map()");
+
 	flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y);
 }

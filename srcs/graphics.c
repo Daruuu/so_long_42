@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 16:53:10 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/09 18:09:28 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	close_window(t_game *game)
 	free_images_xpm(game);
 	free(game);
 	exit(0);
-	return (0);
+	// return (0);
 }
 
 void	load_textures_game(t_game *game)
@@ -75,6 +75,8 @@ void	check_image_texture(t_game *game, void **image, char *path)
 
 	*image = mlx_xpm_file_to_image(game->mlx_ptr, path, &width, &height);
 	if (*image == NULL)
+	{
+		free(image);
 		ft_printf("error image texture creating !!!\n");
-		// free(image);
+	}
 }

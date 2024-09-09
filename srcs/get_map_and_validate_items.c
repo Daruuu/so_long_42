@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 14:55:53 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/09 18:48:55 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,15 +125,15 @@ int	check_map_items_coins_and_exit(t_map *map)
 	int	y;
 
 	x = 0;
-	ft_printf("CHECK_MAP_ITEMS_COINS_AND_EXIT()\n");
-	ft_printf("ROWS: %d\n", map->rows);
-	ft_printf("COLS: %d\n", map->columns);
+	// ft_printf("CHECK_MAP_ITEMS_COINS_AND_EXIT()\n");
+	// ft_printf("ROWS: %d\n", map->rows);
+	// ft_printf("COLS: %d\n", map->columns);
 	while (x < map->rows)
 	{
 		y = 0;
 		while (y < map->columns)
 		{
-			if (map->matrix_map[x][y] == '0')
+			if (map->matrix_map[x][y] == 'E')
 				return (1);
 			y++;
 		}
@@ -189,23 +189,11 @@ void	check_minim_items_in_map(t_map *map)
 static void	aux_check_player_exit_coins(t_map *map, int i, int j)
 {
 	if (map->matrix_map[i][j] == PLAYER)
-	{
 		map->players ++;
-		if (map->players != 1)
-		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-	}
 	else if (map->matrix_map[i][j] == COLLECTIONABLE)
-	{
 		map->coins++;
-		if (map->coins < 1)
-			free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-	}
 	else if (map->matrix_map[i][j] == EXIT_GAME)
-	{
 		map->exits++;
-		if (map->exits != 1)
-			free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-	}
 }
 
 void	check_minim_items_in_map(t_map *map)
@@ -214,7 +202,6 @@ void	check_minim_items_in_map(t_map *map)
 	int	j;
 
 	i = 1;
-	ft_printf("minim itemmsmsmmsmsm\n");
 	while (i < map->rows)
 	{
 		j = 1;
@@ -224,6 +211,14 @@ void	check_minim_items_in_map(t_map *map)
 			j++;
 		}
 		i++;
+	}
+	// ft_printf("PLAYERS: %d\n", map->players);
+	// ft_printf("COINS: %d\n", map->coins);
+	// ft_printf("EXITS: %d\n", map->exits);
+	if (map->players != 1 || map->coins < 1 || map->exits != 1)
+	{
+		// ft_printf("Es aquiiiiiiiiiiiiii()\n");
+		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
 	}
 	get_positions_player_and_exit(map);
 }
