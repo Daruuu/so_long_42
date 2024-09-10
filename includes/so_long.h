@@ -58,7 +58,7 @@ void		check_minim_items_in_map(t_map *map);
 // ********** FLOOD_FILL.C ***********************
 
 int			can_open_fd(char *path_map);
-void		flood_fill(t_map *map, int x, int y);
+int flood_fill(t_map *map, int x, int y);
 
 // ********** INIT_STRUCTS.C ***********************
 

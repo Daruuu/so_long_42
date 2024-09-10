@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 20:38:23 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 23:00:40 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	flood_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 {
 	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns)
 		return ;
-//	if (*coins_flood == map->coins && map->matrix_map[x][y] == 'E')
-//	{
-//		map->matrix_map[x][y] = 'V';
-//		return ;
-//	}
 	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'V' \
 		|| map->matrix_map[x][y] == 'E')
 	{
@@ -35,7 +30,7 @@ void	flood_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 	flood_player_and_coins(map, x, y - 1, coins_flood);
 }
 
-static void flood_fill_exit(t_map *map, int x, int y, int *coins_flood_exit)
+static void	flood_fill_exit(t_map *map, int x, int y, int *coins_flood_exit)
 {
 	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns)
 		return ;
@@ -80,77 +75,50 @@ static t_map	*fill_copy_matrix(t_map *map)
 	return (map_copy);
 }
 
+int	prepare_flood_fill(t_map *map, t_map **map_copy, t_map **map_copy_exit)
+{
+	*map_copy = fill_copy_matrix(map);
+	*map_copy_exit = fill_copy_matrix(map);
+	if (*map_copy == NULL || *map_copy_exit == NULL)
+	{
+		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
+		return (1);
+	}
+	(*map_copy)->rows = map->rows;
+	(*map_copy)->columns = map->columns;
+	(*map_copy)->coins = map->coins;
+	(*map_copy_exit)->rows = map->rows;
+	(*map_copy_exit)->columns = map->columns;
+	return (0);
+}
 
-void	flood_fill(t_map *map, int x, int y)
+int	flood_fill(t_map *map, int x, int y)
 {
 	t_map	*map_copy;
 	t_map	*map_copy_exit;
 	int		coins_flood;
 	int		coins_exit;
 
-	map_copy = fill_copy_matrix(map);
-	map_copy_exit = fill_copy_matrix(map);
-	if (map_copy == NULL || map_copy_exit == NULL)
-	{
-		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
-		return ;
-	}
-	map_copy->rows = map->rows;
-	map_copy->columns = map->columns;
-	map_copy->coins = map->coins;
-
-	map_copy_exit->rows = map->rows;
-	map_copy_exit->columns = map->columns;
-
 	coins_flood = 0;
 	coins_exit = 0;
-
+	if (prepare_flood_fill(map, &map_copy, &map_copy_exit))
+		return (1);
 	flood_player_and_coins(map_copy, x, y, &coins_flood);
-
-	ft_printf("coins_flood: %d\n", coins_flood);
-//	print_map(map_copy);
-
-//	flood_fill_exit(map_copy_exit, x, y, &coins_exit);
-//	flood_fill_exit(map_copy_exit, map->player_pos.x, map->player_pos.y, &coins_exit);
-
-//	ft_printf("coins_flood_exit: %d\n", coins_flood);
-//	print_map(map_copy_exit);
-
+	flood_fill_exit(map_copy_exit, x, y, &coins_exit);
 	if (map->coins == coins_flood && map->coins == coins_exit && \
 		map_copy_exit->matrix_map[map->exit_pos.x][map->exit_pos.y] == 'V')
 	{
-		ft_printf("VALIDATIONS OKAYYYYYYYYY\n");
+		free_map_copy(map_copy, NULL);
+		free_map_copy(map_copy_exit, ALL_VALIDATIONS_OK);
+		return (0);
 	}
 	else
 	{
-		ft_printf("VALIDATIONS FAILEDDDDDDD\n");
-		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
-		exit(2);
+		free_map_copy(map_copy, NULL);
+		free_map_copy(map_copy_exit, NULL);
+		return (1);
 	}
-//	aux_flood_fill(map, map_copy, &coins_flood, map_copy_exit);
+	free_map_copy(map_copy, NULL);
+	free_map_copy(map_copy_exit, NULL);
+	return (0);
 }
-/*
- * TODO: erroe cuando encuentra todos los coins
- * y E es la ultima posicion en encontrar
- */
-
-/*
-void	aux_flood_fill(t_map *map, t_map *map_copy, int *coins_flood, t_map *map_copy_exit)
-{
-	if (map->coins == *coins_flood && \
-		map_copy_exit->matrix_map[map->exit_pos.x][map->exit_pos.y] == 'X')
-	{
-		ft_printf(ALL_VALIDATIONS_OK);
-//		free_map_copy(map_copy, ERROR_INVALID_MAP);
-//		free_struct_map_and_exit(NULL, map);
-//		return ;
-	}
-	if (aux_flood_check_map_items(map_copy) == 1)
-	{
-		free_map_copy(map_copy, ERROR_INVALID_MAP);
-		free_struct_map_and_exit(NULL, map);
-	}
-	else
-		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
-}
-*/
