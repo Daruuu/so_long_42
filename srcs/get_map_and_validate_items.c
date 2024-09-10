@@ -6,34 +6,11 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 18:48:55 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 01:01:55 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-// void	check_buffer_items_map(char *buffer_map)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (buffer_map[i] != '\0')
-// 	{
-// 		// Verificamos si el carácter es uno de los permitidos
-// 		if (buffer_map[i] != '1' && // Pared
-// 			buffer_map[i] != 'P' && // Jugador
-// 			buffer_map[i] != 'E' && // Salida
-// 			buffer_map[i] != 'C' && // Coleccionable
-// 			buffer_map[i] != '0' && // Piso
-// 			buffer_map[i] != '\n')  // Saltos de línea
-// 		{
-// 			ft_printf("Error: ítem inválido en el BUFFER, carácter: '%c' en la posición %d\n", buffer_map[i], i);
-// 			free(buffer_map);
-// 			exit(2); // Salida con código de error
-// 		}
-// 		i++;
-// 	}
-// }
 
 char	*get_map_from_file(char *path)
 {
@@ -56,8 +33,6 @@ char	*get_map_from_file(char *path)
 	read (fd, new_map, i);
 	new_map[i] = '\0';
 	close(fd);
-	ft_printf("MAPA:\n%s\n", new_map);
-	// check_buffer_items_map(new_map);
 	return (new_map);
 }
 
@@ -117,17 +92,12 @@ static void	get_positions_player_and_exit(t_map *map)
 	}
 }
 
-// change name
-// check_map_after_flood_fill();
 int	check_map_items_coins_and_exit(t_map *map)
 {
 	int	x;
 	int	y;
 
 	x = 0;
-	// ft_printf("CHECK_MAP_ITEMS_COINS_AND_EXIT()\n");
-	// ft_printf("ROWS: %d\n", map->rows);
-	// ft_printf("COLS: %d\n", map->columns);
 	while (x < map->rows)
 	{
 		y = 0;
@@ -141,50 +111,6 @@ int	check_map_items_coins_and_exit(t_map *map)
 	}
 	return (0);
 }
-
-/*
-static void	aux_check_player_exit_coins(t_map *map, int i, int j)
-{
-	if (map->matrix_map[i][j] == PLAYER)
-	{
-		map->players++;
-	}
-	else if (map->matrix_map[i][j] == COLLECTIONABLE)
-	{
-		map->coins++;
-	}
-	else if (map->matrix_map[i][j] == EXIT_GAME)
-	{
-		map->exits++;
-	}
-}
-
-void	check_minim_items_in_map(t_map *map)
-{
-	int	i;
-	int	j;
-
-	i = 0; // Recorrer todo el mapa desde la primera fila
-	while (i < map->rows)
-	{
-		j = 0; // Recorrer todo el mapa desde la primera columna
-		while (j < map->columns)
-		{
-			aux_check_player_exit_coins(map, i, j);
-			j++;
-		}
-		i++;
-	}
-
-	// Verificar si el mapa tiene exactamente 1 jugador, 1 salida y al menos 1 moneda
-	if (map->players != 1 || map->exits != 1 || map->coins < 1)
-	{
-		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-	}
-	get_positions_player_and_exit(map);
-}
-
-*/
 
 static void	aux_check_player_exit_coins(t_map *map, int i, int j)
 {
@@ -212,13 +138,7 @@ void	check_minim_items_in_map(t_map *map)
 		}
 		i++;
 	}
-	// ft_printf("PLAYERS: %d\n", map->players);
-	// ft_printf("COINS: %d\n", map->coins);
-	// ft_printf("EXITS: %d\n", map->exits);
 	if (map->players != 1 || map->coins < 1 || map->exits != 1)
-	{
-		// ft_printf("Es aquiiiiiiiiiiiiii()\n");
 		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
-	}
 	get_positions_player_and_exit(map);
 }

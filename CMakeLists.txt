@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.22)
 project(so_long_42 C)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -g")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address")
 
 # Comando para compilar libmlx.a
 add_custom_target(libmlx ALL
@@ -11,7 +13,17 @@ add_custom_target(libmlx ALL
         COMMENT "Compilando libmlx.a"
 )
 
-# Añadir el ejecutable
+#   use this definition for compile the images using Cmakelists.txt
+
+add_definitions(
+    -DASSETS_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/sprites\"
+    -DTILES_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/sprites/Tiles\"
+    -DCOLLECTIBLES_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/sprites/Collectibles\"
+    -DPLAYER_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/sprites/Player\"
+    -DEXIT_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/sprites/Exit\"
+)
+
+# Add this executable
 add_executable(so_long_42 srcs/so_long.c
         # HEADERS
         includes/so_long.h

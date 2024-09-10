@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:55:31 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/06 11:55:34 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 01:07:41 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ void	update_floor_or_coins(t_game *game, int new_x, int new_y)
 		game->map->matrix_map[last_x][last_y] = FLOOR;
 		if (game->map->matrix_map[new_x][new_y] == COLLECTIONABLE)
 			game->map->coins --;
-		/*	update new position of player	*/
 		game->map->player_pos.x = new_x;
 		game->map->player_pos.y = new_y;
-		/*	update player	*/
 		game->map->matrix_map[new_x][new_y] = PLAYER;
 		game->count_moves ++;
 		ft_printf("count moves: %d \n", game->count_moves);

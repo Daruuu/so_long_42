@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/10 00:35:49 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/10 00:43:41 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long_utils.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
@@ -48,6 +60,21 @@
 # define RIGHT		65363
 # define DOWN		65364
 
+// Macros definidas en CMakeLists.txt para las rutas .xpm
+# define WALL_XPM TILES_DIR "/blockSimple.xpm"
+# define FLOOR_XPM TILES_DIR "/midBlocks_02.xpm"
+# define COLLECT_XPM COLLECTIBLES_DIR "/star_01.xpm"
+
+# define PLAYER_FRONT_XPM PLAYER_DIR "/idle_00.xpm"
+# define PLAYER_LEFT_XPM PLAYER_DIR "/walkLeft_00.xpm"
+# define PLAYER_DOWN_XPM PLAYER_DIR "/walkDown_00.xpm"
+# define PLAYER_RIGHT_XPM PLAYER_DIR "/walkRight_00.xpm"
+
+# define EXIT_OPEN_XPM EXIT_DIR "/exit_open_01.xpm"
+# define EXIT_CLOSED_XPM EXIT_DIR "/exit_close_01.xpm"
+
+// Macros defined in Makefile  to use paths of images .xpm
+/*
 # define WALL_XPM "assets/sprites/Tiles/blockSimple.xpm"
 # define FLOOR_XPM "assets/sprites/Tiles/midBlocks_02.xpm"
 # define COLLECT_XPM "assets/sprites/Collectibles/star_01.xpm"
@@ -59,6 +86,7 @@
 
 # define EXIT_OPEN_XPM "assets/sprites/Exit/exit_open_01.xpm"
 # define EXIT_CLOSED_XPM "assets/sprites/Exit/exit_close_01.xpm"
+*/
 
 # define CELL_SIZE 32
 # define TITLE_WINDOWS "So_long by Dasalaza"

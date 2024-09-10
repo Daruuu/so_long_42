@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 19:15:35 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 02:07:31 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 		return ;
 	if (*coins_flood == map->coins && map->matrix_map[x][y] == 'E')
 	{
-		ft_printf("entra en coinss validation E-------------\n");
 		map->matrix_map[x][y] = 'V';
 	}
 	if (map->matrix_map[x][y] == '1' || map->matrix_map[x][y] == 'V' \
@@ -37,8 +36,7 @@ void	fill_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 		return ;
 	}
 	if (map->matrix_map[x][y] == 'C')
-		*coins_flood = *coins_flood + 1;
-		// (*coins_flood)++;
+		(*coins_flood)++;
 	map->matrix_map[x][y] = 'V';
 	fill_player_and_coins(map, x + 1, y, coins_flood);
 	fill_player_and_coins(map, x - 1, y, coins_flood);
@@ -75,26 +73,26 @@ static t_map	*fill_copy_matrix(t_map *map)
 }
 
 /*
-static int	iterate_map_items(t_map *map)
-{
-	int	x;
-	int	y;
+ * TODO: erroe cuando encuentra todos los coins
+ * y E es la ultima posicion en encontrar
+ */
 
-	x = 1;
-	while (x < map->rows)
+static void	aux_validations_flood_fill(t_map *map, t_map *map_copy, int *coins_flood)
+{
+	if (map->coins != *coins_flood)
 	{
-		y = 1;
-		while (y < map->columns)
-		{
-			// if (map->matrix_map[x][y] == '0')
-				return (1);
-			y++;
-		}
-		x++;
+		free_map_copy(map_copy, ERROR_INVALID_MAP);
+		free_struct_map_and_exit(NULL, map);
+		return ;
 	}
-	return (0);
+	if (check_map_items_coins_and_exit(map_copy) == 1)
+	{
+		free_map_copy(map_copy, ERROR_INVALID_MAP);
+		free_struct_map_and_exit(NULL, map);
+	}
+	else
+		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
 }
-*/
 
 void	flood_fill(t_map *map, int x, int y)
 {
@@ -111,31 +109,6 @@ void	flood_fill(t_map *map, int x, int y)
 	map_copy->columns = map->columns;
 	map_copy->coins = map->coins;
 	coins_flood = 0;
-	// ft_printf("\nLLEGA AQUIII FLOOD_FILL *****************\n");
-
 	fill_player_and_coins(map_copy, x, y, &coins_flood);
-
-	// ft_printf("map AFTER de flood_fill()\n");
-	print_map(map_copy);
-
-	ft_printf("coins map: %d\n", map->coins);
-	ft_printf("coins_flood copy_map: %d\n", coins_flood);
-
-	if (map->coins != coins_flood)
-	{
-		ft_printf("Error: ¡El número de monedas no es válido!\n");
-		free_map_copy(map_copy, ERROR_INVALID_MAP);
-		free_struct_map_and_exit(NULL, map);
-		return ;
-	}
-	//TODO: erroe cuando encuentra todos los coins
-	// y E es la ultima posicion en encontrar
-	if (check_map_items_coins_and_exit(map_copy) == 1)
-	{
-		ft_printf("Error en la validación del mapa dentro de flood_fill()\n");
-		free_map_copy(map_copy, ERROR_INVALID_MAP);
-		free_struct_map_and_exit(NULL, map);
-	}
-	else
-		free_map_copy(map_copy, ALL_VALIDATIONS_OK);
-	}
+	aux_validations_flood_fill(map, map_copy, &coins_flood);
+}

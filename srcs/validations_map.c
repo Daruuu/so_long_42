@@ -6,19 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 18:25:20 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   validations_map.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 14:52:44 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/10 01:15:08 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +48,6 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
-//	ft_printf("LINE MAP: %s\n", line);
 	if (line == NULL || check_all_ones(line, map) == 1)
 	{
 		free_and_close(line, fd);
@@ -78,24 +65,27 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 		}
 		i++;
 	}
-//	ft_printf("LINE MAP %i: %s\n", i, line);
 	free_and_close(line, fd);
 	return (0);
 }
 
-int	check_all_line(char *line, int len_line,  t_map *map)
+int	check_all_line(char *line, int len_line, t_map *map)
 {
-	int i;
+	int	i;
 
 	if (len_line < 3 || len_line != map->columns || \
-			(line[0] != WALL || line[len_line - 1] != WALL))
+		(line[0] != WALL || line[len_line - 1] != WALL))
 	{
 		return (1);
 	}
 	i = 0;
 	while (i < len_line)
 	{
-		if (line[i] != WALL && line[i] != PLAYER && line[i] != COLLECTIONABLE && line[i] != EXIT_GAME && line[i] != FLOOR)
+		if (line[i] != WALL && \
+			line[i] != PLAYER && \
+			line[i] != COLLECTIONABLE && \
+			line[i] != EXIT_GAME && \
+			line[i] != FLOOR)
 		{
 			return (1);
 		}
@@ -113,10 +103,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
 	if (!line)
-	{
-		ft_printf("ENTRA EN check _columns_of_map 1\n");
 		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
-	}
 	map->columns = (int) ft_strlen(line) - 1;
 	while (line)
 	{
@@ -124,10 +111,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		if (line[len_line - 1] == '\n')
 			len_line = len_line - 1;
 		if (check_all_line(line, len_line, map))
-		// if (len_line < 3 || len_line != map->columns ||
-		// 	(line[0] != WALL || line[len_line - 1] != WALL))
 		{
-			ft_printf("ENTRA EN check _columns_of_map 2\n");
 			free_exit_file_columns_map(line, ERROR_INVALID_MAP);
 			return (1);
 		}
@@ -138,7 +122,6 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	}
 	return (0);
 }
-
 
 void	validate_file_and_edge_of_map(char *av1, t_map **map)
 {
@@ -164,12 +147,6 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	if (ptr_map == NULL)
 		free_struct_map_and_exit(NULL, *map);
 	add_map_to_matrix(ptr_map, *map);
-
-//	print_map(*map);
-	print_map_data(*map);
-
 	check_minim_items_in_map(*map);
-	// ft_printf("entra aquiiiiii validate_file_map()");
-
 	flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y);
 }
