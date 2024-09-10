@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 01:15:08 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:06:29 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,6 @@ static int	validate_filename_map(char *av1)
 	return (0);
 }
 
-static int	check_all_ones(const char *line, t_map *map)
-{
-	int	j;
-
-	j = 0;
-	while (j < map->columns)
-	{
-		if (line[j] != WALL)
-			return (1);
-		j++;
-	}
-	return (0);
-}
-
 static int	check_first_and_last_line_map(char *av1, t_map *map)
 {
 	int		i;
@@ -48,7 +34,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
-	if (line == NULL || check_all_ones(line, map) == 1)
+	if (line == NULL || aux_check_all_ones(line, map) == 1)
 	{
 		free_and_close(line, fd);
 		return (1);
@@ -58,7 +44,7 @@ static int	check_first_and_last_line_map(char *av1, t_map *map)
 	{
 		free(line);
 		line = get_next_line(fd);
-		if (i == map->rows && line && check_all_ones(line, map) == 1)
+		if (i == map->rows && line && aux_check_all_ones(line, map) == 1)
 		{
 			free_and_close(line, fd);
 			return (1);

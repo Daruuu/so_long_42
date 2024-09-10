@@ -6,19 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 00:35:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 00:43:41 by dasalaza         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long_utils.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 13:55:52 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/10 18:47:24 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +32,16 @@
 # define ERROR_FD "Error FD < 0!\n"
 # define ERROR_MLX_PTR "Error init mlx_ptr\n"
 # define ERROR_WIN_PTR "Error init win_ptr\n"
-# define ALL_VALIDATIONS_OK "All VALIDATIONS IN MAP ARE CORRECT!\n"
+
+#define ALL_VALIDATIONS_OK "\
+           _ _  __      __   _ _     _       _   _                         _    \n\
+    /\\   | | | \\ \\    / /  | (_)   | |     | | (_)                       | |   \n\
+   /  \\  | | |  \\ \\  / /_ _| |_  __| | __ _| |_ _  ___  _ __  ___    ___ | | __\n\
+  / /\\ \\ | | |   \\ \\/ / _` | | |/ _` |/ _` | __| |/ _ \\| '_ \\/ __|  / _ \\| |/ /\n\
+ / ____ \\| | |    \\  / (_| | | | (_| | (_| | |_| | (_) | | | \\__ \\ | (_) |   < \n\
+/_/    \\_\\_|_|     \\/ \\__,_|_|_|\\__,_|\\__,_|\\__|_|\\___/|_| |_|___/  \\___/|_|\\_\\\n\
+                                                                              \n"
+
 
 //  GAME OBJECTS
 # define ESC			65307
@@ -61,20 +58,22 @@
 # define DOWN		65364
 
 // Macros definidas en CMakeLists.txt para las rutas .xpm
-# define WALL_XPM TILES_DIR "/blockSimple.xpm"
-# define FLOOR_XPM TILES_DIR "/midBlocks_02.xpm"
-# define COLLECT_XPM COLLECTIBLES_DIR "/star_01.xpm"
+/*
+# define WALL_XPM TILES_DIR				"/blockSimple.xpm"
+# define FLOOR_XPM TILES_DIR 			"/midBlocks_02.xpm"
+# define COLLECT_XPM COLLECTIBLES_DIR	"/star_01.xpm"
 
-# define PLAYER_FRONT_XPM PLAYER_DIR "/idle_00.xpm"
-# define PLAYER_LEFT_XPM PLAYER_DIR "/walkLeft_00.xpm"
-# define PLAYER_DOWN_XPM PLAYER_DIR "/walkDown_00.xpm"
-# define PLAYER_RIGHT_XPM PLAYER_DIR "/walkRight_00.xpm"
+# define PLAYER_FRONT_XPM PLAYER_DIR	"/idle_00.xpm"
+# define PLAYER_LEFT_XPM PLAYER_DIR		"/walkLeft_00.xpm"
+# define PLAYER_DOWN_XPM PLAYER_DIR		"/walkDown_00.xpm"
+# define PLAYER_RIGHT_XPM PLAYER_DIR	"/walkRight_00.xpm"
 
-# define EXIT_OPEN_XPM EXIT_DIR "/exit_open_01.xpm"
-# define EXIT_CLOSED_XPM EXIT_DIR "/exit_close_01.xpm"
+# define EXIT_OPEN_XPM EXIT_DIR			"/exit_open_01.xpm"
+# define EXIT_CLOSED_XPM EXIT_DIR		"/exit_close_01.xpm"
+*/
 
 // Macros defined in Makefile  to use paths of images .xpm
-/*
+
 # define WALL_XPM "assets/sprites/Tiles/blockSimple.xpm"
 # define FLOOR_XPM "assets/sprites/Tiles/midBlocks_02.xpm"
 # define COLLECT_XPM "assets/sprites/Collectibles/star_01.xpm"
@@ -86,12 +85,11 @@
 
 # define EXIT_OPEN_XPM "assets/sprites/Exit/exit_open_01.xpm"
 # define EXIT_CLOSED_XPM "assets/sprites/Exit/exit_close_01.xpm"
-*/
 
-# define CELL_SIZE 32
-# define TITLE_WINDOWS "So_long by Dasalaza"
-# define WIN_GAME "You win the game!!\n"
-# define CLOSE_GAME "Close game with Escape or Q!!\n"
+# define CELL_SIZE			32
+# define TITLE_WINDOWS		"So_long by Dasalaza"
+# define WIN_GAME			"You win the game!!\n"
+# define CLOSE_GAME			"Close game with Escape or Q!!\n"
 
 /********Estructura para posiciones en 2D*****/
 

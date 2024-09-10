@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 01:01:55 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:02:25 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,26 +90,6 @@ static void	get_positions_player_and_exit(t_map *map)
 		}
 		i++;
 	}
-}
-
-int	check_map_items_coins_and_exit(t_map *map)
-{
-	int	x;
-	int	y;
-
-	x = 0;
-	while (x < map->rows)
-	{
-		y = 0;
-		while (y < map->columns)
-		{
-			if (map->matrix_map[x][y] == 'E')
-				return (1);
-			y++;
-		}
-		x++;
-	}
-	return (0);
 }
 
 static void	aux_check_player_exit_coins(t_map *map, int i, int j)

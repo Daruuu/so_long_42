@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 18:13:08 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 13:07:35 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/10 16:06:00 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void		free_exit_file_columns_map(char *line, char *message);
 
 char		*get_map_from_file(char *path);
 void		add_map_to_matrix(char *map_ptr, t_map *map);
-int			check_map_items_coins_and_exit(t_map *map);
 void		check_minim_items_in_map(t_map *map);
 
 // ********** FLOOD_FILL.C ***********************
@@ -78,5 +77,9 @@ void		load_textures_game(t_game *game);
 
 int			handle_event_keyboard(int keysym, t_game *game);
 void		update_floor_or_coins(t_game *game, int new_x, int new_y);
+
+// ********** UTILS_FUNCTIONS.C ***********************
+int			aux_check_all_ones(const char *line, t_map *map);
+int			aux_flood_check_map_items(t_map *map);
 
 #endif

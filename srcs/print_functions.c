@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 18:12:31 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 01:33:29 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:02:57 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	print_map_data(t_map *map)
 	ft_printf("----------------------\n");
 }
 
+/*
 void	print_game_data(t_game *game)
 {
 	ft_printf("DATA OF GAME:\n");
@@ -63,6 +64,7 @@ void	print_game_data(t_game *game)
 	ft_printf("columns: %d\n", game->map->columns);
 	ft_printf("coins: %d\n", game->map->coins);
 }
+*/
 
 void	free_and_close(char *line, int fd)
 {
