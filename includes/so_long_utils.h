@@ -6,12 +6,22 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 00:35:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 18:47:24 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 00:40:25 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_UTILS_H
 # define SO_LONG_UTILS_H
+
+//	COLORS IN ERRRORS
+# define R_COLOR "\033[0m"
+# define RED "\033[31m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define BLUE "\033[34m"
+# define MAGENTA "\033[35m"
+# define CYAN "\033[36m"
+# define WHITE "\033[37m"
 
 //  GAME OBJECTS
 # define PLAYER 'P'
@@ -20,28 +30,72 @@
 # define WALL '1'
 # define FLOOR '0'
 
-# define ERROR_INVALID_MAP "Error INVALID MAP\n"
-# define ERROR_EMPTY_FILE "Error EMPTY FILE\n"
-# define ERROR_ITEMS_IN_MAP "Error INVALID ITEMS IN MAP\n"
-# define ERROR_IN_MATRIX "Error DATA IN MATRIX\n"
-# define ERROR_MEMORY_ALLOCATION "Error DATA IN MATRIX\n"
-# define ERROR_INVALID_EXTENSION_MAP "Error INVALID EXTENSION_MAP\n"
-# define ERROR_COLUMNS_MAP "Error COLUMNS OF MAP\n"
-# define ERROR_ROWS_MAP "Error ROWS OF MAP\n"
-# define ERROR_LOADING_MAP "Error LOADING MAP\n"
-# define ERROR_FD "Error FD < 0!\n"
-# define ERROR_MLX_PTR "Error init mlx_ptr\n"
-# define ERROR_WIN_PTR "Error init win_ptr\n"
+# define LEFT_POSITION 0
+# define RIGHT_POSITION 1
+//# define UP_POSITION 2
+//# define DOWN_POSITION 3
+# define BACK_POSITION 2
+# define FRONT_POSITION 3
 
-#define ALL_VALIDATIONS_OK "\
+# define ERROR_INVALID_MAP RED "Error: INVALID MAP\n" R_COLOR
+# define ERROR_EMPTY_FILE YELLOW "Error: EMPTY FILE\n" R_COLOR
+# define ERROR_ITEMS_IN_MAP MAGENTA "Error: INVALID ITEMS IN MAP\n" R_COLOR
+# define ERROR_IN_MATRIX CYAN "Error: DATA IN MATRIX\n" R_COLOR
+# define ERROR_MEMORY_ALLOCATION RED "Error: MEMORY ALLOCATION\n" R_COLOR
+# define ERROR_INVALID_EXTENSION_MAP RED "Error: INVALID EXTENSION MAP\n" \
+	R_COLOR
+# define ERROR_COLUMNS_MAP RED "Error: COLUMNS OF MAP\n" R_COLOR
+# define ERROR_ROWS_MAP RED "Error: ROWS OF MAP\n" R_COLOR
+# define ERROR_LOADING_MAP YELLOW "Error: LOADING MAP\n" R_COLOR
+# define ERROR_FD MAGENTA "Error: FD < 0!\n" R_COLOR
+# define ERROR_MLX_PTR RED "Error: init mlx_ptr\n" R_COLOR
+# define ERROR_WIN_PTR RED "Error: init win_ptr\n" R_COLOR
+
+#define ALL_VALIDATIONS_OK GREEN "\
            _ _  __      __   _ _     _       _   _                         _    \n\
     /\\   | | | \\ \\    / /  | (_)   | |     | | (_)                       | |   \n\
    /  \\  | | |  \\ \\  / /_ _| |_  __| | __ _| |_ _  ___  _ __  ___    ___ | | __\n\
   / /\\ \\ | | |   \\ \\/ / _` | | |/ _` |/ _` | __| |/ _ \\| '_ \\/ __|  / _ \\| |/ /\n\
  / ____ \\| | |    \\  / (_| | | | (_| | (_| | |_| | (_) | | | \\__ \\ | (_) |   < \n\
 /_/    \\_\\_|_|     \\/ \\__,_|_|_|\\__,_|\\__,_|\\__|_|\\___/|_| |_|___/  \\___/|_|\\_\\\n\
-                                                                              \n"
+                                                                              \n" R_COLOR
+#define QUIT_OF_GAME YELLOW "\
+ ____        _ _            __                               \n\
+/ __ \\      (_) |          / _|                              \n\
+| |  | |_   _ _| |_    ___ | |_    __ _  __ _ _ __ ___   ___  \n\
+| |  | | | | | | __|  / _ \\|  _|  / _` |/ _` | '_ ` _ \\ / _ \\ \n\
+| |__| | |_| | | |_  | (_) | |   | (_| | (_| | | | | | |  __/ \n\
+ \\___\\_\\\\__,_|_|\\__|  \\___/|_|    \\__, |\\__,_|_| |_| |_|\\___| \n\
+                                   __/ |                     \n\
+                                  |___/                      \n" R_COLOR
 
+# define EXIT_GAME_MESSAGE YELLOW "\
+ ______                        ____        _ _      _____                      \n\
+|  ____|                      / __ \\      (_) |    / ____|                     \n\
+| |__   _ __ _ __ ___  _ __  | |  | |_   _ _| |_  | |  __  __ _ _ __ ___   ___  \n\
+|  __| | '__| '__/ _ \\| '__| | |  | | | | | | __| | | |_ |/ _` | '_ ` _ \\ / _ \\ \n\
+| |____| |  | | | (_) | |    | |__| | |_| | | |_  | |__| | (_| | | | | | |  __/ \n\
+|______|_|  |_|  \\___/|_|     \\___\\_\\\\__,_|_|\\__|  \\_____|\\__,_|_| |_| |_|\\___| \n\
+                                                                               \n\
+    __                                                                        \n\
+ _ / /                                                                        \n\
+(_) |                                                                         \n\
+  | |                                                                         \n\
+ _| |                                                                         \n\
+(_) |                                                                         \n\
+   \\_\\                                                                       \n" R_COLOR
+
+/*
+#define EXIT_GAME_MESSAGE "\
+  __      __   _ _     _       _   _                    ____  _      __  \n\
+  \\ \\    / /  | (_)   | |     | | (_)                  / __ \\| |     \\ \\ \n\
+   \\ \\  / /_ _| |_  __| | __ _| |_ _  ___  _ __  ___  | |  | | | __ (_) |\n\
+    \\ \\/ / _` | | |/ _` |/ _` | __| |/ _ \\| '_ \\/ __| | |  | | |/ /   | |\n\
+     \\  / (_| | | | (_| | (_| | |_| | (_) | | | \\__ \\ | |__| |   <   _| |\n\
+      \\/ \\__,_|_|_|\\__,_|\\__,_|\\__|_|\\___/|_| |_|___/  \\____/|_|\\_\\ (_) |\n\
+                                                                       /_/ \n\
+" R_COLOR
+*/
 
 //  GAME OBJECTS
 # define ESC			65307
@@ -58,6 +112,7 @@
 # define DOWN		65364
 
 // Macros definidas en CMakeLists.txt para las rutas .xpm
+
 /*
 # define WALL_XPM TILES_DIR				"/blockSimple.xpm"
 # define FLOOR_XPM TILES_DIR 			"/midBlocks_02.xpm"

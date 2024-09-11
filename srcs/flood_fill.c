@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 23:00:40 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 00:11:31 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int	prepare_flood_fill(t_map *map, t_map **map_copy, t_map **map_copy_exit)
 	*map_copy_exit = fill_copy_matrix(map);
 	if (*map_copy == NULL || *map_copy_exit == NULL)
 	{
-		free_struct_map_and_exit(ERROR_MEMORY_ALLOCATION, map);
+		free_map_copy(*map_copy, NULL);
+		free_map_copy(*map_copy_exit, NULL);
 		return (1);
 	}
 	(*map_copy)->rows = map->rows;
@@ -101,7 +102,7 @@ int	flood_fill(t_map *map, int x, int y)
 
 	coins_flood = 0;
 	coins_exit = 0;
-	if (prepare_flood_fill(map, &map_copy, &map_copy_exit))
+	if (prepare_flood_fill(map, &map_copy, &map_copy_exit) == 1)
 		return (1);
 	flood_player_and_coins(map_copy, x, y, &coins_flood);
 	flood_fill_exit(map_copy_exit, x, y, &coins_exit);
@@ -118,7 +119,4 @@ int	flood_fill(t_map *map, int x, int y)
 		free_map_copy(map_copy_exit, NULL);
 		return (1);
 	}
-	free_map_copy(map_copy, NULL);
-	free_map_copy(map_copy_exit, NULL);
-	return (0);
 }

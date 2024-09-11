@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 16:02:25 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/11 13:55:46 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ static void	aux_check_player_exit_coins(t_map *map, int i, int j)
 	if (map->matrix_map[i][j] == PLAYER)
 		map->players ++;
 	else if (map->matrix_map[i][j] == COLLECTIONABLE)
-		map->coins++;
+		map->coins ++;
 	else if (map->matrix_map[i][j] == EXIT_GAME)
-		map->exits++;
+		map->exits ++;
 }
 
 void	check_minim_items_in_map(t_map *map)

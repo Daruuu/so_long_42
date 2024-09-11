@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 00:56:04 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/11 13:24:01 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	main(int ac, char **av)
 		game = init_game();
 		if (game == NULL)
 		{
-			free(game);
+			free_game(game, ERROR_MEMORY_ALLOCATION);
 			exit(2);
 		}
 		validate_file_and_edge_of_map(av[1], &(game->map));
 		init_game_windows_data(game);
-		draw_map_sprites(game, 0, 0);
+		render_full_map_sprites(game, 0, 0);
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);
 		mlx_loop(game->mlx_ptr);

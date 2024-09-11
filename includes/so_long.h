@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 16:06:00 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 00:23:06 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		free_struct_map_and_exit(char *message, t_map *map);
 
 void		free_game_complete(t_game *game);
 void		free_images_xpm(t_game *game);
-void		free_game_ptr(t_game *game, char *message);
+void		free_game(t_game *game, char *message);
 void		free_struct_game(t_game *game, char *message);
 
 // ********** PRINT_FUNCTIONS.C ***********************
@@ -58,7 +58,7 @@ void		check_minim_items_in_map(t_map *map);
 // ********** FLOOD_FILL.C ***********************
 
 int			can_open_fd(char *path_map);
-int flood_fill(t_map *map, int x, int y);
+int			flood_fill(t_map *map, int x, int y);
 
 // ********** INIT_STRUCTS.C ***********************
 
@@ -69,7 +69,7 @@ void		check_image_texture(t_game *game, void **image, char *path);
 
 // ********** GRAPHICS.C ***********************
 
-void		draw_map_sprites(t_game *game, int i, int j);
+void		render_full_map_sprites(t_game *game, int i, int j);
 int			close_window(t_game *game);
 void		load_textures_game(t_game *game);
 
@@ -80,6 +80,5 @@ void		update_floor_or_coins(t_game *game, int new_x, int new_y);
 
 // ********** UTILS_FUNCTIONS.C ***********************
 int			aux_check_all_ones(const char *line, t_map *map);
-int			aux_flood_check_map_items(t_map *map);
 
 #endif

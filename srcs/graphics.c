@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 01:04:50 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 00:20:08 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,36 @@ static void	put_image_to_window(t_game *game, void *image, int x, int y)
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, image, x, y);
 }
 
-void	draw_map_sprites(t_game *game, int i, int j)
+static void	draw_player_sprite_direction(t_game *game, int x, int y)
+{
+	if (game->player_sprite == LEFT_POSITION)
+		put_image_to_window(game, game->player_left.xpm_ptr, x, y);
+	else if (game->player_sprite == RIGHT_POSITION)
+		put_image_to_window(game, game->player_right.xpm_ptr, x, y);
+	else if (game->player_sprite == BACK_POSITION)
+		put_image_to_window(game, game->player_back.xpm_ptr, x, y);
+	else if (game->player_sprite == FRONT_POSITION)
+		put_image_to_window(game, game->player_front.xpm_ptr, x, y);
+}
+
+void	render_sprite_by_title(t_game *game, char player_pos, int x, int y)
+{
+	if (player_pos == WALL)
+		put_image_to_window(game, game->wall.xpm_ptr, x, y);
+	else if (player_pos == FLOOR)
+		put_image_to_window(game, game->floor.xpm_ptr, x, y);
+	else if (player_pos == EXIT_GAME)
+		put_image_to_window(game, game->exit_open.xpm_ptr, x, y);
+	else if (player_pos == PLAYER)
+	{
+		put_image_to_window(game, game->player_front.xpm_ptr, x, y);
+		draw_player_sprite_direction(game, x, y);
+	}
+	else if (player_pos == COLLECTIONABLE)
+		put_image_to_window(game, game->coins.xpm_ptr, x, y);
+}
+
+void	render_full_map_sprites(t_game *game, int i, int j)
 {
 	int	x;
 	int	y;
@@ -29,30 +58,11 @@ void	draw_map_sprites(t_game *game, int i, int j)
 		{
 			x = j * CELL_SIZE;
 			y = i * CELL_SIZE;
-			if (game->map->matrix_map[i][j] == WALL)
-				put_image_to_window(game, game->wall.xpm_ptr, x, y);
-			else if (game->map->matrix_map[i][j] == FLOOR)
-				put_image_to_window(game, game->floor.xpm_ptr, x, y);
-			else if (game->map->matrix_map[i][j] == EXIT_GAME)
-				put_image_to_window(game, game->exit_open.xpm_ptr, x, y);
-			else if (game->map->matrix_map[i][j] == PLAYER)
-				put_image_to_window(game, game->player_front.xpm_ptr, x, y);
-			else if (game->map->matrix_map[i][j] == COLLECTIONABLE)
-				put_image_to_window(game, game->coins.xpm_ptr, x, y);
+			render_sprite_by_title(game, game->map->matrix_map[i][j], x, y);
 			j++;
 		}
 		i++;
 	}
-}
-
-int	close_window(t_game *game)
-{
-	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	free_map_copy(game->map, NULL);
-	free_images_xpm(game);
-	free(game);
-	exit(0);
-	return (0);
 }
 
 void	load_textures_game(t_game *game)
@@ -66,21 +76,4 @@ void	load_textures_game(t_game *game)
 	check_image_texture(game, &game->wall.xpm_ptr, WALL_XPM);
 	check_image_texture(game, &game->exit_open.xpm_ptr, EXIT_OPEN_XPM);
 	check_image_texture(game, &game->exit_closed.xpm_ptr, EXIT_CLOSED_XPM);
-}
-
-void	check_image_texture(t_game *game, void **image, char *path)
-{
-	int	width;
-	int	height;
-
-	width = 0;
-	height = 0;
-	*image = mlx_xpm_file_to_image(game->mlx_ptr, path, &width, &height);
-	if (*image == NULL)
-	{
-		free(image);
-		ft_printf("error image texture creating !!!\n");
-	}
-	else
-		return ;
 }

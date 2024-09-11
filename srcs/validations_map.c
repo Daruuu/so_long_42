@@ -6,7 +6,7 @@
 /*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/10 23:10:02 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 00:12:08 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,11 +130,10 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 		free_struct_map_and_exit(NULL, *map);
 	add_map_to_matrix(ptr_map, *map);
 	check_minim_items_in_map(*map);
-	//TODO: leaks en esta funcion al momento de pasar un mapa invalido :(
 	if (flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y) == 1)
 	{
 		free(ptr_map);
-		ft_printf(ERROR_INVALID_MAP);
+		free_map_copy(*map, ERROR_INVALID_MAP);
 		exit(2);
 	}
 }
