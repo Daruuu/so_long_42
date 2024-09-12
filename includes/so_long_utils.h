@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 00:35:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 00:40:25 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:41:22 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@
 
 # define CELL_SIZE			32
 # define TITLE_WINDOWS		"So_long by Dasalaza"
-# define WIN_GAME			"You win the game!!\n"
+# define WIN_GAME			"You win the game!!"
 # define CLOSE_GAME			"Close game with Escape or Q!!\n"
 
 /********Estructura para posiciones en 2D*****/

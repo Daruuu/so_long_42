@@ -3,39 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:55:31 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 00:07:25 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:42:38 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-/*
- * function to finish game correct if all coins was taken
-*/
-
-void	close_game(t_game *game)
-{
-	if (game->mlx_ptr && game->win_ptr)
-	{
-		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	}
-	if (game->mlx_ptr)
-	{
-		mlx_destroy_display(game->mlx_ptr);
-		free(game->mlx_ptr);
-	}
-	free(game->map->matrix_map);
-	free(game);
-	exit(0);
-}
-
 void	game_victory(t_game *game)
 {
-	free_game_complete(game);
 	ft_printf(WIN_GAME " with %d moves\n", game->count_moves);
+	free_game_complete(game);
 }
 
 /*
@@ -98,7 +78,7 @@ int	handle_event_keyboard(int keysym, t_game *game)
 	else if (keysym == KEY_Q || keysym == ESC)
 	{
 		ft_printf(EXIT_GAME_MESSAGE);
-		close_window(game);
+		free_game_complete(game);
 	}
 	return (0);
 }

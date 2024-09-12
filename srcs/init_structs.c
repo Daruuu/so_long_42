@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/09 16:20:14 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:25:56 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	init_game_windows_data(t_game *game)
 	if (!game->mlx_ptr)
 	{
 		free(game->mlx_ptr);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
 	game->map->columns * CELL_SIZE, \

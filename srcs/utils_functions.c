@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:58:33 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 00:20:08 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 19:44:14 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,20 @@ int	can_open_fd(char *path_map)
 
 int	close_window(t_game *game)
 {
-	free_images_xpm(game);
-	mlx_destroy_display(game->mlx_ptr);
-	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	free_map_copy(game->map, NULL);
-	free(game);
+	if (game)
+	{
+		free_images_xpm(game);
+		if (game->map)
+		{
+			free_map_copy(game->map, NULL);
+		}
+		if (game->win_ptr)
+			mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		if (game->mlx_ptr)
+			mlx_destroy_display(game->mlx_ptr);
+		free(game);
+		exit(0);
+	}
 	return (1);
 }
 
@@ -56,9 +65,7 @@ void	check_image_texture(t_game *game, void **image, char *path)
 	*image = mlx_xpm_file_to_image(game->mlx_ptr, path, &width, &height);
 	if (*image == NULL)
 	{
-		free(image);
-		ft_printf("error image texture creating !!!\n");
+		ft_printf("Error image texture creating !!!\n");
+		exit(1);
 	}
-	else
-		return ;
 }
