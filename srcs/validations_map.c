@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 00:12:08 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/12 20:08:37 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,15 +88,23 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
-	if (!line)
+	if (line == NULL)
+	{
 		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
+		return (1);
+	}
 	map->columns = (int) ft_strlen(line) - 1;
+	if (map->columns <= 0)
+	{
+		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
+		return (1);
+	}
 	while (line)
 	{
 		len_line = (int) ft_strlen(line);
 		if (line[len_line - 1] == '\n')
 			len_line = len_line - 1;
-		if (check_all_line(line, len_line, map))
+		if (check_all_line(line, len_line, map) == 1)
 		{
 			free_exit_file_columns_map(line, ERROR_INVALID_MAP);
 			return (1);
@@ -105,6 +113,11 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 		free(line);
 		line = get_next_line(fd);
 		i++;
+	}
+	if (line == NULL)
+	{
+		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
+		return (1);
 	}
 	return (0);
 }
