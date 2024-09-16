@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/16 13:54:10 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
@@ -80,14 +92,11 @@ t_game	*init_game(void)
 	return (new_game);
 }
 
-void	init_game_windows_data(t_game *game)
+int init_game_windows_data(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	if (!game->mlx_ptr)
-	{
-		free(game->mlx_ptr);
-		exit(1);
-	}
+		return (1);
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
 	game->map->columns * CELL_SIZE, \
 	game->map->rows * CELL_SIZE, TITLE_WINDOWS);
@@ -95,7 +104,17 @@ void	init_game_windows_data(t_game *game)
 	{
 		mlx_destroy_display(game->mlx_ptr);
 		free(game->mlx_ptr);
-		exit(EXIT_FAILURE);
+		return (1);
 	}
 	load_textures_game(game);
+/*
+	if (load_textures_game(game) != 0)
+	{
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		mlx_destroy_display(game->mlx_ptr);
+		free(game->mlx_ptr);
+		return (1);
+	}
+*/
+	return (0);
 }

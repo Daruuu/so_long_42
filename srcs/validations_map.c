@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/16 13:34:48 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
@@ -97,14 +109,13 @@ static int	read_and_validate_line(char *line, t_map *map)
 	return (0);
 }
 
-static int	check_columns_of_map(char *av1, t_map *map, int i)
+static int check_columns_of_map(char *av1, t_map *map, int fd)
 {
-	int		fd;
 	char	*line;
 
 	fd = can_open_fd(av1);
 	line = get_next_line(fd);
-	if (line == NULL || line == 0)
+	if (line == NULL)
 	{
 		free_exit_file_columns_map(line, ERROR_INVALID_MAP);
 		return (1);
@@ -122,12 +133,10 @@ static int	check_columns_of_map(char *av1, t_map *map, int i)
 	{
 		if (read_and_validate_line(line, map) == 1)
 			return (1);
-		i++;
 		line = get_next_line(fd);
 	}
 	return (0);
 }
-
 
 void	validate_file_and_edge_of_map(char *av1, t_map **map)
 {

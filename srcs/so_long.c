@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/16 13:55:45 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
@@ -30,7 +42,11 @@ int	main(int ac, char **av)
 			exit(2);
 		}
 		validate_file_and_edge_of_map(av[1], &(game->map));
-		init_game_windows_data(game);
+		if (init_game_windows_data(game) != 0)
+		{
+			free_game_complete(game);
+			exit(1);
+		}
 		render_full_map_sprites(game, 0, 0);
 		mlx_key_hook(game->win_ptr, handle_event_keyboard, game);
 		mlx_hook(game->win_ptr, 17, 0, close_window, game);

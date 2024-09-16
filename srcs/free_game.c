@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   free_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/16 14:12:52 by dasalaza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_game.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:57:05 by dasalaza          #+#    #+#             */
@@ -26,8 +38,8 @@ void	free_game_complete(t_game *game)
 		if (game->mlx_ptr)
 			mlx_destroy_display(game->mlx_ptr);
 		free(game);
-		exit(0);
 	}
+	exit(1);
 }
 
 void	free_images_xpm(t_game *game)
