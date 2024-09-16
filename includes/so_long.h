@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 12:56:54 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/16 17:11:41 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,24 @@ void        free_exit_file_columns_map_exit(char *line, char *message);
 
 // ********** GET_MAP_AND_VALIDATE_ITEMS.C ***********************
 
+// char		*get_map_from_file(char *path, int i);
 char		*get_map_from_file(char *path);
 void		add_map_to_matrix(char *map_ptr, t_map *map);
 void		check_minim_items_in_map(t_map *map);
 
 // ********** FLOOD_FILL.C ***********************
 
-int			can_open_fd(char *path_map);
 int			flood_fill(t_map *map, int x, int y);
 
 // ********** INIT_STRUCTS.C ***********************
 
 t_map		*init_map(void);
-t_game		*init_game(void);
-int init_game_windows_data(t_game *game);
-void		check_image_texture(t_game *game, void **image, char *path);
+t_game      *init_game(void);
+int         init_game_windows_data(t_game *game);
 
 // ********** GRAPHICS.C ***********************
 
 void		render_full_map_sprites(t_game *game, int i, int j);
-int			close_window(t_game *game);
 void		load_textures_game(t_game *game);
 
 // ********** MOVES_GAME.C ***********************
@@ -80,6 +78,12 @@ int			handle_event_keyboard(int keysym, t_game *game);
 void		update_floor_or_coins(t_game *game, int new_x, int new_y);
 
 // ********** UTILS_FUNCTIONS.C ***********************
-int			aux_check_all_ones(const char *line, t_map *map);
 
+int         aux_check_all_ones(const char *line, t_map *map);
+int         can_open_fd(char *path_map);
+void        check_open_fd(int fd, char *ptr);
+int         close_window(t_game *game);
+void        check_image_texture(t_game *game, void **image, char *path);
+
+int			aux_check_all_ones(const char *line, t_map *map);
 #endif
