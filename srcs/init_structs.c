@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 13:54:10 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:26:51 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ t_game	*init_game(void)
 int init_game_windows_data(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
-	if (!game->mlx_ptr)
+	if (game->mlx_ptr == NULL)
 		return (1);
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
 	game->map->columns * CELL_SIZE, \
@@ -107,6 +107,7 @@ int init_game_windows_data(t_game *game)
 		return (1);
 	}
 	load_textures_game(game);
+	// TODO: load_rtexures convert to reutn int() and de inside function too.
 /*
 	if (load_textures_game(game) != 0)
 	{

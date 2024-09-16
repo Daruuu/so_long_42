@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 19:31:36 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/16 18:16:21 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	free_map_copy(t_map *map_copy, char *message)
 void	free_struct_map_and_exit(char *message, t_map *map)
 {
 	free_map_copy(map, message);
-	exit(1);
+	exit(2);
 }

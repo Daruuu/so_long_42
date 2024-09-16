@@ -9,13 +9,15 @@
                 "${workspaceFolder}"
             ],
             "options": {
-                // "cwd": "${fileDirname}"
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build"
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "type": "cppbuild",

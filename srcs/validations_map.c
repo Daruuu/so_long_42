@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 17:37:13 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/16 18:19:53 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ static int	read_and_validate_line(char *line, t_map *map)
 	return (0);
 }
 
-static int check_columns_of_map(char *av1, t_map *map, int fd)
+static int	check_columns_of_map(char *av1, t_map *map, int fd)
 {
 	char	*line;
 
@@ -161,8 +161,8 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	check_minim_items_in_map(*map);
 	if (flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y) == 1)
 	{
+		free(ptr_map);
 		free_map_copy(*map, ERROR_INVALID_MAP);
 		exit(2);
 	}
-	// free(ptr_map);
 }
