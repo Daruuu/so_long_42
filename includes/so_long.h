@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 17:11:41 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/17 15:37:13 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int         init_game_windows_data(t_game *game);
 // ********** GRAPHICS.C ***********************
 
 void		render_full_map_sprites(t_game *game, int i, int j);
-void		load_textures_game(t_game *game);
+int         load_textures_game(t_game *game);
 
 // ********** MOVES_GAME.C ***********************
 
@@ -83,7 +83,8 @@ int         aux_check_all_ones(const char *line, t_map *map);
 int         can_open_fd(char *path_map);
 void        check_open_fd(int fd, char *ptr);
 int         close_window(t_game *game);
-void        check_image_texture(t_game *game, void **image, char *path);
+int         check_img_xpm(t_game *game, void **image, char *path);
+
 
 int			aux_check_all_ones(const char *line, t_map *map);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 08:47:55 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 00:20:08 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:38:51 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,25 @@ void	render_full_map_sprites(t_game *game, int i, int j)
 	}
 }
 
-void	load_textures_game(t_game *game)
+int	load_textures_game(t_game *game)
 {
-	check_image_texture(game, &game->player_front.xpm_ptr, PLAYER_FRONT_XPM);
-	check_image_texture(game, &game->player_left.xpm_ptr, PLAYER_LEFT_XPM);
-	check_image_texture(game, &game->player_back.xpm_ptr, PLAYER_DOWN_XPM);
-	check_image_texture(game, &game->player_right.xpm_ptr, PLAYER_RIGHT_XPM);
-	check_image_texture(game, &game->floor.xpm_ptr, FLOOR_XPM);
-	check_image_texture(game, &game->coins.xpm_ptr, COLLECT_XPM);
-	check_image_texture(game, &game->wall.xpm_ptr, WALL_XPM);
-	check_image_texture(game, &game->exit_open.xpm_ptr, EXIT_OPEN_XPM);
-	check_image_texture(game, &game->exit_closed.xpm_ptr, EXIT_CLOSED_XPM);
+	if (check_img_xpm(game, &game->player_front.xpm_ptr, PLAYER_FRONT_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->player_left.xpm_ptr, PLAYER_LEFT_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->player_back.xpm_ptr, PLAYER_DOWN_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->player_right.xpm_ptr, PLAYER_RIGHT_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->floor.xpm_ptr, FLOOR_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->coins.xpm_ptr, COLLECT_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->wall.xpm_ptr, WALL_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->exit_open.xpm_ptr, EXIT_OPEN_XPM) == 1)
+		return (1);
+	if (check_img_xpm(game, &game->exit_closed.xpm_ptr, EXIT_CLOSED_XPM) == 1)
+		return (1);
+	return (0);
 }

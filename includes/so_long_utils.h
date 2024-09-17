@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 00:35:49 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 18:41:22 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/17 15:26:19 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@
 # define ERROR_FD MAGENTA "Error: FD < 0!\n" R_COLOR
 # define ERROR_MLX_PTR RED "Error: init mlx_ptr\n" R_COLOR
 # define ERROR_WIN_PTR RED "Error: init win_ptr\n" R_COLOR
+# define ERROR_PUT_IMAGES "Error image texture creating!\n" R_COLOR
 
 #define ALL_VALIDATIONS_OK GREEN "\
            _ _  __      __   _ _     _       _   _                         _    \n\

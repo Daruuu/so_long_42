@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 18:26:51 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/17 15:51:49 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ t_game	*init_game(void)
 	return (new_game);
 }
 
-int init_game_windows_data(t_game *game)
+int	init_game_windows_data(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	if (game->mlx_ptr == NULL)
@@ -102,20 +102,16 @@ int init_game_windows_data(t_game *game)
 	game->map->rows * CELL_SIZE, TITLE_WINDOWS);
 	if (!game->win_ptr)
 	{
-		mlx_destroy_display(game->mlx_ptr);
-		free(game->mlx_ptr);
+		// mlx_destroy_display(game->mlx_ptr);
+		// free(game->mlx_ptr);
 		return (1);
 	}
-	load_textures_game(game);
-	// TODO: load_rtexures convert to reutn int() and de inside function too.
-/*
-	if (load_textures_game(game) != 0)
+	if (load_textures_game(game) == 1)
 	{
-		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-		mlx_destroy_display(game->mlx_ptr);
-		free(game->mlx_ptr);
+		// mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		// mlx_destroy_display(game->mlx_ptr);
+		// free(game->mlx_ptr);
 		return (1);
 	}
-*/
 	return (0);
 }
