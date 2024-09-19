@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/06 16:44:02 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/16 18:02:02 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/19 01:44:30 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/19 01:55:38 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

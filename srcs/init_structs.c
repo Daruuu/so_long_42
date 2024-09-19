@@ -3,34 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
+/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/17 15:51:49 by  dasalaza        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   init_structs.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/12 18:25:56 by  dasalaza        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   init_structs.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 14:48:52 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/07 14:42:00 by  dasalaza        ###   ########.fr       */
+/*   Created: 2024/09/19 01:44:30 by dasalaza          #+#    #+#             */
+/*   Updated: 2024/09/19 01:59:24 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,21 +72,24 @@ int	init_game_windows_data(t_game *game)
 {
 	game->mlx_ptr = mlx_init();
 	if (game->mlx_ptr == NULL)
+	{
+		free(game->mlx_ptr);
 		return (1);
+	}
 	game->win_ptr = mlx_new_window(game->mlx_ptr, \
 	game->map->columns * CELL_SIZE, \
 	game->map->rows * CELL_SIZE, TITLE_WINDOWS);
 	if (!game->win_ptr)
 	{
-		// mlx_destroy_display(game->mlx_ptr);
-		// free(game->mlx_ptr);
+		mlx_destroy_display(game->mlx_ptr);
+		free(game->mlx_ptr);
 		return (1);
 	}
 	if (load_textures_game(game) == 1)
 	{
-		// mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-		// mlx_destroy_display(game->mlx_ptr);
-		// free(game->mlx_ptr);
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		mlx_destroy_display(game->mlx_ptr);
+		free(game->mlx_ptr);
 		return (1);
 	}
 	return (0);
