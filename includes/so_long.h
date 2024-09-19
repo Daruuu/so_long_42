@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/17 15:37:13 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/19 14:01:42 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 /* *************VALIDATIONS MAP **********/
 
 void		validate_file_and_edge_of_map(char *av1, t_map **map);
+// int         validate_file_and_edge_of_map(char *av1, t_map **map);
 
 // ********** FT_FREE_ERRORS.C ***********************
 
