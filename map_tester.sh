@@ -19,6 +19,7 @@ for map in "$1"/*.*; do
   if [[ "$filename" =~ ^[^.]+\..* ]]; then
     echo -e "${YELLOW}Ejecutando ./so_long con el archivo $map${NC}"
     ./so_long "$map"
+    # valgrind --leak-check=full --show-leak-kinds=reachable ./so_long "$map"
 
     # Captura el código de salida de ./so_long
     result=$?

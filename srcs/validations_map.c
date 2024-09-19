@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:44:30 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/19 01:57:46 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:00:17 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,6 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 	check_minim_items_in_map(*map);
 	if (flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y) == 1)
 	{
-		free(ptr_map);
 		free_map_copy(*map, ERROR_INVALID_MAP);
 		exit(2);
 	}
