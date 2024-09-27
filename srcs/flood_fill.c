@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 12:57:46 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/19 12:57:49 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:55:53 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	flood_player_and_coins(t_map *map, int x, int y, int *coins_flood)
+static void	flood_player_and_coins(t_map *map, int x, int y, int *coins_flood)
 {
 	if (x < 0 || x >= map->rows || y < 0 || y >= map->columns)
 		return ;

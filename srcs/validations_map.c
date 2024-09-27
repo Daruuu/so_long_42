@@ -6,33 +6,19 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:44:30 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/19 13:00:17 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:47:33 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static int	validate_filename_map(char *av1)
-{
-	const char	*type_file;
-	int			len_file;
-
-	type_file = ".ber";
-	len_file = (int) ft_strlen(av1);
-	if (len_file < 4)
-		return (1);
-	if (ft_strncmp(av1 + len_file - 4, type_file, 4) != 0)
-		return (1);
-	return (0);
-}
-
-static int	check_first_and_last_line_map(char *av1, t_map *map)
+static int	check_first_and_last_line_map(char *av1, t_map *map, t_game *game)
 {
 	int		i;
 	int		fd;
 	char	*line;
 
-	fd = can_open_fd(av1);
+	fd = can_open_fd(av1, game);
 	line = get_next_line(fd);
 	if (line == NULL || aux_check_all_ones(line, map) == 1)
 	{
@@ -97,11 +83,11 @@ static int	read_and_validate_line(char *line, t_map *map)
 	return (0);
 }
 
-static int	check_columns_of_map(char *av1, t_map *map, int fd)
+static int	check_columns_of_map(char *av1, t_map *map, int fd, t_game *game)
 {
 	char	*line;
 
-	fd = can_open_fd(av1);
+	fd = can_open_fd(av1, game);
 	line = get_next_line(fd);
 	if (line == NULL)
 	{
@@ -126,7 +112,7 @@ static int	check_columns_of_map(char *av1, t_map *map, int fd)
 	return (0);
 }
 
-void	validate_file_and_edge_of_map(char *av1, t_map **map)
+void	validate_file_and_edge_of_map(char *av1, t_map **map, t_game *game)
 {
 	char	*ptr_map;
 
@@ -137,16 +123,16 @@ void	validate_file_and_edge_of_map(char *av1, t_map **map)
 		return ;
 	}
 	if (validate_filename_map(av1) == 1)
-		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map);
-	if (check_columns_of_map(av1, *map, 0) == 1)
-		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map);
-	if (check_first_and_last_line_map(av1, *map) == 1)
-		free_struct_map_and_exit(ERROR_ROWS_MAP, *map);
-	ptr_map = get_map_from_file(av1);
+		free_struct_map_and_exit(ERROR_INVALID_EXTENSION_MAP, *map, game);
+	if (check_columns_of_map(av1, *map, 0, game) == 1)
+		free_struct_map_and_exit(ERROR_COLUMNS_MAP, *map, game);
+	if (check_first_and_last_line_map(av1, *map, game) == 1)
+		free_struct_map_and_exit(ERROR_ROWS_MAP, *map, game);
+	ptr_map = get_map_from_file(av1, game);
 	if (ptr_map == NULL)
-		free_struct_map_and_exit(NULL, *map);
-	add_map_to_matrix(ptr_map, *map);
-	check_minim_items_in_map(*map);
+		free_struct_map_and_exit(NULL, *map, game);
+	add_map_to_matrix(ptr_map, *map, game);
+	check_minim_items_in_map(*map, game);
 	if (flood_fill(*map, (**map).player_pos.x, (**map).player_pos.y) == 1)
 	{
 		free_map_copy(*map, ERROR_INVALID_MAP);

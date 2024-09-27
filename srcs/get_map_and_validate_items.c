@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_and_validate_items.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 23:32:48 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/11 13:55:46 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:34:17 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-char	*get_map_from_file(char *path)
+char	*get_map_from_file(char *path, t_game *game)
 {
 	char	*new_map;
 	int		fd;
 	char	buffer;
 	int		i;
 
-	fd = can_open_fd(path);
+	fd = can_open_fd(path, game);
 	i = 0;
 	while (read(fd, &buffer, 1))
 		i ++;
@@ -36,7 +36,7 @@ char	*get_map_from_file(char *path)
 	return (new_map);
 }
 
-void	add_map_to_matrix(char *map_ptr, t_map *map)
+void	add_map_to_matrix(char *map_ptr, t_map *map, t_game *game)
 {
 	int	i;
 	int	j;
@@ -52,7 +52,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 	while (map->matrix_map[i] != NULL)
 		i++;
 	if (map->rows != i)
-		free_struct_map_and_exit(ERROR_IN_MATRIX, map);
+		free_struct_map_and_exit(ERROR_IN_MATRIX, map, game);
 	i = 0;
 	while (i < map->rows)
 	{
@@ -60,7 +60,7 @@ void	add_map_to_matrix(char *map_ptr, t_map *map)
 		while (map->matrix_map[i][j] != '\0')
 			j++;
 		if (j != map->columns)
-			free_struct_map_and_exit(ERROR_IN_MATRIX, map);
+			free_struct_map_and_exit(ERROR_IN_MATRIX, map, game);
 		i++;
 	}
 }
@@ -102,7 +102,7 @@ static void	aux_check_player_exit_coins(t_map *map, int i, int j)
 		map->exits ++;
 }
 
-void	check_minim_items_in_map(t_map *map)
+void	check_minim_items_in_map(t_map *map, t_game *game)
 {
 	int	i;
 	int	j;
@@ -119,6 +119,6 @@ void	check_minim_items_in_map(t_map *map)
 		i++;
 	}
 	if (map->players != 1 || map->coins < 1 || map->exits != 1)
-		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map);
+		free_struct_map_and_exit(ERROR_ITEMS_IN_MAP, map, game);
 	get_positions_player_and_exit(map);
 }

@@ -6,7 +6,7 @@
 /*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:44:30 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/19 12:37:38 by  dasalaza        ###   ########.fr       */
+/*   Updated: 2024/09/19 15:02:38 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	free_game_complete(t_game *game)
 			mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 		if (game->mlx_ptr)
 			mlx_destroy_display(game->mlx_ptr);
-		// free(game);
 	}
 	free(game);
 	exit(1);
@@ -53,7 +52,6 @@ void	free_images_xpm(t_game *game)
 		mlx_destroy_image(game->mlx_ptr, game->player_back.xpm_ptr);
 }
 
-//	call if game is nullllllllll
 void	free_game(t_game *game, char *message)
 {
 	if (message)

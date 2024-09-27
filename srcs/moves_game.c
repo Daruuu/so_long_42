@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dasalaza <dasalaza@student.42barcelona.c>  +#+  +:+       +#+        */
+/*   By:  dasalaza < dasalaza@student.42barcel>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:18:58 by dasalaza          #+#    #+#             */
-/*   Updated: 2024/09/19 02:06:43 by dasalaza         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:48:24 by  dasalaza        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	game_victory(t_game *game)
 	ft_printf(WIN_GAME " with %d moves\n", game->count_moves);
 	free_game_complete(game);
 }
-
-/*
- *	function to validate new move of the PLAYER
-*/
 
 void	move_player(t_game *game, int new_x, int new_y, int player_sprite)
 {
